@@ -1,0 +1,36 @@
+<!-- Used by theme-projects-builtin-1a, entire card is the link. -->
+
+
+<a class="grey card" href="{% if page.projecturl %}{{ page.projecturl }}{% else %}{{ site.baseurl}}{{ include.page.url }}{% endif %}">
+  <div class="content" style="padding-top: 15%;">
+    {% if include.page.image %}
+    <div class="ui tiny right floated rounded bordered image">
+      <img src="../images/oval.svg" data-echo="{{ site.baseurl }}/{{ include.page.image }}">
+    </div>
+    {% endif %}
+
+    <span class="header font-balooChettan2">{{ include.page.title }} 
+      {% if include.page.language %}
+        <div class="ui light small top attached label">{{ include.page.language }}</div>
+      {% endif %}
+    </span>
+    <div class="meta">
+      <span class="date font-balooChettan2">{{ include.page.date | date: "%d.%m.%Y" }}</span>
+    </div>
+
+    <div class="ui segment description" style="min-height: 150px; display: flex; justify-content: center; align-items: center;">
+      <div class="font-balooChettan2" style="text-align:center; font-size: 90%;">
+        {{ include.page.summary }}
+      </div>
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="ui tiny labels center aligned font-balooChettan2">
+      {% for label in include.page.labels %}
+      <div class="ui light label">{{ label }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
+</a>

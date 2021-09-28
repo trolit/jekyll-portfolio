@@ -1,0 +1,148 @@
+---
+# Provide front matter so Jekyll processes this file as SASS.
+---
+@charset "utf-8";
+
+// Default CSS.
+// Don't edit this file.  Put your changes in stylesheet-customizations.scss
+
+// Default background color
+body {
+  font-size: 108%;
+  background-color: #f2f2f2;
+}
+
+// Default menubar color
+.ui.menu {
+  background: lighten(silver, 10%);
+}
+
+// Default home page icon color
+.icon-color {
+  color: darken(silver, 40%);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  opacity: 0.4;
+}
+
+.font-electrolize {
+  font-family: 'Electrolize', sans-serif !important;
+}
+
+.font-spartan {
+  font-family: 'Spartan', sans-serif !important;
+}
+
+.font-rocksalt {
+  font-family: 'Rock Salt', cursive !important;
+}
+
+.font-bauman {
+  font-family: 'Baumans', cursive !important;
+}
+
+.font-balooChettan2 {
+  font-family: 'Baloo Chettan 2', cursive !important;
+}
+
+.clickable:hover:after{
+  content:'';
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background: url('../images/view_ico.png') center no-repeat;
+  background-size: 70px;
+}
+
+.img-center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.popover-icon {
+  height: 22px !important; 
+  color: darken(silver, 40%);
+}
+
+.popover-hr {
+  opacity: 0.1;
+}
+
+// Prefer space between list items in screen mode.
+.list-padding {
+  ul li { padding: 5px 0px; }
+  ol li { padding: 5px 0px; }
+}
+
+// This class is used in the prebuilt bio themes.
+.no-bottom {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+// Swiper settings
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: 350px;
+}
+
+.custom-color {
+  background-color: #a36021 !important; 
+  color: white !important;
+}
+
+.iconify {
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+.custom-icon-size {
+  height: 9rem !important;
+  width: 9rem !important;
+}
+
+.custom-icon-size-8 {
+  height: 4rem !important;
+  width: 4rem !important;
+  position: absolute;
+}
+
+.javascript {
+  background-color: #D29F00 !important;
+  color: white !important;
+}
+
+.java {
+  background-color: #B00B1E !important;
+  color: white !important;
+}
+
+.csharp {
+  background-color: #5893bb !important;
+  color: white !important;
+}
+
+.kotlin {
+  background-color: #CC7000 !important;
+  color: white !important;
+}

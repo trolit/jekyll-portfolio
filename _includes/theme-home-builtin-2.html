@@ -1,0 +1,70 @@
+<header>
+  <script type="text/javascript" src="js/particles/jquery.particleground.js"></script>
+  <script type="text/javascript" src="js/particles/demo.js"></script>
+</header>
+
+<!-- Home page design with large image to left of bio info. -->
+{% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
+{% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
+{% assign num_essays = essay_pages.size %}
+{% assign num_projects = project_pages.size %}
+
+<div class="ui icon button" onclick="redirectBlank('http://techfolios.github.io/')" data-html="<span class='iconify' data-icon='bx:bx-cube-alt' data-inline='true' style='margin-right: 5px; height: 110% !important;'></span> trolit.github.io <br/><hr/> Strona zbudowana na podstawie szablonu startowego <strong>Techfolios</strong> (Jekyll, Semantic UI, Liquid). Efekt cząsteczek od Jonathana Nicola. <br/><br/> Kliknięcie spowoduje otwarcie nowej karty z TechFolios." data-position="top left" data-variation="small" style="z-index: 1000; position: absolute; top: 0; left: 0; background-color: transparent;">
+  <span class="iconify" data-icon="bi:patch-question" data-inline="false"></span>
+</div>
+
+<div onselectstart="return false" ondragstart="return false" id="lead-content" style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
+
+  <div class="four wide column" style="text-align: center;">
+    <span class="iconify custom-icon-size" data-icon="la:dev" data-inline="false"></span>
+    <span style="position: absolute; top: 70px; right: -5;" class="iconify" data-icon="octicon:tools-16" data-inline="false" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+    <span class="iconify custom-icon-size-8" data-icon="emojione:gear" data-inline="false" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+  </div>
+
+  <div class="two wide column"></div>
+
+  <div class="ten wide column ui card font-balooChettan2">
+    <h2 class="header no-bottom font-bauman"><span class="iconify" data-icon="whh:debug" data-inline="false"></span> {{ site.data.bio.basics.name }}</h2>
+    <div class="font-balooChettan2">
+      Non nobis solum nati sumus, Marcus T. Cicero
+    </div>
+    <br/>
+    <div class="ui bottom attached active tab segment">
+      <p class="justify-text">
+        {{ site.data.bio.basics.summary }}
+      </p>
+    </div>
+    <br/>
+    <div class="ui three buttons" style="text-align: center;">
+      <div class="ui labeled button" onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
+        <div class="ui basic custom-color button font-electrolize">
+          PROJEKTY
+        </div>
+        <a class="ui basic left pointing custom-color label font-rocksalt" style="opacity: 0.8;">
+          {{ num_projects }}
+        </a>
+      </div>
+      <div class="button">
+        <p style="text-align: center">
+          {% include home-network-links.html %}
+        </p>
+      </div>
+      <!-- <div class="ui left labeled button" onclick="redirect('{{ site.baseurl}}/essays/')" tabindex="0">
+        <a class="ui basic right pointing custom-color label font-rocksalt" style="opacity: 0.8;">
+          {{ num_essays }}
+        </a>
+        <div class="ui basic custom-color button font-electrolize">
+          WPISY
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script>
+  $('.button')
+  .popup({
+    inline: true
+  })
+;
+</script>
+<div id="lead-overlay" class="particles"></div>

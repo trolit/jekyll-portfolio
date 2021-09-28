@@ -1,0 +1,37 @@
+<!-- Used by theme-bio-builtin-1 -->
+
+{% if site.data.bio.publications %}
+<div class="row">
+  <div class="sixteen wide column no-bottom" style="margin-top: 4%;">
+    <div class="ui stackable centered four cards">
+      {% for entry in site.data.bio.publications %}
+      <div class="ui raised card">
+        <div class="content">
+          <div class="meta">
+            <span class="category">{% if entry.author and entry.author != "" %} {{ entry.author }} {% endif %}</span>
+          </div>
+          <div class="description justify-text">
+            <p>{{ entry.name }}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="right floated">
+            <a href="{{ entry.website }}" target="_blank">
+              <div class="ui animated custom-color button" onclick="this.blur();" tabindex="0">
+                <div class="visible content">Sprawdź</div>
+                <div class="hidden content">
+                  <i class="right arrow icon"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="left floated" style="padding-top: 5%;">
+            {{ entry.year }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

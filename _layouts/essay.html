@@ -1,0 +1,17 @@
+---
+layout: essays
+---
+
+<div style="margin-top: 20px; margin-bottom: 20px;" class="ui text container">
+  <div class="ui large grey message">
+    <span class="iconify" style="display: inline-block;" data-icon="ant-design:file-text-twotone" data-inline="true"></span>
+    <h2 style="display: inline-block;" class="header font-spartan">{{ page.title }}</h2>
+    <br/>
+    <a class="ui custom-color image label" style="cursor: default;">
+      Data opublikowania
+      <div class="detail">{{ page.date | date: "%-d.%m.%Y" }}</div>
+    </a>
+  </div>
+  <hr style="border: 1px solid #616247;">
+  {{ content }}
+</div>

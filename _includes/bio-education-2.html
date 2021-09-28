@@ -1,0 +1,44 @@
+<!-- Used by theme-bio-builtin-2 -->
+
+{% for entry in site.data.bio.education %}
+    <div class="ten wide column no-bottom center-div">
+      <div class="ui one column grid">
+        <div class="column">
+          <div class="ui raised segment">
+            <a href={{entry.institutionAdress}} target="_blank" class="ui custom-color ribbon label">{{ entry.institutionType }}</a>
+            <br />
+            <br />
+            <em>{{ entry.institution }}</em>
+            <strong  class="ui tag label" style="float: right;">
+              {% if entry.startDate %}
+                {{ entry.startDate | slice: 0,4 }}
+              {% endif %}
+              {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
+              -
+              {% endif %}
+              {% if entry.endDate %}
+              {% if entry.endDate != "Present" %}
+                {{ entry.endDate | slice: 0,4 }}
+              {% else %}
+                {{ entry.endDate }}
+              {% endif %}
+            {% endif %}            
+            </strong>
+            <p style="font-size: 85%;">{{ entry.studyType }}, {{ entry.area }}</p>
+            <!--
+            <a class="ui red ribbon label">Szkoła średnia</a> User Reviews
+            <p></p>
+            -->
+
+            {% if entry.courses %}
+            <ul style="margin: 0px;">
+              {% for course in entry.courses %}
+              <li><small>{{ course }}</small></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}

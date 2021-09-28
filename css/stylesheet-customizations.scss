@@ -1,0 +1,81 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+.justify-text {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  word-break: break-word;
+}
+
+.stylize-text {
+  line-height: 1.4; 
+  font-size: 14pt; 
+  font-family: 'Nunito', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+.stylize-header {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.bio-work-text {
+  font-size: 14px;
+}
+
+.center-div {
+  margin: auto;
+  padding: 10px;
+}
+
+.center-sub-text {
+  text-align: center;
+  font-size: 90%; 
+}
+
+#lead-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#lead-content {
+  position: relative;
+  -webkit-transform: none;
+          transform: none;
+  left: auto;
+  top: auto;
+  z-index: 2;
+}
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.iconify { 
+  width: 33px;
+  height: 33px;
+  vertical-align: middle !important;
+ }
+
+ pre { 
+  white-space: pre;
+  overflow: auto; 
+  font-size: 14px;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono;
+}
+
+.lineno {
+  padding: .5em;
+}
+
+td.code {
+  padding: 1em .5em;
+}
+
