@@ -4,41 +4,97 @@
 </header>
 
 <!-- Home page design with large image to left of bio info. -->
-{% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
+{% assign essay_pages = site.pages | where: "type", "essay" | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
 {% assign num_essays = essay_pages.size %}
 {% assign num_projects = project_pages.size %}
 
-<div class="ui icon button" onclick="redirectBlank('http://techfolios.github.io/')" data-html="<span class='iconify' data-icon='bx:bx-cube-alt' data-inline='true' style='margin-right: 5px; height: 110% !important;'></span> trolit.github.io <br/><hr/> Strona zbudowana na podstawie szablonu startowego <strong>Techfolios</strong> (Jekyll, Semantic UI, Liquid). Efekt cząsteczek od Jonathana Nicola. <br/><br/> Kliknięcie spowoduje otwarcie nowej karty z TechFolios." data-position="top left" data-variation="small" style="z-index: 1000; position: absolute; top: 0; left: 0; background-color: transparent;">
+<div class="ui icon button" onclick="redirectBlank('http://techfolios.github.io/')"
+  data-html="<span class='iconify' data-icon='bx:bx-cube-alt' data-inline='true' style='margin-right: 5px; height: 110% !important;'></span> trolit.github.io <br/><hr/> Strona zbudowana na podstawie szablonu startowego <strong>Techfolios</strong> (Jekyll, Semantic UI, Liquid). Efekt cząsteczek od Jonathana Nicola. <br/><br/> Kliknięcie spowoduje otwarcie nowej karty z TechFolios."
+  data-position="top left" data-variation="small"
+  style="z-index: 1000; position: absolute; top: 0; left: 0; background-color: transparent;">
   <span class="iconify" data-icon="bi:patch-question" data-inline="false"></span>
 </div>
 
-<div onselectstart="return false" ondragstart="return false" id="lead-content" style="height: 100%;" class="ui middle aligned two column centered stackable grid container">
+<div onselectstart="return false" ondragstart="return false" id="lead-content" style="height: 100%;"
+  class="ui middle aligned two column centered stackable grid container">
 
   <div class="four wide column" style="text-align: center;">
     <span class="iconify custom-icon-size" data-icon="la:dev" data-inline="false"></span>
-    <span style="position: absolute; top: 70px; right: -5;" class="iconify" data-icon="octicon:tools-16" data-inline="false" data-rotate="180deg" data-flip="horizontal,vertical"></span>
-    <span class="iconify custom-icon-size-8" data-icon="emojione:gear" data-inline="false" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+    <span style="position: absolute; top: 70px; right: -5;" class="iconify" data-icon="octicon:tools-16"
+      data-inline="false" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+    <span class="iconify custom-icon-size-8" data-icon="emojione:gear" data-inline="false" data-rotate="180deg"
+      data-flip="horizontal,vertical"></span>
   </div>
 
   <div class="two wide column"></div>
 
   <div class="ten wide column ui card font-balooChettan2">
-    <h2 class="header no-bottom font-bauman"><span class="iconify" data-icon="whh:debug" data-inline="false"></span> {{ site.data.bio.basics.name }}</h2>
+    <h2 class="header no-bottom font-bauman"><span class="iconify" data-icon="whh:debug" data-inline="false"></span> {{
+      site.data.bio.basics.name }}</h2>
+
     <div class="font-balooChettan2">
       Non nobis solum nati sumus, Marcus T. Cicero
     </div>
-    <br/>
+
+    <br />
+
     <div class="ui bottom attached active tab segment">
       <p class="justify-text">
-        {{ site.data.bio.basics.summary }}
+        #ITbio
+      <div class='ui relaxed divided list'>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2008</span>
+            <div class='description'>
+              playing with <a href='https://forums.alliedmods.net/showthread.php?p=504608' target='_blank'>blockmaker</a>
+              plugin made for Counter Strike 1.6
+            </div>
+          </div>
+        </div>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2012</span>
+            <div class='description'>
+              first approach to Unity with <a href='https://helion.pl/ksiazki/projektowanie-gier-w-srodowisku-unity-3-x-will-goldstone,prgun3.htm#format/e' target='_blank'>Will Goldstone's</a> book 
+            </div>
+          </div>
+        </div>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2013 - 2016</span>
+            <div class='description'>
+              graphics(Pixlr), videos(Windows MovieMaker), music(Audacity) editing, first map: <a
+              href='https://gamebanana.com/maps/176920' target='_blank'> cs_k1234</a>
+            </div> 
+          </div>
+        </div>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2015</span>
+            <div class='description'>
+              improved <a href='https://gamebanana.com/maps/184254' target='_blank'>cs_k1234</a> map made in VHE, first page project: <a href='http://przepisownik2016.opx.pl/' target='_blank'>Przepisownik 2016</a>
+            </div>
+          </div>
+        </div>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2017 - 2018</span>
+            <div class='description'>
+              first C# project, game in WinForms: <a href='https://github.com/trolit/Projekt-Frog#projekt-frog' target='_blank'>Projekt Frog</a>(arcade classic Frogger flavour)
+            </div>
+          </div>
+        </div>
+        <div class='item'> <i class='large clone outline middle aligned icon'></i>
+          <div class='content'> <span class='header'>2019 - 2020</span>
+            <div class='description'>
+              worked on scientific publication, created full educational game in Unity 3D, <a href='https://github.com/trolit/projectZero' target='_blank'>Project Zero</a>
+            </div>
+          </div>
+        </div>
+      </div>
       </p>
     </div>
-    <br/>
+    <br />
     <div class="ui three buttons" style="text-align: center;">
       <div class="ui labeled button" onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
         <div class="ui basic custom-color button font-electrolize">
-          PROJEKTY
+          PROJECTS
         </div>
         <a class="ui basic left pointing custom-color label font-rocksalt" style="opacity: 0.8;">
           {{ num_projects }}
@@ -54,7 +110,7 @@
           {{ num_essays }}
         </a>
         <div class="ui basic custom-color button font-electrolize">
-          WPISY
+          ESSAYS
         </div>
       </div>
     </div>
@@ -62,9 +118,9 @@
 </div>
 <script>
   $('.button')
-  .popup({
-    inline: true
-  })
-;
+    .popup({
+      inline: true
+    })
+    ;
 </script>
 <div id="lead-overlay" class="particles"></div>
