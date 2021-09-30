@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "idzk 968",
-    "label": "4e6f6e206e6f62697320736f6c756d206e6174692073756d75732c204d617263757320542e2043696365726f",
+    "nothing": "4e6f6e206e6f62697320736f6c756d206e6174692073756d75732c204d617263757320542e2043696365726f",
     "picture": "https://raw.githubusercontent.com/trolit/trolit.github.io/master/images/avatar.png",
     "website": "https://trolit.github.io",
-    "summary": "Just a guy with passion and ambition to construct solutions <div class='ui relaxed divided list'> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2008</span> <div class='description'>majsterkowanie przy pluginie <a href='https://forums.alliedmods.net/showthread.php?p=504608' target='_blank'>blockmaker</a> do gry Counter Strike 1.6</div> </div> </div> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2012</span> <div class='description'>pierwsze podejście do Unity 3.x, <a href='https://helion.pl/ksiazki/projektowanie-gier-w-srodowisku-unity-3-x-will-goldstone,prgun3.htm#format/e' target='_blank'>Will Goldstone</a> </div> </div> </div> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2013 - 2016</span> <div class='description'>obróbka grafiki, montaż wideo, projektowanie map np. <a href='https://gamebanana.com/maps/176920' target='_blank'> cs_k1234</a> z 2013</div> </div> </div> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2015</span> <div class='description'>pomoc przy zadaniach z angielskiego w serwisie zadane.pl, wykonanie <a href='https://gamebanana.com/maps/184254' target='_blank'>rozbudowanej wersji mapy</a> cs_k1234, przygotowanie pierwszego projektu strony <a href='http://przepisownik2016.opx.pl/' target='_blank'>Przepisownik 2016</a> na darmowym hostingu</div> </div> </div> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2017 - 2018</span> <div class='description'>pierwszy projekt w języku C#, gra <a href='https://trolit.github.io/projects/projectFrog' target='_blank'>Projekt Frog</a></div> </div> </div> <div class='item'> <i class='large clone outline middle aligned icon'></i> <div class='content'> <span class='header'>2019 - 2020</span> <div class='description'>udział w stworzeniu programów do badań przy <a href='https://trolit.github.io/projects/NaiveBayesRP' target='_blank'>publikacji</a>, <br/>przygotowanie pełnoprawnej gry edukacyjnej w Unity 3D, <a href='https://trolit.github.io/projects/projectZero' target='_blank'>Project Zero</a></div> </div> </div> </div>",
+    "summary": "monkaHmm",
     "profiles": [
       {
         "network": "github",
@@ -12,50 +12,5 @@
         "url": "http://github.com/trolit"
       }
     ]
-  },
-  "interests": [
-    {
-      "name": "programowanie",
-      "keywords": [
-      ]
-    }
-  ],
-  "skills": [
-  ],
-  "education": [
-    {
-      "institution": "Uniwersytet Warmińsko-Mazurski w Olsztynie",
-      "institutionType": "Szkoła wyższa",
-      "institutionAdress": "http://www.uwm.edu.pl/",
-      "area": "Inżynieria Systemów Informatycznych",
-      "studyType": "Informatyka, I stopień",
-      "startDate": "2016-09-01",
-      "endDate": "2020",
-      "gpa": "",
-      "courses": [ "Uzyskanie tytułu inżyniera"
-      ]
-    },
-    {
-      "institution": "Zespół Szkół nr 1 im Stanisława Staszica w Szczytnie",
-      "institutionType": "Szkoła średnia",
-      "institutionAdress": "http://zs1.powiatszczycienski.pl/",
-      "area": "Technik Informatyk",
-      "studyType": "Technikum",
-      "startDate": "2012",
-      "endDate": "2016",
-      "gpa": "",
-      "courses": [ "Uzyskanie kwalifikacji <a class='activating element' target='blank' data-html='<span class=\"iconify popover-icon\" data-icon=\"bi:question-square\" data-inline=\"false\"></span> Kwalifikacja E12 <br/><hr class=\"popover-hr\"/>Montaż i eksploatacja komputerów osobistych oraz urządzeń peryferyjnych.' data-position='top center'>E12</a>, <a class='activating element' target='blank' data-html='<span class=\"iconify popover-icon\" data-icon=\"bi:question-square\" data-inline=\"false\"></span> Kwalifikacja E13 <br/><hr class=\"popover-hr\"/>Projektowanie lokalnych sieci komputerowych i administrowanie sieciami.' data-position='top center'>E13</a> oraz <a class='activating element' target='blank' data-html='<span class=\"iconify popover-icon\" data-icon=\"bi:question-square\" data-inline=\"false\"></span> Kwalifikacja E14 <br/><hr class=\"popover-hr\"/>Tworzenie aplikacji internetowych i baz danych oraz administrowanie bazami.' data-position='top center'>E14</a> uprawniających do tytułu technika informatyka"
-      ]
-    }
-  ],
-  "work": [
-  ],
-  "publications": [
-    {
-      "name":"Building an Ensemble of Naive Bayes Classifiers using committee of bootstraps and monte carlo splits for a various percentage of random objects from training set.",
-      "author":"Artiemjew, P, Idzikowski, P.",
-      "year": "2019",
-      "website": "http://ceur-ws.org/Vol-2571/CSP2019_paper_17.pdf"
-    }
-  ]
+  }
 }
