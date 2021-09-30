@@ -8,7 +8,7 @@
  * Inspired by http://requestlab.fr/ and http://disruptivebydesign.com/
  */
 
-;(function(window, document) {
+; (function (window, document) {
   "use strict";
   var pluginName = 'particleground';
 
@@ -31,6 +31,22 @@
   };
 
   var $ = window.jQuery;
+
+  var avatar;
+  var avatarRectTop;
+  var avatarRectRight;
+  var avatarRectBottom;
+  var avatarRectLeft;
+
+  $(window).load(function () {
+    avatar = document.getElementById('avatar');
+    var rect = avatar.getBoundingClientRect();
+    avatarRectTop = rect.top - 10;
+    avatarRectRight = rect.right;
+    avatarRectBottom = rect.bottom + 10;
+    avatarRectLeft = rect.left;
+  });
+
 
   function Plugin(element, options) {
     var canvasSupport = !!document.createElement('canvas').getContext;
@@ -74,7 +90,7 @@
         particles.push(p);
       };
 
-      window.addEventListener('resize', function() {
+      window.addEventListener('resize', function () {
         resizeHandler();
       }, false);
 
@@ -230,7 +246,7 @@
     /**
      * Draw particle
      */
-    Particle.prototype.draw = function() {
+    Particle.prototype.draw = function () {
       // Draw circle
       ctx.beginPath();
       ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, options.particleRadius / 2, 0, Math.PI * 2, true);
@@ -265,7 +281,7 @@
     /**
      * update particle position
      */
-    Particle.prototype.updatePosition = function() {
+    Particle.prototype.updatePosition = function () {
       if (options.parallax) {
         if (orientationSupport && !desktop) {
           // Map tiltX range [-30,30] to range [0,winW]
@@ -292,6 +308,9 @@
         case 'left':
           if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
             this.position.x = elWidth - this.parallaxOffsetX;
+          } else if (this.position.x + this.speed.x + this.parallaxOffsetX < avatarRectLeft) {
+            console.log('fuf');
+            this.position.x = avatarRectLeft - this.parallaxOffsetX;
           }
           break;
         case 'right':
@@ -301,7 +320,12 @@
           break;
         default:
           // If particle has reached edge of canvas, reverse its direction
+          const particleXPos = this.position.x + this.speed.x + this.parallaxOffsetX;
+          const particleYPos = this.position.y + this.speed.y + this.parallaxOffsetY;
+
           if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.speed.x = -this.speed.x;
+          } else if ((particleXPos < avatarRectRight && particleXPos > avatarRectLeft && particleYPos > avatarRectTop && particleYPos < avatarRectBottom) || (particleXPos > avatarRectLeft && particleXPos < avatarRectRight && particleYPos > avatarRectTop && particleYPos < avatarRectBottom)) {
             this.speed.x = -this.speed.x;
           }
           break;
@@ -319,8 +343,14 @@
           }
           break;
         default:
+          const particleXPos = this.position.x + this.speed.x + this.parallaxOffsetX;
+          const particleYPos = this.position.y + this.speed.y + this.parallaxOffsetY;
+
           // If particle has reached edge of canvas, reverse its direction
           if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.speed.y = -this.speed.y;
+          } else if ((particleYPos > avatarRectTop && particleYPos < avatarRectBottom && particleXPos > avatarRectLeft && particleXPos < avatarRectRight) || (particleYPos < avatarRectBottom && particleYPos > avatarRectTop && particleXPos > avatarRectLeft && particleXPos < avatarRectRight)) {
+            this.speed.x = -this.speed.x;
             this.speed.y = -this.speed.y;
           }
           break;
@@ -334,11 +364,11 @@
     /**
      * Setter: particle stacking position
      */
-    Particle.prototype.setStackPos = function(i) {
+    Particle.prototype.setStackPos = function (i) {
       this.stackPos = i;
     }
 
-    function option (key, val) {
+    function option(key, val) {
       if (val) {
         options[key] = val;
       } else {
@@ -371,7 +401,7 @@
     };
   }
 
-  window[pluginName] = function(elem, options) {
+  window[pluginName] = function (elem, options) {
     return new Plugin(elem, options);
   };
 
@@ -386,34 +416,34 @@
     dotColor: '#666666',
     lineColor: '#666666',
     particleRadius: 5, // Dot size
-    lineWidth: 0.6,
+    lineWidth: 0.7,
     curvedLines: false,
-    proximity: 111, // How close two dots need to be before they join
+    proximity: 80, // How close two dots need to be before they join
     parallax: true,
-    parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
-    onInit: function() {},
-    onDestroy: function() {}
+    parallaxMultiplier: 10, // The lower the number, the more extreme the parallax effect
+    onInit: function () { },
+    onDestroy: function () { }
   };
 
   // nothing wrong with hooking into jQuery if it's there...
   if ($) {
-    $.fn[pluginName] = function(options) {
+    $.fn[pluginName] = function (options) {
       if (typeof arguments[0] === 'string') {
         var methodName = arguments[0];
         var args = Array.prototype.slice.call(arguments, 1);
         var returnVal;
-        this.each(function() {
+        this.each(function () {
           if ($.data(this, 'plugin_' + pluginName) && typeof $.data(this, 'plugin_' + pluginName)[methodName] === 'function') {
             returnVal = $.data(this, 'plugin_' + pluginName)[methodName].apply(this, args);
           }
         });
-        if (returnVal !== undefined){
+        if (returnVal !== undefined) {
           return returnVal;
         } else {
           return this;
         }
       } else if (typeof options === "object" || !options) {
-        return this.each(function() {
+        return this.each(function () {
           if (!$.data(this, 'plugin_' + pluginName)) {
             $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
           }
@@ -430,27 +460,27 @@
  * @see: http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
  * @license: MIT license
  */
-(function() {
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-      window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
+(function () {
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+      || window[vendors[x] + 'CancelRequestAnimationFrame'];
+  }
 
-    if (!window.requestAnimationFrame)
-      window.requestAnimationFrame = function(callback, element) {
-        var currTime = new Date().getTime();
-        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-        var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-          timeToCall);
-        lastTime = currTime + timeToCall;
-        return id;
-      };
+  if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function (callback, element) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var id = window.setTimeout(function () { callback(currTime + timeToCall); },
+        timeToCall);
+      lastTime = currTime + timeToCall;
+      return id;
+    };
 
-    if (!window.cancelAnimationFrame)
-      window.cancelAnimationFrame = function(id) {
-        clearTimeout(id);
-      };
+  if (!window.cancelAnimationFrame)
+    window.cancelAnimationFrame = function (id) {
+      clearTimeout(id);
+    };
 }());

@@ -10,5 +10,3 @@ document.addEventListener('DOMContentLoaded', function () {
     lineColor: '#996c2c'
   });
 }, false);
-
-
