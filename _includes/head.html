@@ -9,8 +9,9 @@
 
   <title>
     {% if page.title %}
-      {{ page.title }} |
+    {{ page.title }} |
     {% endif %}
+
     {{ site.title }}
   </title>
 
@@ -34,22 +35,22 @@
   -->
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/css/rouge/{{ site.rouge-theme}}.css">
 
-  <!-- Custom fonts -->  
+  <!-- Custom fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Baloo+Chettan+2' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet' type='text/css'>
-  
+
   <!-- Icons -->
   <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 
-  <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+  <!-- Load MathJax if 'mathjax: true' is found in _config.yml. -->
   {% if site.mathjax %}
   <script type="text/javascript"
-          src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   {% endif %}
 
   <!-- Load Swiper JS -->
