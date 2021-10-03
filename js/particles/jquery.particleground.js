@@ -344,7 +344,7 @@
 
           if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
             this.speed.x = -this.speed.x;
-          } else if ((particleXPos < avatarRectRight && particleXPos > avatarRectLeft && particleYPos > avatarRectTop && particleYPos < avatarRectBottom) || (particleXPos > avatarRectLeft && particleXPos < avatarRectRight && particleYPos > avatarRectTop && particleYPos < avatarRectBottom)) {
+          } else if (particleXPos < avatarRectRight && particleXPos > avatarRectLeft && particleYPos > avatarRectTop && particleYPos < avatarRectBottom) {
             this.speed.x = -this.speed.x;
           }
           break;
@@ -368,7 +368,7 @@
           // If particle has reached edge of canvas, reverse its direction
           if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
             this.speed.y = -this.speed.y;
-          } else if ((particleYPos > avatarRectTop && particleYPos < avatarRectBottom && particleXPos > avatarRectLeft && particleXPos < avatarRectRight) || (particleYPos < avatarRectBottom && particleYPos > avatarRectTop && particleXPos > avatarRectLeft && particleXPos < avatarRectRight)) {
+          } else if (particleYPos > avatarRectTop && particleYPos < avatarRectBottom && particleXPos > avatarRectLeft && particleXPos < avatarRectRight) {
             this.speed.x = -this.speed.x;
             this.speed.y = -this.speed.y;
           }
