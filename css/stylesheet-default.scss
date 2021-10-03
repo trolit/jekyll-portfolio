@@ -17,6 +17,10 @@ body {
   background: lighten(silver, 10%);
 }
 
+.text-center {
+  text-align: center;
+}
+
 // Default home page icon color
 .icon-color {
   color: darken(silver, 40%);
@@ -107,7 +111,7 @@ body {
 }
 
 .custom-color {
-  background-color: #2478B7 !important; 
+  background-color: #996c2c !important; 
   color: white !important;
 }
 
@@ -145,4 +149,13 @@ body {
 .kotlin {
   background-color: #CC7000 !important;
   color: white !important;
+}
+
+#avatar {
+  min-height: 250px;
+  min-width: 250px;
+}
+
+.mw-150 {
+  min-width: 150px;
 }
