@@ -202,14 +202,14 @@
     }
 
     function randomizeSpawnPosition() {
-      var x = 0;
-      var y = 0;
+      var x = 200;
+      var y = 200;
 
       while (true) {
         x = Math.ceil(Math.random() * canvas.width);
         y = Math.ceil(Math.random() * canvas.height);
 
-        if (x > avatarRectLeft && x < avatarRectRight && y > avatarRectTop && y < avatarRectBottom) {
+        if ((x > avatarRectLeft && x < avatarRectRight) || (y > avatarRectTop && y < avatarRectBottom)) {
           continue;
         }
 
@@ -228,8 +228,10 @@
       this.layer = Math.ceil(Math.random() * 3);
       this.parallaxOffsetX = 0;
       this.parallaxOffsetY = 0;
+
       // Initial particle position
       var intialPosition = randomizeSpawnPosition();
+
       this.position = {
         x: intialPosition[0],
         y: intialPosition[1]
