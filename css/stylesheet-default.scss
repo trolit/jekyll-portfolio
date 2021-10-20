@@ -1,24 +1,19 @@
 ---
 # Provide front matter so Jekyll processes this file as SASS.
 ---
+
 @charset "utf-8";
 
 // Default CSS.
 // Don't edit this file.  Put your changes in stylesheet-customizations.scss
 
-// Default background color
-body {
-  font-size: 108%;
-  background-color: #f2f2f2;
+body .ui.card, body .ui.cards>.card{
+  box-shadow: none;
 }
 
 // Default menubar color
 .ui.menu {
   background: lighten(silver, 10%);
-}
-
-.text-center {
-  text-align: center;
 }
 
 // Default home page icon color
@@ -115,6 +110,11 @@ body {
   color: white !important;
 }
 
+.home-btn-color {
+  background-color: #F0C27B !important;
+  color: white;
+}
+
 .iconify {
   height: 3rem !important;
   width: 3rem !important;
@@ -159,3 +159,16 @@ body {
 .mw-150 {
   min-width: 150px;
 }
+
+.pa-0 {
+  padding: 0 !important;
+}
+
+.ma-0 {
+  margin: 0 !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+

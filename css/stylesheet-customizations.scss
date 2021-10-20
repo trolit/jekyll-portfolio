@@ -1,11 +1,34 @@
 ---
-# Front matter comment to ensure Jekyll properly reads file.
+# Provide front matter so Jekyll processes this file as SASS.
 ---
 
+$main-gradient: linear-gradient(to right, #F0C27B , #4B1248);
+$secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
+
+
+
+$primary-color: #4B1248;
 .justify-text {
   text-align: justify !important;
   text-justify: inter-word !important;
   word-break: break-word;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card > .header {
+  height: 15vh;
+  width: 100%;
+  background-image: $secondary-gradient;
+  @extend .text-center;
+  padding: 20px;
+}
+
+body {
+  font-size: 108%;
+  background-image: $main-gradient;
 }
 
 .stylize-text {
@@ -78,4 +101,5 @@
 td.code {
   padding: 1em .5em;
 }
+
 

@@ -16,116 +16,58 @@
   <span class="iconify" data-icon="bi:patch-question" data-inline="false"></span>
 </div>
 
-<div onselectstart="return false" ondragstart="return false" id="lead-content" style="height: 100%;"
-  class="ui middle aligned two column centered stackable grid container">
+<div onselectstart="return false" ondragstart="return false" id="lead-content"
+  class="h-100 ui centered middle aligned grid container">
 
   <div class="four wide column">
-    <img id="avatar" class="ui centered large rounded image" src="../images/oval.svg" data-echo="../images/avatar.PNG">
+    <img id="avatar" class="ui centered large rounded image" src="../images/oval.svg" data-echo="../images/avatar.png">
   </div>
 
   <div class="two wide column"></div>
 
-  <div class="ten wide column ui card font-balooChettan2">
-    <h2 class="header no-bottom font-bauman"> {{
-      site.data.bio.basics.name }}</h2>
-
-    <div class="font-balooChettan2">
-      Non nobis solum nati sumus, Marcus T. Cicero
-    </div>
-
-    <br />
-
-    <div class="ui bottom attached active tab segment">
-      <p class="justify-text">
-      <div class='ui relaxed divided list'>
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2008</span>
-            <div class='description'>
-              playing with <a href='https://forums.alliedmods.net/showthread.php?p=504608'
-                target='_blank'>blockmaker</a>
-              plugin made for Counter Strike 1.6
-            </div>
-          </div>
-        </div>
-
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2012</span>
-            <div class='description'>
-              first approach to Unity with <a
-                href='https://helion.pl/ksiazki/projektowanie-gier-w-srodowisku-unity-3-x-will-goldstone,prgun3.htm#format/e'
-                target='_blank'>Will Goldstone's</a> book
-            </div>
-          </div>
-        </div>
-
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2013 - 2016</span>
-            <div class='description'>
-              graphics(Pixlr), videos(Windows Movie Maker), music(Audacity) editing, first map: <a
-                href='https://gamebanana.com/maps/176920' target='_blank'> cs_k1234</a>
-            </div>
-          </div>
-        </div>
-
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2015</span>
-            <div class='description'>
-              improved <a href='https://gamebanana.com/maps/184254' target='_blank'>cs_k1234</a> map made in VHE, first
-              page project: <a href='http://przepisownik2016.opx.pl/' target='_blank'>Przepisownik 2016</a>
-            </div>
-          </div>
-        </div>
-
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2017 - 2018</span>
-            <div class='description'>
-              first C# project, game in WinForms: <a href='https://github.com/trolit/Projekt-Frog#projekt-frog'
-                target='_blank'>Projekt Frog</a>(idea from classic, arcade game - Frogger)
-            </div>
-          </div>
-        </div>
-
-        <div class='item'> <i class='large clone outline middle aligned icon'></i>
-          <div class='content'> <span class='header'>2019 - 2020</span>
-            <div class='description'>
-              worked on scientific publication, created full educational game in Unity 3D, <a
-                href='https://github.com/trolit/projectZero' target='_blank'>Project Zero</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="sixteen wide tablet ten wide computer column ui card font-balooChettan2 pa-0 ma-0">
+    <div class="centered header">
+      <p class="pa-0 ma-0">
+        <span class="iconify-inline" data-icon="fontisto:earth" data-width="30"></span>
       </p>
+      {{ site.data.bio.basics.name }}
     </div>
 
-    <br />
-
-    <div class="ui stackable grid container text-center">
-      <div class="six wide column">
-        <div class="ui labeled button" onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
-          <div class="ui basic custom-color button font-electrolize mw-150">
-            PROJECTS
+    <div class="ui bottom attached">
+      <div class="ui placeholder segment" style="padding-top: 5%;">
+        <div class="ui two column center aligned grid">
+          <div class="column">
+            <div class="ui icon header">
+              <span class="iconify-inline icon" data-icon="ri:open-source-fill"></span>
+              Code
+              <br />
+              {{ num_projects }}
+            </div>
+            <div class="ui primary button" onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
+              Create
+            </div>
           </div>
-          <a class="ui basic left pointing custom-color label font-rocksalt" style="opacity: 0.8;">
-            {{ num_projects }}
-          </a>
+          <div class="column">
+            <div class="ui icon header">
+              <span class="iconify-inline icon" data-icon="bi:file-text"></span>
+              Text
+              <br />
+              {{ num_essays }}
+            </div>
+            <div class="ui primary button" onclick="redirect('{{ site.baseurl}}/essays/')" tabindex="0">
+              Create
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="four wide column">
-        <div class="button">
-          <p style="text-align: center">
-            {% include home-network-links.html %}
-          </p>
+        <div class="ui vertical divider">
+          or
         </div>
-      </div>
 
-      <div class="six wide column">
-        <div class="ui left labeled button" onclick="redirect('{{ site.baseurl}}/essays/')" tabindex="0">
-          <a class="ui basic right pointing custom-color label font-rocksalt" style="opacity: 0.8;">
-            {{ num_essays }}
-          </a>
-          <div class="ui basic custom-color button font-electrolize mw-150">
-            ESSAYS
+        <div style="margin-top: 5%;">
+          <div class="right floated ">
+            <p>
+              {% include home-network-links.html %}
+            </p>
           </div>
         </div>
       </div>
