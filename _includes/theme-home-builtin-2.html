@@ -12,7 +12,7 @@
 <div class="ui icon button" onclick="redirectBlank('http://techfolios.github.io/')"
   data-html="<span class='iconify' data-icon='bx:bx-cube-alt' data-inline='true' style='margin-right: 5px; height: 110% !important;'></span> trolit.github.io <br/><hr/> Page based on Techfolios template (Jeykll, Semantic UI, Liquid). Particles effect made by Jonathan Nicol. <br/><br/> Click on the icon to open new tab with TechFolios template home page."
   data-position="top left" data-variation="small"
-  style="z-index: 1000; position: absolute; top: 0; left: 0; background-color: transparent;">
+  style="z-index: 1000; position: absolute; bottom: 0; left: 0; background-color: transparent;">
   <span class="iconify" data-icon="bi:patch-question" data-inline="false"></span>
 </div>
 
@@ -26,37 +26,41 @@
   <div class="two wide column"></div>
 
   <div class="sixteen wide tablet ten wide computer column ui card font-balooChettan2 pa-0 ma-0">
-    <div class="centered header">
+    <div class="centered header font-bauman" style="padding: 3% 0%;">
       <p class="pa-0 ma-0">
-        <span class="iconify-inline" data-icon="fontisto:earth" data-width="30"></span>
+        <span class="iconify size-25" data-icon="fad:random-2dice"></span>
       </p>
-      {{ site.data.bio.basics.name }}
+      Welcome at {{ site.data.bio.basics.name }}
     </div>
 
     <div class="ui bottom attached">
       <div class="ui placeholder segment" style="padding-top: 5%;">
         <div class="ui two column center aligned grid">
           <div class="column">
-            <div class="ui icon header">
-              <span class="iconify-inline icon" data-icon="ri:open-source-fill"></span>
-              Code
-              <br />
-              {{ num_projects }}
+            <div class="ui icon header font-balooChettan2">
+              <span class="iconify icon" data-icon="file-icons:dogescript"></span>
+              open source
             </div>
-            <div class="ui primary button" onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
-              Create
+            <div class="mb-5">
+              <span class="large ui basic black label">{{ num_projects }}</span>
             </div>
+            <button class="small compact ui orange button font-spartan"
+              onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
+              redirect
+            </button>
           </div>
           <div class="column">
-            <div class="ui icon header">
-              <span class="iconify-inline icon" data-icon="bi:file-text"></span>
-              Text
-              <br />
-              {{ num_essays }}
+            <div class="ui icon header font-balooChettan2">
+              <span class="iconify icon" data-icon="mdi:owl"></span>
+              <span style="opacity: 0.06">kn</span>owledge
             </div>
-            <div class="ui primary button" onclick="redirect('{{ site.baseurl}}/essays/')" tabindex="0">
-              Create
+            <div class="mb-5">
+              <span class="large ui basic black label">{{ num_essays }}</span>
             </div>
+            <button class="small compact ui orange button font-spartan" onclick="redirect('{{ site.baseurl}}/essays/')"
+              tabindex="0">
+              redirect
+            </button>
           </div>
         </div>
         <div class="ui vertical divider">

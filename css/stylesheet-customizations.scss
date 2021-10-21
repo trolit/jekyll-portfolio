@@ -4,10 +4,17 @@
 
 $main-gradient: linear-gradient(to right, #F0C27B , #4B1248);
 $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
-
-
-
 $primary-color: #4B1248;
+
+.w-100 {
+  width: 100%;
+}
+
+.mb-5 {
+  margin-bottom: 5%;
+}
+
+
 .justify-text {
   text-align: justify !important;
   text-justify: inter-word !important;
@@ -19,11 +26,18 @@ $primary-color: #4B1248;
 }
 
 .card > .header {
-  height: 15vh;
   width: 100%;
   background-image: $secondary-gradient;
   @extend .text-center;
-  padding: 20px;
+}
+
+/* ************************************* */
+/* Iconify icons */
+/* ************************************* */
+
+.icon-25 {
+  height: 40px !important;
+  width: 40px !important;
 }
 
 body {
