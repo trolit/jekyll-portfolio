@@ -1,0 +1,10 @@
+---
+layout: music
+type: music
+author: Thomas Newman
+youtubeId: KzmdfOh6su4
+subtitle: 1917
+# All dates must be YYYY-MM-DD format!
+date: 2021-10-23
+---
+

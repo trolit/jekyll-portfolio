@@ -1,0 +1,23 @@
+<!-- Used by theme-projects-builtin-1a, entire card is the link. -->
+
+
+<div class="grey card">
+  <div class="content">
+    <span class="header font-balooChettan2">{{ include.page.author }}
+      <a class="right floated" href="https://www.youtube.com/watch?v={{ include.page.youtubeId }}" target="_blank">
+        <span class="iconify" data-icon="ph:youtube-logo"></span>
+      </a>
+    </span>
+
+    <span class="iconify icon-20" data-icon="flat-color-icons:music"></span>
+
+    <span class="subheader font-balooChettan2">{{ include.page.subtitle }}</span>
+  </div>
+
+  <div class="extra content">
+    <div class="ui tiny labels center aligned font-balooChettan2">
+      added on {{ include.page.date | date: "%d.%m.%Y" }}
+    </div>
+  </div>
+
+</div>
