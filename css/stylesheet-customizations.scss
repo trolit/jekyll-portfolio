@@ -5,15 +5,49 @@
 $main-gradient: linear-gradient(to right, #F0C27B , #4B1248);
 $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
 $primary-color: #4B1248;
+$secondary-color: #F0C27B;
+
+.background-main-gradient {
+  background-image: $main-gradient !important;
+}
+
+nav .active {
+  background-color: darken($secondary-color, 5%) !important;
+}
+
+/* ************************************* */
+/* Sizing */
+/* ************************************* */
 
 .w-100 {
   width: 100%;
 }
 
+.h-10 {
+  height: 5px;
+}
+
+/* ************************************* */
+/* Spacing */
+/* ************************************* */
+
 .mb-5 {
   margin-bottom: 5%;
 }
 
+.mb-10 {
+  margin-bottom: 10%;
+}
+
+.pt-3 {
+  padding-top: 3%;
+}
+
+.pb-5 {
+  padding-bottom: 5%;
+}
+
+/* ************************************* */
 
 .justify-text {
   text-align: justify !important;
@@ -35,14 +69,21 @@ $primary-color: #4B1248;
 /* Iconify icons */
 /* ************************************* */
 
+.icon-20 {
+  height: 20px !important;
+  width: 20px !important;
+}
+
 .icon-25 {
   height: 40px !important;
   width: 40px !important;
 }
 
+/* ************************************* */
+
 body {
   font-size: 108%;
-  background-image: $main-gradient;
+  @extend .background-main-gradient;
 }
 
 .stylize-text {
