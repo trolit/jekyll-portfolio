@@ -11,7 +11,7 @@ labels:
   - JavaScript
   - Bootstrap
   - CSS
-summary: Projekt strony wykonany w ramach przedmiotu Programowanie Aplikacji WWW. 
+summary: WWW page projects made for studies.
 ---
 
 <div class="ui centered grid">

@@ -7,8 +7,24 @@ $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
 $primary-color: #4B1248;
 $secondary-color: #F0C27B;
 
+@media only screen and (max-width: 600px) {
+  .top-spacing {
+    padding-top: 8%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .top-spacing {
+    padding-top: 3%;
+  }
+}
+
 .background-main-gradient {
   background-image: $main-gradient !important;
+}
+
+.background-secondary-gradient {
+  background-image: $secondary-gradient !important;
 }
 
 nav .active {
@@ -23,7 +39,7 @@ nav .active {
   width: 100%;
 }
 
-.h-10 {
+.h-5 {
   height: 5px;
 }
 
@@ -31,8 +47,16 @@ nav .active {
 /* Spacing */
 /* ************************************* */
 
+.mt-5 {
+  margin-top: 5%;
+}
+
 .mb-5 {
   margin-bottom: 5%;
+}
+
+.mt-10 {
+  margin-top: 10%;
 }
 
 .mb-10 {
@@ -41,6 +65,10 @@ nav .active {
 
 .pt-3 {
   padding-top: 3%;
+}
+
+.pt-5 {
+  padding-top: 5%;
 }
 
 .pb-5 {
@@ -61,7 +89,7 @@ nav .active {
 
 .card > .header {
   width: 100%;
-  background-image: $secondary-gradient;
+  @extend .background-secondary-gradient;
   @extend .text-center;
 }
 
@@ -94,6 +122,11 @@ body {
 
 .stylize-header {
   font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.card-header {
+  font-size: 90%;
+  color: black;
 }
 
 .bio-work-text {

@@ -11,7 +11,7 @@ date: 2019-05-19
 labels:
   - .NET Framework
   - CSP2019
-summary: Badanie klasyfikowania obiektów za pomocą NKB, gdy do TRN mogą trafić te same obiekty (Bootstrap) i kiedy TRN będzie składał się tylko z unikalnych obiektów (Monte Carlo).
+summary: Naive Bayes Classifier efficency test when training set can contain duplicates(Bootstrap) or consists of unique objects only(Monte Carlo).
 ---
 
 <table class="ui celled striped tablet stackable table">

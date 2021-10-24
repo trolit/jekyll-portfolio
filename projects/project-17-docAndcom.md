@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/docAndCom-cover.png
-title: docAndCom
+title: Document and Compare
 labelColor: blue
 language: C#
 permalink: projects/docAndCom

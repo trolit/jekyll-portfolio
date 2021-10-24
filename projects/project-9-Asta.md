@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/aStar-cover.jpg
-title: AStar
+title: A★
 labelColor: blue
 language: C#
 permalink: projects/Astar

@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/enigmaProject-cover.jpg
-title: Projekt Enigma
+title: Project Enigma
 labelColor: blue
 language: C#
 permalink: projects/enigmaProject

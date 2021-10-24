@@ -11,7 +11,7 @@ date: 2019-06-16
 labels:
   - Unity 3D
   - .NET Framework
-summary: Projekt gry 3D wspierającej naukę programowania. Mapa świata, 40 poziomów, 5 języków. Zawiera sporą dokumentację dostępna w serwisie GitHub :)
+summary: 3D educational game that introduces programming world. Sandbox, 40 levels, 4 minigames. Includes quite rich documentation :)
 ---
 
 <div class="ui centered grid">

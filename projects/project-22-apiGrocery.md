@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/gsa-cover.png
-title: API Sklep spożywczy
+title: Grocery Store (API)
 labelColor: red
 language: Java
 permalink: projects/groceryStoreApi

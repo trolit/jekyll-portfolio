@@ -1,50 +1,49 @@
 <!-- Like theme-projects-builtin-1, but uses project-card-2.html (i.e. entire card is a link). -->
 
-<div style="padding-top: 20px" class="ui container ">
-
-  <div class="ui raised segment">
-    <div class="ui one column stackable center aligned grid">
-        {% assign projects = site.pages | where: "type", "project" %}
-        {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
-          {% for language in languages %}
-              {% if language == nil %}
-                {% continue %}
-              {% endif %}
-            {% assign counter = 0 %}
-            {% for project in projects %}
-              {% if project.language == language %}
-                {% assign counter = counter | plus: 1 %}
-              {% endif %}
-            {% endfor %}
-            <div class="ui medium statistic">
-              <div class="value"> 
-                {% case language %}
-                  {% when "Java" %}
-                    <span class="iconify" data-icon="logos:java" data-inline="false" data-height="250"></span>
-                  {% when "JavaScript" %}
-                    <span class="iconify" data-icon="logos:javascript" data-inline="false"></span>
-                  {% when "Kotlin" %}
-                    <span class="iconify" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
-                  {% when "C#" %}
-                    <span class="iconify" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
-                  {% else %}
-                    Something bad happened!
-                {% endcase %}
-              </div>
-              <div class="label" style="margin-top: 40% !important;">
-                {{ counter }}
-              </div>
-            </div>
-          {% endfor %}
+<div class="ui raised background-main-gradient top-spacing">
+  <div class="ui one column stackable center aligned grid">
+    {% assign projects = site.pages | where: "type", "project" %}
+    {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
+    {% for language in languages %}
+    {% if language == nil %}
+    {% continue %}
+    {% endif %}
+    {% assign counter = 0 %}
+    {% for project in projects %}
+    {% if project.language == language %}
+    {% assign counter = counter | plus: 1 %}
+    {% endif %}
+    {% endfor %}
+    <div class="ui medium statistic">
+      <div class="value">
+        {% case language %}
+        {% when "Java" %}
+        <span class="iconify" data-icon="logos:java" data-inline="false" data-height="250"></span>
+        {% when "JavaScript" %}
+        <span class="iconify" data-icon="logos:javascript" data-inline="false"></span>
+        {% when "Kotlin" %}
+        <span class="iconify" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
+        {% when "C#" %}
+        <span class="iconify" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
+        {% else %}
+        Something bad happened!
+        {% endcase %}
+      </div>
+      <div class="label" style="margin-top: 40% !important;">
+        {{ counter }}
+      </div>
     </div>
+    {% endfor %}
   </div>
+</div>
 
+<div class="ui container top-spacing">
   <div class="ui stackable centered four cards">
     {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
     {% for page in project_pages %}
-      {% unless page.draft %}
-        {% include project-card-1a.html page=page %}
-      {% endunless %}
+    {% unless page.draft %}
+    {% include project-card-1a.html page=page %}
+    {% endunless %}
     {% endfor %}
   </div>
 </div>
