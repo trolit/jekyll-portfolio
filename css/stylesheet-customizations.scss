@@ -2,20 +2,33 @@
 # Provide front matter so Jekyll processes this file as SASS.
 ---
 
-$main-gradient: linear-gradient(to right, #F0C27B , #4B1248);
+$main-gradient: linear-gradient(to right, #f0c27b, #4b1248);
 $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
-$primary-color: #4B1248;
-$secondary-color: #F0C27B;
+$primary-color: #4b1248;
+$secondary-color: #f0c27b;
 
-@media only screen and (max-width: 600px) {
-  .top-spacing {
-    padding-top: 8%;
+@media only screen and (max-width: 900px) {
+  .projects-counter {
+    margin: 15% 0 10% 0 !important;
   }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  .top-spacing {
-    padding-top: 3%;
+@media only screen and (max-width: 620px) {
+  .year-label-margin {
+    margin: 10% 0 !important;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .year-label {
+    top: -20px !important;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .bottom-spacing {
+    margin-top: 5% !important;
+    margin-bottom: 65% !important;
   }
 }
 
@@ -47,8 +60,28 @@ nav .active {
 /* Spacing */
 /* ************************************* */
 
+.pa-0 {
+  padding: 0 !important;
+}
+
+.ma-0 {
+  margin: 0 !important;
+}
+
+.ml-6 {
+  margin-left: 6%;
+}
+
 .mt-5 {
   margin-top: 5%;
+}
+
+.mr-2 {
+  margin-right: 2%;
+}
+
+.mr-6 {
+  margin-right: 6%;
 }
 
 .mb-5 {
@@ -63,6 +96,18 @@ nav .active {
   margin-bottom: 10%;
 }
 
+.pl-2 {
+  padding-left: 2%;
+}
+
+.pr-2 {
+  padding-right: 2%;
+}
+
+.pt-2 {
+  padding-top: 2%;
+}
+
 .pt-3 {
   padding-top: 3%;
 }
@@ -75,7 +120,20 @@ nav .active {
   padding-bottom: 5%;
 }
 
+.year-label-margin {
+  margin: 5% 0;
+}
+
 /* ************************************* */
+
+.year-label {
+  position: absolute;
+  top: -15px;
+}
+
+.projects-counter {
+  margin: 7% 0 1% 0;
+}
 
 .justify-text {
   text-align: justify !important;
@@ -102,9 +160,19 @@ nav .active {
   width: 20px !important;
 }
 
+.icon-30 {
+  height: 30px !important;
+  width: 30px !important;
+}
+
 .icon-25 {
   height: 40px !important;
   width: 40px !important;
+}
+
+.icon-50 {
+  height: 50px !important;
+  width: 50px !important;
 }
 
 /* ************************************* */
@@ -115,9 +183,9 @@ body {
 }
 
 .stylize-text {
-  line-height: 1.4; 
-  font-size: 14pt; 
-  font-family: 'Nunito', sans-serif, Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  font-size: 14pt;
+  font-family: "Nunito", sans-serif, Arial, Helvetica, sans-serif;
 }
 
 .stylize-header {
@@ -140,7 +208,7 @@ body {
 
 .center-sub-text {
   text-align: center;
-  font-size: 90%; 
+  font-size: 90%;
 }
 
 #lead-overlay {
@@ -157,7 +225,7 @@ body {
 #lead-content {
   position: relative;
   -webkit-transform: none;
-          transform: none;
+  transform: none;
   left: auto;
   top: auto;
   z-index: 2;
@@ -169,25 +237,23 @@ body {
   left: -9999px !important;
 }
 
-.iconify { 
+.iconify {
   width: 33px;
   height: 33px;
   vertical-align: middle !important;
- }
+}
 
- pre { 
+pre {
   white-space: pre;
-  overflow: auto; 
+  overflow: auto;
   font-size: 14px;
-  font-family:Consolas,Monaco,Lucida Console,Liberation Mono;
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono;
 }
 
 .lineno {
-  padding: .5em;
+  padding: 0.5em;
 }
 
 td.code {
-  padding: 1em .5em;
+  padding: 1em 0.5em;
 }
-
-

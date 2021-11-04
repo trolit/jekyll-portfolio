@@ -1,7 +1,7 @@
 <!-- Like theme-projects-builtin-1, but uses project-card-2.html (i.e. entire card is a link). -->
 
-<div class="ui raised background-main-gradient top-spacing">
-  <div class="ui one column stackable center aligned grid">
+<div class="ui raised background-main-gradient projects-counter">
+  <div class="ui one column center aligned container">
     {% assign projects = site.pages | where: "type", "project" %}
     {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
     {% for language in languages %}
@@ -14,22 +14,22 @@
     {% assign counter = counter | plus: 1 %}
     {% endif %}
     {% endfor %}
-    <div class="ui medium statistic">
+    <div class="ui medium statistic basic label" style="padding: 3%;">
       <div class="value">
         {% case language %}
         {% when "Java" %}
-        <span class="iconify" data-icon="logos:java" data-inline="false" data-height="250"></span>
+        <span class="iconify icon-25" data-icon="logos:java" data-inline="false"></span>
         {% when "JavaScript" %}
-        <span class="iconify" data-icon="logos:javascript" data-inline="false"></span>
+        <span class="iconify icon-25" data-icon="logos:javascript" data-inline="false"></span>
         {% when "Kotlin" %}
-        <span class="iconify" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
+        <span class="iconify icon-25" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
         {% when "C#" %}
-        <span class="iconify" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
+        <span class="iconify icon-25" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
         {% else %}
         Something bad happened!
         {% endcase %}
       </div>
-      <div class="label" style="margin-top: 40% !important;">
+      <div class="ui grey circular label" style="margin-top: 40% !important;">
         {{ counter }}
       </div>
     </div>
@@ -37,13 +37,45 @@
   </div>
 </div>
 
-<div class="ui container top-spacing">
+<div class="ui container mb-5">
   <div class="ui stackable centered four cards">
     {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
+
+    <!-- Take out unique years -->
+    {% assign years = "" %}
     {% for page in project_pages %}
-    {% unless page.draft %}
-    {% include project-card-1a.html page=page %}
-    {% endunless %}
+      {% assign test = test | append: page | date: "%Y" %}
+
+      {% if years contains test %}
+    
+      {% else %}
+        {% assign years = years | append: test | append: "," %}
+      {% endif %}
     {% endfor %}
+
+    {% assign yearsAsArray = years | split: ',' %}
+
+    {% for year in yearsAsArray %}
+    
+      <div class="ui container year-label-margin" style="position: relative;">
+        <div>
+          <div class="ui huge label year-label">
+            <i class="folder icon ma-0"></i> &nbsp; /{{ year }}
+          </div>
+          <hr style="border: 1px solid white;" />
+        </div>
+      </div>
+
+      {% for page in project_pages %}
+        {% unless page.draft %}
+          {% assign pageYear = page.date | date: "%Y" %}
+
+          {% if pageYear == year %}
+            {% include project-card-1a.html page=page %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+
+    {% endfor %} 
   </div>
 </div>

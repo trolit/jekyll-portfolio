@@ -10,7 +10,7 @@
 {% assign num_projects = project_pages.size %}
 
 <div onselectstart="return false" ondragstart="return false" id="lead-content"
-  class="h-100 ui centered middle aligned grid container">
+  class="h-100 ui centered middle aligned grid container bottom-spacing">
 
   <div class="sixteen wide tablet four wide computer column">
     <img id="avatar" class="ui centered large rounded image" src="../images/oval.svg" data-echo="../images/avatar.jpg">
@@ -19,11 +19,11 @@
   <div class="two wide column"></div>
 
   <div class="sixteen wide tablet ten wide computer column ui card font-balooChettan2 pa-0 ma-0">
-    <div class="centered header font-bauman pt-3 pb-5">
+    <div class="centered header font-balooChettan2 pt-3 pb-5">
       <p class="pa-0 ma-0">
         <span class="iconify size-25" data-icon="fad:random-2dice"></span>
       </p>
-      Welcome at {{ site.data.bio.basics.name }}
+      {{ site.data.bio.basics.name }} <strong>homepage</strong>
     </div>
 
     <div class="ui bottom attached">
@@ -44,8 +44,8 @@
           </div>
           <div class="column">
             <div class="ui icon header font-balooChettan2">
-              <span class="iconify icon" data-icon="vscode-icons:file-type-registry"></span>
-              registry
+              <span class="iconify icon" data-icon="clarity:blocks-group-solid"></span>
+              confidential
             </div>
             <div class="mb-5">
               <span class="large ui basic black label">{{ num_essays }}</span>
@@ -71,13 +71,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  $('.button')
-    .popup({
-      inline: true
-    })
-    ;
-</script>
 
 <div id="lead-overlay" class="particles"></div>

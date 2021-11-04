@@ -7,7 +7,8 @@
 // Default CSS.
 // Don't edit this file.  Put your changes in stylesheet-customizations.scss
 
-body .ui.card, body .ui.cards>.card{
+body .ui.card,
+body .ui.cards > .card {
   box-shadow: none;
 }
 
@@ -30,34 +31,34 @@ body .ui.card, body .ui.cards>.card{
 }
 
 .font-electrolize {
-  font-family: 'Electrolize', sans-serif !important;
+  font-family: "Electrolize", sans-serif !important;
 }
 
 .font-spartan {
-  font-family: 'Spartan', sans-serif !important;
+  font-family: "Spartan", sans-serif !important;
 }
 
 .font-rocksalt {
-  font-family: 'Rock Salt', cursive !important;
+  font-family: "Rock Salt", cursive !important;
 }
 
 .font-bauman {
-  font-family: 'Baumans', cursive !important;
+  font-family: "Baumans", cursive !important;
 }
 
 .font-balooChettan2 {
-  font-family: 'Baloo Chettan 2', cursive !important;
+  font-family: "Baloo Chettan 2", cursive !important;
 }
 
-.clickable:hover:after{
-  content:'';
-  position:absolute;
+.clickable:hover:after {
+  content: "";
+  position: absolute;
   left: 0px;
   top: 0px;
   bottom: 0px;
   width: 100%;
   height: 100%;
-  background: url('../images/view_ico.png') center no-repeat;
+  background: url("../images/view_ico.png") center no-repeat;
   background-size: 70px;
 }
 
@@ -71,7 +72,7 @@ body .ui.card, body .ui.cards>.card{
 }
 
 .popover-icon {
-  height: 22px !important; 
+  height: 22px !important;
   color: darken(silver, 40%);
 }
 
@@ -81,8 +82,12 @@ body .ui.card, body .ui.cards>.card{
 
 // Prefer space between list items in screen mode.
 .list-padding {
-  ul li { padding: 5px 0px; }
-  ol li { padding: 5px 0px; }
+  ul li {
+    padding: 5px 0px;
+  }
+  ol li {
+    padding: 5px 0px;
+  }
 }
 
 // This class is used in the prebuilt bio themes.
@@ -106,12 +111,12 @@ body .ui.card, body .ui.cards>.card{
 }
 
 .custom-color {
-  background-color: #996c2c !important; 
+  background-color: #996c2c !important;
   color: white !important;
 }
 
 .home-btn-color {
-  background-color: #F0C27B !important;
+  background-color: #f0c27b !important;
   color: white;
 }
 
@@ -132,12 +137,12 @@ body .ui.card, body .ui.cards>.card{
 }
 
 .javascript {
-  background-color: #D29F00 !important;
+  background-color: #d29f00 !important;
   color: white !important;
 }
 
 .java {
-  background-color: #B00B1E !important;
+  background-color: #b00b1e !important;
   color: white !important;
 }
 
@@ -147,28 +152,20 @@ body .ui.card, body .ui.cards>.card{
 }
 
 .kotlin {
-  background-color: #CC7000 !important;
+  background-color: #cc7000 !important;
   color: white !important;
 }
 
 #avatar {
   min-height: 250px;
   min-width: 250px;
+  filter: brightness(90%);
 }
 
 .mw-150 {
   min-width: 150px;
 }
 
-.pa-0 {
-  padding: 0 !important;
-}
-
-.ma-0 {
-  margin: 0 !important;
-}
-
 .h-100 {
   height: 100%;
 }
-
