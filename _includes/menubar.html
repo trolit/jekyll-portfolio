@@ -9,7 +9,7 @@
   <nav class="ui fixed menu font-balooChettan2 h-5 background-main-gradient">
     <a href="{{ site.baseurl}}/" class="brand item">
       <span class="iconify icon-20" data-icon="carbon:select-window"></span> &nbsp;
-      {{ site.data.bio.basics.name }}
+      home
     </a>
 
     {% if num_projects > 0 %}
@@ -18,9 +18,10 @@
     {% endif %}
 
     {% if num_essays > 0 %}
-    <a href="{{ site.baseurl }}/essays" class="{% if include.active == 'essays' %} active {% endif %} item">registry</a>
+    <a href="{{ site.baseurl }}/essays"
+      class="{% if include.active == 'essays' %} active {% endif %} item">confidential</a>
     {% endif %}
 
-    <a href="{{ site.baseurl }}/music" class="{% if include.active == 'music' %} active {% endif %} item">music</a>
+    <a href="{{ site.baseurl }}/music" class="{% if include.active == 'music' %} active {% endif %} item">?</a>
   </nav>
 </div>
