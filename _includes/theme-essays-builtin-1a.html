@@ -4,16 +4,16 @@
   <div class="" style="margin-bottom: 5%;">
     {% assign essays = site.pages | where: "type", "essay" %}
     {% assign labels = '' | split: '' %}
-      {% for essay in essays %}
-        {% for label in essay.labels %}
-          {% assign tmp = label | split: '_' %}
-          {% assign labels = labels | concat: tmp %}
-        {% endfor %}
-      {% endfor %}
+    {% for essay in essays %}
+    {% for label in essay.labels %}
+    {% assign tmp = label | split: '_' %}
+    {% assign labels = labels | concat: tmp %}
+    {% endfor %}
+    {% endfor %}
     {% assign labels = labels | uniq | sort %}
 
     <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
-      <option value="">Filtruj według etykiet</option>
+      <option value="">Filter by label(s)</option>
       {% for label in labels %}
       <option value="{{label}}">{{ label }}</option>
       {% endfor %}
@@ -22,10 +22,10 @@
 
   <div class="ui stackable centered four cards">
     {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
-      {% for page in essay_pages %}
-        {% unless page.draft %}
-          {% include essay-card-1a.html page=page %}
-        {% endunless %}
-      {% endfor %}
+    {% for page in essay_pages %}
+    {% unless page.draft %}
+    {% include essay-card-1a.html page=page %}
+    {% endunless %}
+    {% endfor %}
   </div>
 </div>
