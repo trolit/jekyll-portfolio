@@ -12,7 +12,7 @@ labels:
   - Maven
   - H2
   - Spring Boot 2.3.4
-summary: Projekt API dla sklepu spożywczego celem poznania m.in. Spring Boot, JPA, Hibernate oraz języka Java (JDK14). 
+summary: Grocery store API implementation to find out Spring Boot, JPA, Hibernate and Java language (JDK 14).
 ---
 
 <table class="ui celled striped tablet stackable table">

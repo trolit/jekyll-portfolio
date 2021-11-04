@@ -12,7 +12,7 @@ labels:
   - HTML
   - MDBootstrap
   - LESS
-summary: Narzędzie WYSIWYG pozwalające na zaprojektowanie dokumentu repozytorium. Stabilną, pierwszą wersję pomysłu zrealizowano w 6 dni.
+summary: WYSIWYG tool that allows to easily and quickly develop repositories documentation. First, stable version got released in 6 days.
 ---
 
 <div class="ui centered grid">

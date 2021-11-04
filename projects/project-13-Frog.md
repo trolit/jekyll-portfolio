@@ -11,7 +11,7 @@ date: 2017-11-12
 labels:
   - WinForms
   - .NET Framework
-summary: Pierwszy projekt na GitHub, także w C#. Gra na wzór klasyki czyli Arcade Frogger stworzona w WinForms.
+summary: First project at GitHub which is game made in WinForms. Concept based on popular classic - Arcade Frogger.
 ---
 
 <div class="ui centered grid">

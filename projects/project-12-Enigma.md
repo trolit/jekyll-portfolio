@@ -10,7 +10,7 @@ permalink: projects/enigmaProject
 date: 2018-01-07
 labels:
   - .NET Framework
-summary: Aplikacja konsolowa mająca za zadanie działać na wzór enigmy z trzema wirnikami. Tworzona w ramach uczestnictwa w kole naukowym.
+summary: Console app that implements three-rotor enigma made while participating in science club. Versions before 2.0 doesn't count :D
 ---
 
 <div class="ui centered grid">

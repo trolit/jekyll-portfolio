@@ -12,7 +12,7 @@ labels:
   - Xamarin.Forms
   - Android
   - SQLite
-summary: Aplikacja mobilna, która pozwala na dokumentowanie zdjęć pod etykietami a następnie wygodne ich zestawianie w wygenerowanych plikach pdf.
+summary: Mobile app that allows to document any "thing" under tag and then generate PDF files to easily compare photos.
 ---
 
 <div class="ui centered grid">

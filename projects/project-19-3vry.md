@@ -12,7 +12,7 @@ labels:
   - Android
   - SQLite
   - YoutubeAPI
-summary: Aplikacja mobilna umożliwiająca dodanie ulubionych artystów, playlist i otrzymywanie propozycji utworów z serwisu YouTube oraz ich odtwarzanie.
+summary: Mobile app that allows to add favourite artists and playlists, receive one suggestion per day from YouTube service and play it.
 ---
 
 <div class="ui centered grid">

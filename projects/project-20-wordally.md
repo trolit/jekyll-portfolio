@@ -12,7 +12,7 @@ labels:
   - HTML
   - SCSS
   - Bootstrap 4
-summary: Implementacja osobistego schematu uczenia się słówek(krótsze interwały uczenia, lepiej zapamiętywane słówka).
+summary: Page that implements personal way of learning foreign language vocabulary(short learning intervals, better effects).
 ---
 
 <table class="ui celled striped tablet stackable table">

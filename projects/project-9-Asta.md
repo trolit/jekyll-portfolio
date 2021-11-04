@@ -11,7 +11,7 @@ date: 2018-08-14
 labels:
   - WinForms
   - .NET Framework
-summary: Projekt realizowany w WinForms mający na celu implementację algorytmu A* oraz jego wizualizację.
+summary: Approach to A* algorithm visualization through WinForms desktop app.
 ---
 
 <div class="ui centered grid">

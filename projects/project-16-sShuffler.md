@@ -11,7 +11,7 @@ date: 2020-04-12
 labels:
   - WinForms
   - .NET Framework
-summary: Program do losowego tasowania muzyki. Numeracja utworów odbywa się w sposób respektowany przez odtwarzacze samochodowe.
+summary: Tired of playlist order? Quickly shuffle it and maintain format that is respected by car players.
 ---
 
 <div class="ui centered grid">

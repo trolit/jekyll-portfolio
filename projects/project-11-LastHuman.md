@@ -11,7 +11,7 @@ date: 2018-06-10
 labels:
   - Unity 2D
   - .NET Framework
-summary: Gra platformowa będąca ponownym podejściem do środowiska Unity po zdobyciu wiedzy o języku C# na programowaniu obiektowym.
+summary: Small 2D project as a second attempt to Unity IDE to make game.
 ---
 
 <div class="ui centered grid">

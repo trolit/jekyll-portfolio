@@ -11,7 +11,7 @@ date: 2016-07-19
 labels:
   - HTML
   - CSS
-summary: Strona z wybranymi przepisami kulinarnymi. Projekt wynikł z potrzeby wygodnego składowania ciekawych przepisów w jednym miejscu oraz poznania gridster.
+summary: Page that stores culinary recipes that got my attention. Project was made to get familiar with gridster library and have mobile recipes book.
 ---
 
 <div class="ui centered grid">

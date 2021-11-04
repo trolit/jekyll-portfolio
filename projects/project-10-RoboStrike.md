@@ -12,7 +12,7 @@ labels:
   - Unity 3D
   - uNet
   - .NET Framework
-summary: Droba gra FPS z trybem sieciowym celem zapoznania się z Unity 3D oraz uNet po pracach nad Last Human.
+summary: Approach to Unity uNet technology(currently deprecated) while expanding FPS sample game provided by Brackeys.
 ---
 
 <div class="ui centered grid">
