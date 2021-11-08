@@ -30,28 +30,29 @@
       <div class="ui placeholder segment" style="padding-top: 8%;">
         <div class="ui two column center aligned grid">
           <div class="column">
-            <div class="ui icon header font-balooChettan2">
-              <span class="iconify icon" data-icon="file-icons:dogescript"></span>
+            <div class="ui icon header font-balooChettan2 jiggle-anim">
+              <span id="projectsIcon" class="iconify icon" data-icon="file-icons:dogescript"></span>
               projects
             </div>
             <div class="mb-5">
               <span class="large ui basic black label">{{ num_projects }}</span>
             </div>
             <button class="small compact ui orange button font-spartan"
-              onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0">
+              onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0"
+              onmouseenter="triggerAnim('projectsIcon', 'tada')" onmouseleave="disableJiggleAnim('projectsIcon')">
               redirect
             </button>
           </div>
           <div class="column">
-            <div class="ui icon header font-balooChettan2">
-              <span class="iconify icon" data-icon="clarity:blocks-group-solid"></span>
+            <div class="ui icon header font-balooChettan2 jiggle-anim">
+              <span id="essaysIcon" class="iconify icon" data-icon="clarity:blocks-group-solid"></span>
               confidential
             </div>
             <div class="mb-5">
               <span class="large ui basic black label">{{ num_essays }}</span>
             </div>
             <button class="small compact ui orange button font-spartan" onclick="redirect('{{ site.baseurl}}/essays/')"
-              tabindex="0">
+              tabindex="0" onmouseenter="triggerAnim('essaysIcon', 'horizontal flip in')">
               redirect
             </button>
           </div>
@@ -73,3 +74,13 @@
 </div>
 
 <div id="lead-overlay" class="particles"></div>
+
+<script>
+  function triggerAnim(id, animation) {
+    $(`#${id}`)
+      .transition({
+        animation,
+        duration: 2000,
+      });
+  }
+</script>
