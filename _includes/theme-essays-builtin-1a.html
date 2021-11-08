@@ -1,7 +1,6 @@
-<div style="padding-top: 20px" class="ui container mb-5">
-
+<div class="ui container projects-counter">
   <!-- Label picker -->
-  <div class="" style="margin-bottom: 5%;">
+  <div style="margin-bottom: 60px;">
     {% assign essays = site.pages | where: "type", "essay" %}
     {% assign labels = '' | split: '' %}
     {% for essay in essays %}
@@ -13,14 +12,15 @@
     {% assign labels = labels | uniq | sort %}
 
     <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
-      <option value="">Filter by label(s)</option>
+      <option value="">Pick interesting label(s)</option>
+
       {% for label in labels %}
-      <option value="{{label}}">{{ label }}</option>
+        <option value="{{label}}">{{ label }}</option>
       {% endfor %}
     </select>
   </div>
 
-  <div class="ui stackable centered four cards">
+  <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
     {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
     {% for page in essay_pages %}
     {% unless page.draft %}

@@ -1,84 +1,91 @@
-<!-- Like theme-projects-builtin-1, but uses project-card-2.html (i.e. entire card is a link). -->
+<div style="border: 1px solid #1C00ff00;">
+  <div class="ui raised projects-counter">
+    <div class="ui one column center aligned container">
+      {% assign projects = site.pages | where: "type", "project" %}
+      {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
+      {% for language in languages %}
+        {% if language == nil %}
+          {% continue %}
+        {% endif %}
 
-<div class="ui raised background-main-gradient projects-counter">
-  <div class="ui one column center aligned container">
-    {% assign projects = site.pages | where: "type", "project" %}
-    {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
-    {% for language in languages %}
-    {% if language == nil %}
-    {% continue %}
-    {% endif %}
-    {% assign counter = 0 %}
-    {% for project in projects %}
-    {% if project.language == language %}
-    {% assign counter = counter | plus: 1 %}
-    {% endif %}
-    {% endfor %}
-    <div class="ui medium statistic label jiggle-anim" style="padding: 2%;">
-      <div class="value">
-        {% case language %}
-        {% when "Java" %}
-        <span class="iconify icon-40" data-icon="logos:java" data-inline="false"></span>
-        {% when "JavaScript" %}
-        <span class="iconify icon-40" data-icon="logos:javascript" data-inline="false"></span>
-        {% when "Kotlin" %}
-        <span class="iconify icon-40" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
-        {% when "C#" %}
-        <span class="iconify icon-40" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
-        {% else %}
-        Something bad happened!
-        {% endcase %}
-      </div>
-      <div class="ui grey circular label" style="margin-top: 40% !important;">
-        {{ counter }}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+        {% assign counter = 0 %}
+        
+        {% for project in projects %}
+          {% if project.language == language %}
+            {% assign counter = counter | plus: 1 %}
+          {% endif %}
+        {% endfor %}
 
-<div class="ui container mb-5">
-  <div class="ui stackable centered three cards">
-    {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
-
-    <!-- Take out unique years -->
-    {% assign years = "" %}
-    {% for page in project_pages %}
-    {% assign test = test | append: page | date: "%Y" %}
-
-    {% if years contains test %}
-
-    {% else %}
-    {% assign years = years | append: test | append: "," %}
-    {% endif %}
-    {% endfor %}
-
-    {% assign yearsAsArray = years | split: ',' %}
-
-    {% for year in yearsAsArray %}
-
-    <div class="ui container year-label-margin" style="position: relative;">
-      <div>
-        <div class="ui huge label year-label">
-          <i class="folder icon ma-0"></i> &nbsp; /{{ year }}
+        <div class="ui medium statistic label jiggle-anim" style="padding: 2%;">
+          <div class="value">
+            {% case language %}
+              {% when "Java" %}
+                <span class="iconify icon-40" data-icon="logos:java" data-inline="false"></span>
+              {% when "JavaScript" %}
+                <span class="iconify icon-40" data-icon="logos:javascript" data-inline="false"></span>
+              {% when "Kotlin" %}
+                <span class="iconify icon-40" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
+              {% when "C#" %}
+                <span class="iconify icon-40" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
+              {% else %}
+                Something bad happened!
+            {% endcase %}
+          </div>
+          <div class="ui grey circular label" style="margin-top: 40% !important;">
+            {{ counter }}
+          </div>
         </div>
-        <hr style="border: 1px solid white;" />
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="ui container mb-5" >
+    <div>
+      {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
+  
+      <!-- Take out unique years -->
+      {% assign years = "" %}
+
+      {% for page in project_pages %}
+        {% assign test = test | append: page | date: "%Y" %}
+          {% if years contains test %} 
+          {% else %}
+            {% assign years = years | append: test | append: "," %}
+          {% endif %}
+      {% endfor %}
+
+      {% assign yearsAsArray = years | split: ',' %}
+  
+      <div class="ui accordion center aligned grid text-center" style="margin: 0 10px;">
+        {% for year in yearsAsArray %}
+          <span class="title title-{{ year }}" onclick="sayWhat('{{ year }}')" style="margin: 10px 15px">
+            <div class="ui huge label">
+              <i class="folder icon ma-0"></i> &nbsp; {{ year }}
+            </div>
+          </span>
+        {% endfor %}
+  
+        {% for year in yearsAsArray %}    
+        <div class="content accordion-{{ year }}">
+          <div class="ui stackable centered cards">
+            {% for page in project_pages %}
+            {% unless page.draft %}
+              {% assign pageYear = page.date | date: "%Y" %}
+
+              {% if pageYear == year %}
+                {% include project-card-1a.html page=page %}
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
       </div>
     </div>
-
-    {% for page in project_pages %}
-    {% unless page.draft %}
-    {% assign pageYear = page.date | date: "%Y" %}
-
-    {% if pageYear == year %}
-    {% include project-card-1a.html page=page %}
-    {% endif %}
-    {% endunless %}
-    {% endfor %}
-
-    {% endfor %}
   </div>
 </div>
+
+
 
 <script>
   $(document).ready(function () {
@@ -88,4 +95,47 @@
       interval: 200
     })
   });
+
+  var lastYear;
+
+  function sayWhat(year) {
+    if (year == lastYear) {
+      $(`.accordion-${year}`).each(function () {
+        $(this).removeClass("active");
+      });
+
+      $(`.title-${year}`).each(function () {
+        $(this).removeClass("active");
+      });
+
+      $(`.title-${year} i`).removeClass("open");
+
+      lastYear = null;
+    } else {
+      $(`.accordion-${lastYear}`).each(function () {
+        $(this).removeClass("active");
+      });
+
+      $(`.title-${lastYear}`).each(function () {
+        $(this).removeClass("active");
+      });
+
+      $(`.title-${lastYear} i`).removeClass("open");
+
+      $(`.accordion-${year}`).each(function () {
+        $(this).addClass("active");
+      });
+
+      $(`.title-${year}`).each(function () {
+        $(this).addClass("active");
+      });
+
+      $(`.title-${year} i`).addClass("open");
+
+      lastYear = year;
+    }
+
+
+
+  }
 </script>

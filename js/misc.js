@@ -3,11 +3,17 @@ var essays = document.getElementsByClassName('myessay');
 $(document).ready(function () {
     $('.tiny.modal')
     .modal('hide');
+
     $(".activating.element").popup({
         trigger: "hover",
         html: true,
         animation: false
     });
+
+    $('.ui.accordion').accordion({
+        on: null
+    });
+
     $('.ui.dropdown').dropdown({
         maxSelections: 2,
         onChange: function() {
