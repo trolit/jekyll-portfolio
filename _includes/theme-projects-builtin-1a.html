@@ -1,4 +1,4 @@
-<div style="border: 1px solid #1C00ff00;">
+<div style="position: absolute; top: 15%; left:0; right:0; margin-left:auto; margin-right:auto; border: 1px solid #1C00ff00;">
   <div class="ui raised projects-counter">
     <div class="ui one column center aligned container">
       {% assign projects = site.pages | where: "type", "project" %}
@@ -31,8 +31,8 @@
                 Something bad happened!
             {% endcase %}
           </div>
-          <div class="ui grey circular label" style="margin-top: 40% !important;">
-            {{ counter }}
+          <div style="margin-top: 40% !important;">
+            ( {{ counter }} )
           </div>
         </div>
       {% endfor %}
@@ -56,11 +56,19 @@
 
       {% assign yearsAsArray = years | split: ',' %}
   
-      <div class="ui accordion center aligned grid text-center" style="margin: 0 10px;">
+      <div class="ui accordion center aligned grid text-center" style="margin: 0 30px;">
         {% for year in yearsAsArray %}
           <span class="title title-{{ year }}" onclick="sayWhat('{{ year }}')" style="margin: 10px 15px">
-            <div class="ui huge label">
-              <i class="folder icon ma-0"></i> &nbsp; {{ year }}
+            <div class="ui huge label" style="position: relative;">
+              <i class="folder icon ma-0"></i> &nbsp; {{ year }} <br/>
+              {% assign numberOfProjects = 0 %}
+              {% for page in project_pages %}
+                {% assign projectYear = page.date | date: "%Y" %}
+                  {% if projectYear == year %} 
+                    {% assign numberOfProjects = numberOfProjects | plus: 1 %}
+                  {% endif %}
+              {% endfor %}
+              <div class="floating ui teal circular label">{{ numberOfProjects }}</div>
             </div>
           </span>
         {% endfor %}
