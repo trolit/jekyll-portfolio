@@ -1,35 +1,38 @@
 <a class="grey card"
   href="{% if page.projecturl %}{{ page.projecturl }}{% else %}{{ site.baseurl}}{{ include.page.url }}{% endif %}">
-  <div class="content" style="padding-top: 15%;">
-    {% if include.page.image %}
-    <div class="ui tiny right floated rounded bordered image">
-      <img src="{{ site.baseurl }}/{{ include.page.image }}">
-    </div>
-    {% endif %}
-
-    <span class="card-header font-spartan">
+  <div class="content">
+    <div class="card-header font-spartan">
       {{ include.page.title }}
       {% if include.page.language %}
-      <div class="ui light small top attached label background-secondary-gradient">{{ include.page.language }}</div>
+      <br/>
+      <span class="ui tiny {{ include.page.labelColor }} label">
+        {{ include.page.language }}
+      </span>
+      <span class="ui tiny label">
+        {{ include.page.date | date: "%d.%m.%Y" }}
+      </span>
       {% endif %}
-    </span>
-    <div class="meta">
-      <span class="date font-balooChettan2">{{ include.page.date | date: "%d.%m.%Y" }}</span>
     </div>
 
-    <div class="ui segment description"
-      style="min-height: 150px; display: flex; justify-content: center; align-items: center;">
-      <div class="font-balooChettan2" style="text-align:center; font-size: 90%;">
+    {% if include.page.image %}
+    <div class="ui tiny rounded bordered image"  style="padding-top: 20px;">
+      <img src="{{ site.baseurl }}/{{ include.page.image }}">
+    </div>
+
+    {% endif %}
+
+    <div class="description" style="min-height: 100px; padding-top: 15px; ">
+      <div class="font-balooChettan2" style="text-align: justify; font-size: 80%;">
         {{ include.page.summary }}
       </div>
     </div>
-  </div>
 
-  <div class="extra content">
-    <div class="ui tiny labels center aligned font-balooChettan2">
-      {% for label in include.page.labels %}
-      <div class="ui white label">{{ label }}</div>
-      {% endfor %}
+    <div class="ui light small bottom attached ">      
+      <div class="ui tiny labels center aligned font-balooChettan2">
+        {% for label in include.page.labels %}
+          <span class="ui label pa-1"> {{ label }} </span>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
