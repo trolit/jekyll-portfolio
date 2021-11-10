@@ -6,32 +6,64 @@
 {% assign num_projects = project_pages.size %}
 
 <div class="nonprintable">
-  <nav class="ui fixed menu font-balooChettan2 h-5 background-main-gradient">
+  <div class="ui left visible vertical inverted sidebar labeled icon menu" style="background-color: #333333;">
     <a href="{{ site.baseurl}}/" class="brand item">
       <div class="text-center">
-        <span class="iconify icon-20" data-icon="radix-icons:home"></span><br/>
-        <small>home</small>
+        <span class="iconify icon icon-25" data-icon="radix-icons:home"></span>
+        <div class="mt-15">
+          <small>Home</small>
+        </div>
       </div>
-
     </a>
-
+  
     {% if num_projects > 0 %}
-    <a href="{{ site.baseurl }}/projects" class="{% if include.active == 'projects' %} active {% endif %} item">
-      {% if include.active == 'projects' %} <span class="iconify-inline icon-15" data-icon="bi:bookmark-star"></span> &nbsp;{% endif %}
-      projects
+    <a href="{{ site.baseurl }}/projects" class="brand {% if include.active == 'projects' %} active {% endif %} item">
+      <div class="text-center">
+        <span class="iconify icon icon-25" data-icon="ion:library-outline"></span>
+        <div class="mt-15">
+          <small>Projects</small>
+        </div>
+      </div>
     </a>
     {% endif %}
-
+  
     {% if num_essays > 0 %}
-    <a href="{{ site.baseurl }}/essays"
-      class="{% if include.active == 'essays' %} active {% endif %} item">
-      {% if include.active == 'essays' %} <span class="iconify-inline icon-15" data-icon="bi:bookmark-star"></span> &nbsp;{% endif %}
-      notes 
-    {% endif %}
-
-    <a href="{{ site.baseurl }}/music" class="{% if include.active == 'music' %} active {% endif %} item">
-      {% if include.active == 'music' %} <span class="iconify-inline icon-15" data-icon="bi:bookmark-star"></span> &nbsp;{% endif %}
-      music
+    <a href="{{ site.baseurl }}/essays" class="brand {% if include.active == 'essays' %} active {% endif %} item">
+      <div class="text-center">
+        <span class="iconify icon icon-25" data-icon="bx:bxs-note"></span>
+        <div class="mt-15">
+          <small>Essays</small>
+        </div>
+      </div>
     </a>
-  </nav>
+    {% endif %}
+    
+    <a href="{{ site.baseurl }}/music" class="brand {% if include.active == 'music' %} active {% endif %} item">
+      <div class="text-center">
+        <span class="iconify icon icon-25" data-icon="bi:file-earmark-music"></span>
+        <div class="mt-15">
+          <small>Music</small>
+        </div>
+      </div>
+    </a>
+  
+    <div style="position: absolute; bottom: 0;">
+      <a href="https://profile-summary-for-github.com/user/trolit" target="_blank" class="brand item">
+        <div class="text-center">
+          <span class="iconify icon icon-25" data-icon="ic:baseline-query-stats"></span>
+          <div class="mt-15">
+            <small>Stats</small>
+          </div>
+        </div>
+      </a>
+      <a href="https://github.com/trolit" target="_blank" class="brand item">
+        <div class="text-center">
+          <span class="iconify icon icon-25" data-icon="iconoir:github-outline"></span>
+          <div class="1mt-15">
+            <small>GitHub</small>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
