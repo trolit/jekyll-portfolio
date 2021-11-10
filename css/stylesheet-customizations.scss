@@ -2,7 +2,7 @@
 # Provide front matter so Jekyll processes this file as SASS.
 ---
 
-$main-gradient: linear-gradient(to right, #f0c27b, #4b1248);
+$main-gradient: linear-gradient(to left, #355c7d, #6c5b7b, #c06c84);
 $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
 $primary-color: #4b1248;
 $secondary-color: #f0c27b;
@@ -86,6 +86,10 @@ nav .active {
 
 .mt-5 {
   margin-top: 5%;
+}
+
+.mt-15 {
+  margin-top: 15%;
 }
 
 .mr-2 {
