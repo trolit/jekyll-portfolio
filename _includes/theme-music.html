@@ -11,11 +11,11 @@
         {% endfor %}
         {% assign genres = genres | uniq | sort %}
 
-        <div class="ui multiple dropdown music-dropdown labeled icon button w-100" style="margin-bottom: 60px; padding: 10px">
+        <div class="ui multiple dropdown music-dropdown labeled icon button w-100" style="margin-bottom: 60px; padding: 10px; font-weight: lighter;">
             <input id="songFilter" type="hidden" name="filters">
 
             <i class="filter icon"></i>
-            <span class="text">Filter tracks</span>
+            <em class="text ml-0">Click here to filter tracks...</em>
 
             <div class="menu">
               <div class="ui icon search input">
@@ -23,8 +23,16 @@
                 <input type="text" placeholder="Search tags...">
               </div>
 
+              <div class="font-balooChettan2" style="margin-left: 10px;">
+                <span class="iconify icon-25 ma-0 pa-0" data-icon="akar-icons:chat-question"></span> ..when combining <span class="ui mini blue label">genre</span> & <span class="ui mini green label">author</span> filters, note that:
+                <ul style="margin-top: 10px;">
+                  <li>if first selection is author, filters are matched independently. </li>
+                  <li>if first selection is genre, tracks must have both author and genre matched. </li>
+                </ul>
+              </div>
+
               <div class="header">
-                <i class="tags icon"></i>
+                <span class="iconify icon-15" data-icon="file-icons:composer"></span>
                 Author
               </div>  
               <div class="scrolling menu">

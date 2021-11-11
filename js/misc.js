@@ -59,19 +59,22 @@ $(document).ready(function () {
       }
 
       // prepare data
-      var pickedAuthors = data
+      const isGenrePickedFirst = data.split(",")[0].includes("genre");
+
+      const pickedAuthors = data
         .split(",")
         .flatMap((item) =>
           item.includes("author") ? item.replace("author: ", "") : []
         );
 
-      var pickedGenres = data
+      const pickedGenres = data
         .split(",")
         .flatMap((item) =>
           item.includes("genre") ? item.replace("genre: ", "") : []
         );
 
       // apply filters
+      // SOLVE BUG when FIRST GENRE THEN AUTHOR
       for (var i = 0; i < songs.length; i++) {
         var isMatched = false;
         var authors = songs[i]
@@ -83,21 +86,33 @@ $(document).ready(function () {
 
         var genre = songs[i].getAttribute("genre");
 
-        if (pickedAuthors) {
-          for (var j = 0; j < authors.length; j++) {
-            if (pickedAuthors.includes(authors[j])) {
-              isMatched = true;
-              break;
+        if (isGenrePickedFirst) {
+          if (pickedAuthors[0]) {
+            for (var j = 0; j < authors.length; j++) {
+              if (
+                pickedAuthors.includes(authors[j]) &&
+                pickedGenres.includes(genre)
+              ) {
+                isMatched = true;
+                break;
+              }
+            }
+          } else {
+            isMatched = pickedGenres.includes(genre);
+          }
+        } else {
+          if (pickedAuthors[0]) {
+            for (var j = 0; j < authors.length; j++) {
+              if (pickedAuthors.includes(authors[j])) {
+                isMatched = true;
+                break;
+              }
             }
           }
-        }
 
-        if (pickedGenres[0]) {
-          console.log("check");
-          console.log(pickedGenres);
-          console.log(genre);
-          console.log(pickedGenres.includes(genre));
-          isMatched = pickedGenres.includes(genre);
+          if (pickedGenres[0]) {
+            isMatched = pickedGenres.includes(genre);
+          }
         }
 
         if (!isMatched) {
