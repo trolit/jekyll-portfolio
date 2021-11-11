@@ -1,14 +1,40 @@
-<div class="grey card mw-150">
+{% assign lastAuthor = include.page.author.last %}
+{% assign authors = '' %}
+
+{% for author in include.page.author %}
+  {% if author != lastAuthor %}
+    {% assign authors = authors | append: author | append: ', ' %}
+  {% else %}
+    {% assign authors = authors | append: author %}
+  {% endif %} 
+{% endfor %}
+
+<div class="grey card mw-150 mysong" authors="{{ authors }}" genre="{{ include.page.genre }}">
   <div class="content">
-    <span class="header font-balooChettan2">{{ include.page.author }}
+    <span class="header font-balooChettan2">
+      {{ authors }}
       <a class="right floated" href="https://www.youtube.com/watch?v={{ include.page.youtubeId }}" target="_blank">
         <span class="iconify" data-icon="ph:youtube-logo"></span>
       </a>
     </span>
 
-    <span class="iconify icon-20" data-icon="flat-color-icons:music"></span>
+    <div class="subheader font-balooChettan2">
+      <div>
+        <span class="iconify icon-20" data-icon="bx:bx-text"></span>
 
-    <span class="subheader font-balooChettan2">{{ include.page.subtitle }}</span>
+        <span>
+          {{ include.page.subtitle }}
+        </span>
+      </div>
+
+      <div>
+        <span class="iconify icon-20" data-icon="ph:disc-duotone"></span>
+        
+        <span>
+          {{ include.page.genre }}
+        </span>
+      </div>
+    </div>
   </div>
 
   <div class="extra content">
