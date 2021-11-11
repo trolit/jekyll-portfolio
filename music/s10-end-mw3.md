@@ -2,9 +2,9 @@
 layout: music
 type: music
 author: ["Hans Zimmer"]
-youtubeId: kOYcbod5J0w
-subtitle: Lost But Won
+youtubeId: 95obkJqXj2c
+subtitle: Enemy of my enemy is my friend
 genre: cinematic
 # All dates must be YYYY-MM-DD format!
-date: 2021-10-23
+date: 2021-11-11
 ---

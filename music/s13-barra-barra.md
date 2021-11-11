@@ -1,10 +1,10 @@
 ---
 layout: music
 type: music
-author: ["Steven Norman"]
-youtubeId: xhfo-lB6JS8
-subtitle: Price
+author: ["Rachid Taha"]
+youtubeId: VmEV6qjY9Nc
+subtitle: Barra Barra
 genre: cinematic
 # All dates must be YYYY-MM-DD format!
-date: 2021-10-23
+date: 2021-11-11
 ---

@@ -1,10 +1,10 @@
 ---
 layout: music
 type: music
-author: Lorne Balfe
+author: ["Lorne Balfe"]
 youtubeId: qOvw6t-cxOs
 subtitle: Assassins Creed Theme
+genre: cinematic
 # All dates must be YYYY-MM-DD format!
 date: 2021-10-23
 ---
-

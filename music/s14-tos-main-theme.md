@@ -2,9 +2,9 @@
 layout: music
 type: music
 author: ["Hans Zimmer"]
-youtubeId: kOYcbod5J0w
-subtitle: Lost But Won
+youtubeId: lxx7i13CPaE
+subtitle: The Jablonsky variations on a theme by HZ
 genre: cinematic
 # All dates must be YYYY-MM-DD format!
-date: 2021-10-23
+date: 2021-11-11
 ---
