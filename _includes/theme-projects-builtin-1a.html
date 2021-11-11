@@ -1,5 +1,5 @@
-<div style="position: absolute; top: 15%; left:0; right:0; margin-left:auto; margin-right:auto; border: 1px solid #1C00ff00;">
-  <div class="ui raised projects-counter">
+<div class="content-margin" style="position: absolute; top: 15%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+  <div class="ui raised">
     <div class="ui one column center aligned container">
       {% assign projects = site.pages | where: "type", "project" %}
       {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
@@ -39,7 +39,7 @@
     </div>
   </div>
   
-  <div class="ui container mb-5" >
+  <div class="ui container mb-5 mt-5" >
     <div>
       {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
   
@@ -56,7 +56,7 @@
 
       {% assign yearsAsArray = years | split: ',' %}
   
-      <div class="ui accordion center aligned grid text-center" style="margin: 0 30px;">
+      <div class="ui accordion center aligned grid text-center">
         {% for year in yearsAsArray %}
           <span class="title title-{{ year }}" onclick="sayWhat('{{ year }}')" style="margin: 10px 15px">
             <div class="ui huge label" style="position: relative;">
@@ -72,9 +72,9 @@
             </div>
           </span>
         {% endfor %}
-  
+
         {% for year in yearsAsArray %}    
-        <div class="content accordion-{{ year }}">
+        <div class="content accordion-{{ year }} w-100">
           <div class="ui stackable centered cards">
             {% for page in project_pages %}
             {% unless page.draft %}

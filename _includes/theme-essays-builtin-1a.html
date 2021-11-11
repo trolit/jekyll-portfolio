@@ -1,31 +1,33 @@
-<div class="ui container projects-counter">
-  <!-- Label picker -->
-  <div style="margin-bottom: 60px;">
-    {% assign essays = site.pages | where: "type", "essay" %}
-    {% assign labels = '' | split: '' %}
-    {% for essay in essays %}
-    {% for label in essay.labels %}
-    {% assign tmp = label | split: '_' %}
-    {% assign labels = labels | concat: tmp %}
-    {% endfor %}
-    {% endfor %}
-    {% assign labels = labels | uniq | sort %}
-
-    <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
-      <option value="">Pick interesting label(s)</option>
-
-      {% for label in labels %}
-        <option value="{{label}}">{{ label }}</option>
+<div class="content-margin" style="position: absolute; top: 15%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+  <div class="ui container">
+    <!-- Label picker -->
+    <div style="margin-bottom: 60px;">
+      {% assign essays = site.pages | where: "type", "essay" %}
+      {% assign labels = '' | split: '' %}
+      {% for essay in essays %}
+      {% for label in essay.labels %}
+      {% assign tmp = label | split: '_' %}
+      {% assign labels = labels | concat: tmp %}
       {% endfor %}
-    </select>
-  </div>
+      {% endfor %}
+      {% assign labels = labels | uniq | sort %}
 
-  <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
-    {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
-    {% for page in essay_pages %}
-    {% unless page.draft %}
-    {% include essay-card-1a.html page=page %}
-    {% endunless %}
-    {% endfor %}
+      <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
+        <option value="">Pick interesting label(s)</option>
+
+        {% for label in labels %}
+          <option value="{{label}}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
+      {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
+      {% for page in essay_pages %}
+      {% unless page.draft %}
+      {% include essay-card-1a.html page=page %}
+      {% endunless %}
+      {% endfor %}
+    </div>
   </div>
 </div>

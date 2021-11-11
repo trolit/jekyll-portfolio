@@ -7,13 +7,7 @@ $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
 $primary-color: #4b1248;
 $secondary-color: #f0c27b;
 
-@media only screen and (max-width: 900px) {
-  .projects-counter {
-    margin: 15% 0 10% 0 !important;
-  }
-}
-
-@media only screen and (max-width: 620px) {
+@media only screen and (min-width: 1px) and (max-width: 600px) {
   .year-label-margin {
     margin: 10% 0 !important;
   }
@@ -30,6 +24,16 @@ $secondary-color: #f0c27b;
 
   .music-resp-spacing {
     margin: 200px 0 !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .projects-counter {
+    margin: 15% 0 10% 0 !important;
+  }
+
+  .content-margin {
+    margin: 0 5% 0 15% !important;
   }
 }
 
@@ -50,6 +54,12 @@ $secondary-color: #f0c27b;
 
 nav .active {
   background-color: darken($secondary-color, 5%) !important;
+}
+
+@media only screen and (min-width: 901px) {
+  .content-margin {
+    margin: 0 5% 0 15% !important;
+  }
 }
 
 /* ************************************* */
@@ -78,6 +88,10 @@ nav .active {
 
 .ma-0 {
   margin: 0 !important;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
 }
 
 .ml-6 {
