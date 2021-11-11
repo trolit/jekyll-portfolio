@@ -58,7 +58,7 @@
   
       <div class="ui accordion center aligned grid text-center">
         {% for year in yearsAsArray %}
-          <span class="title title-{{ year }}" onclick="sayWhat('{{ year }}')" style="margin: 10px 15px">
+          <span class="title title-{{ year }}" onclick="toggleAccordionContent('{{ year }}')" style="margin: 10px 15px">
             <div class="ui huge label" style="position: relative;">
               <i class="folder icon ma-0"></i> &nbsp; {{ year }} <br/>
               {% assign numberOfProjects = 0 %}
@@ -106,44 +106,47 @@
 
   var lastYear;
 
-  function sayWhat(year) {
+  function toggleAccordionContent(year) {
     if (year == lastYear) {
-      $(`.accordion-${year}`).each(function () {
-        $(this).removeClass("active");
-      });
-
-      $(`.title-${year}`).each(function () {
-        $(this).removeClass("active");
-      });
-
-      $(`.title-${year} i`).removeClass("open");
+      updateAccordionElementByYear(lastYear, 'hide');
 
       lastYear = null;
     } else {
-      $(`.accordion-${lastYear}`).each(function () {
-        $(this).removeClass("active");
-      });
+      if (lastYear) {
+        updateAccordionElementByYear(lastYear, 'hide');
+      }
 
-      $(`.title-${lastYear}`).each(function () {
-        $(this).removeClass("active");
-      });
-
-      $(`.title-${lastYear} i`).removeClass("open");
-
-      $(`.accordion-${year}`).each(function () {
-        $(this).addClass("active");
-      });
-
-      $(`.title-${year}`).each(function () {
-        $(this).addClass("active");
-      });
-
-      $(`.title-${year} i`).addClass("open");
+      updateAccordionElementByYear(year, 'show');
 
       lastYear = year;
     }
 
+    function updateAccordionElementByYear(year, action) {
+      if (action === 'hide') {
+        // remove active class from content
+        $(`.accordion-${year}`).each(function () { 
+          $(this).removeClass("active");
+        });
 
+        // remove active class from title
+        $(`.title-${year}`).each(function () {
+          $(this).removeClass("active");
+        });
+
+        // update directory icon
+        $(`.title-${year} i`).removeClass("open");
+      } else if (action === 'show') {
+        $(`.accordion-${year}`).each(function () {
+          $(this).addClass("active");
+        });
+
+        $(`.title-${year}`).each(function () {
+          $(this).addClass("active");
+        });
+
+        $(`.title-${year} i`).addClass("open");
+      }
+    }
 
   }
 </script>
