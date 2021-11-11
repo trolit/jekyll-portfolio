@@ -1,5 +1,64 @@
 <div class="content-margin" style="position: absolute; top: 15%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
     <div class="ui container">
+        {% assign songs = site.pages | where: "type", "music" %}
+        {% assign authors = '' %}
+        {% assign genres = '' %}
+
+        {% for song in songs %}
+            {% assign authors = authors | concat: song.author | uniq | sort %}
+            {% assign tmp = song.genre | split: '_' %}
+            {% assign genres = genres | concat: tmp %}
+        {% endfor %}
+        {% assign genres = genres | uniq | sort %}
+
+        <div class="ui multiple dropdown music-dropdown labeled icon button w-100" style="margin-bottom: 60px; padding: 10px">
+            <input id="songFilter" type="hidden" name="filters">
+
+            <i class="filter icon"></i>
+            <span class="text">Filter tracks</span>
+
+            <div class="menu">
+              <div class="ui icon search input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search tags...">
+              </div>
+
+              <div class="header">
+                <i class="tags icon"></i>
+                Author
+              </div>  
+              <div class="scrolling menu">
+                {% for author in authors %}
+                    {% if author == '' %}
+                        {% continue %}
+                    {% endif %}
+
+                    <div class="item" data-value="author: {{ author }}">
+                        <div class="ui green empty circular label"></div>
+                        {{ author }}
+                    </div>
+                {% endfor %}
+              </div>
+              
+              <div class="header">
+                <span class="iconify-inline icon-15" data-icon="clarity:cd-dvd-solid"></span>
+                Genre
+              </div>
+              <div class="scrolling menu">
+                {% for genre in genres %}
+                    {% if genre == '' %}
+                        {% continue %}
+                    {% endif %}
+
+                    <div class="item" data-value="genre: {{ genre }}">
+                        <div class="ui blue empty circular label"></div>
+                        {{ genre }}
+                    </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+
         <div class="ui stackable centered three cards">
             {% assign song_pages = site.pages | where: "type", "music" | sort: "date" | reverse %}
             {% for page in song_pages %}
