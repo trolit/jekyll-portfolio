@@ -13,9 +13,6 @@
   <div class="content">
     <span class="header font-balooChettan2">
       {{ authors }}
-      <a class="right floated" href="https://www.youtube.com/watch?v={{ include.page.youtubeId }}" target="_blank">
-        <span class="iconify" data-icon="ph:youtube-logo"></span>
-      </a>
     </span>
 
     <div class="subheader font-balooChettan2">
@@ -37,7 +34,9 @@
 
   <div class="extra content">
     <div class="ui tiny labels center aligned font-balooChettan2">
-      added on {{ include.page.date | date: "%d.%m.%Y" }}
+      <a href="https://www.youtube.com/watch?v={{ include.page.youtubeId }}" target="_blank">
+        <span class="iconify" data-icon="ph:youtube-logo"></span>
+      </a>
     </div>
   </div>
 
