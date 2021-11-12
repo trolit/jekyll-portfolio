@@ -185,6 +185,21 @@ nav .active {
   @extend .text-center;
 }
 
+div.segment.active {
+  background-color: #cccccc;
+  border: 0;
+}
+
+div.ui.attached.segment {
+  border: 1px solid #cccccc;
+}
+
+div.tabular > a.item.active {
+  background-color: #2e2e2e !important;
+  border: 3px solid #cccccc !important;
+  border-radius: 0px !important;
+}
+
 /* ************************************* */
 /* Iconify icons */
 /* ************************************* */

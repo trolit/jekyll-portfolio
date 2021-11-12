@@ -14,6 +14,8 @@ $(document).ready(function () {
     on: null,
   });
 
+  $(".menu .item").tab();
+
   $(".ui.dropdown").dropdown({
     maxSelections: 2,
     onChange: function () {

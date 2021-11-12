@@ -2,16 +2,14 @@
 layout: essays
 ---
 
-<div style="margin-top: 20px; margin-bottom: 20px;" class="ui text container">
-  <div class="ui large grey message">
-    <span class="iconify" style="display: inline-block;" data-icon="ant-design:file-text-twotone" data-inline="true"></span>
-    <h2 style="display: inline-block;" class="header font-spartan">{{ page.title }}</h2>
-    <br/>
-    <a class="ui custom-color image label" style="cursor: default;">
-      Data opublikowania
-      <div class="detail">{{ page.date | date: "%-d.%m.%Y" }}</div>
-    </a>
+<div class="content-margin" style="position: absolute; top: 15%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+  <div class="ui container" style="position: relative; background-color: #333333; border: 0; border-bottom-left-radius: 25px;">
+    <span style="position: absolute; top: 13px; right: 13px;">
+      <div class="ui label">
+        published on {{ page.date | date: "%-d.%m.%Y" }}
+      </div>
+
+    </span>
+        {{ content }}
   </div>
-  <hr style="border: 1px solid #616247;">
-  {{ content }}
 </div>
