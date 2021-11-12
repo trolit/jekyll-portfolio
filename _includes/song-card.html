@@ -22,10 +22,23 @@
         </em>
       </div>
 
+      <br/>
+
       <div>
-        <span class="iconify icon-20" data-icon="ph:disc-duotone"></span>
-        
-        <span>
+        {% case include.page.genre %}
+          {% when "alternative" %}
+            {% assign labelColor = 'blue' %}
+          {% when "cinematic" %}
+            {% assign labelColor = 'violet' %}
+          {% when "hard rock" %}
+            {% assign labelColor = 'brown' %}
+          {% when "country" %}
+            {% assign labelColor = 'orange' %}
+          {% when "rock" %}
+            {% assign labelColor = 'grey' %}
+        {% endcase %}
+
+        <span class="ui small {{ labelColor }} label">
           {{ include.page.genre }}
         </span>
       </div>
