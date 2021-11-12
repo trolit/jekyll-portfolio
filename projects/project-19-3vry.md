@@ -5,6 +5,7 @@ image: images/3vry-cover.png
 title: 3vry
 labelColor: orange
 language: Kotlin
+website: https://github.com/trolit/3vry#3vry
 permalink: projects/3vry
 # All dates must be YYYY-MM-DD format!
 date: 2020-06-03
@@ -66,7 +67,7 @@ summary: Mobile app that allows to add favourite artists and playlists, receive 
 
 <h4>Krótka demonstracja</h4>
 
-<div class="ui embed" data-source="youtube" data-id="ZJ2wglKpu5M" > </div> 
+<div class="ui embed" data-source="youtube" data-id="ZJ2wglKpu5M" > </div>
 
 <br>
 

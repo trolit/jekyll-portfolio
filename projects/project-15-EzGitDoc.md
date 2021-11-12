@@ -5,6 +5,7 @@ image: images/ezGitDoc-cover.png
 title: EzGitDoc
 labelColor: yellow
 language: JavaScript
+website: https://github.com/OS-expected/EzGitDoc
 permalink: projects/ezGitDoc
 # All dates must be YYYY-MM-DD format!
 date: 2020-02-23

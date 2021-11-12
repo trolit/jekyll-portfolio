@@ -5,6 +5,7 @@ image: images/projectZero-square.jpg
 title: Project Zero
 labelColor: blue
 language: C#
+website: https://github.com/trolit/projectZero
 permalink: projects/projectZero
 # All dates must be YYYY-MM-DD format!
 date: 2019-06-16
@@ -103,19 +104,17 @@ summary: 3D educational game that introduces programming languages. Sandbox, 40 
 <!-- Initialize Swiper -->
 <script src="../js/initialize-swiper.js"></script>
 
-
-
 <br>
 
 <h4>Przegląd aplikacji oraz pokazanie m.in. trybu puzzle</h4>
 
-<div class="ui embed" data-source="youtube" data-id="W4FGTbqTwsY" > </div> 
+<div class="ui embed" data-source="youtube" data-id="W4FGTbqTwsY" > </div>
 
 <br>
 
 <h4>Urywki z kilku poziomów i trybów rozgrywki </h4>
 
-<div class="ui embed" data-source="youtube" data-id="UtQ0g11_Juc" > </div> 
+<div class="ui embed" data-source="youtube" data-id="UtQ0g11_Juc" > </div>
 
 <br>
 <br>

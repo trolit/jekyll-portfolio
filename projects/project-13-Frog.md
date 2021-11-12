@@ -5,6 +5,7 @@ image: images/projectFrog-cover.png
 title: Projekt Frog
 labelColor: blue
 language: C#
+website: https://github.com/trolit/Projekt-Frog#projekt-frog
 permalink: projects/projectFrog
 # All dates must be YYYY-MM-DD format!
 date: 2017-11-12

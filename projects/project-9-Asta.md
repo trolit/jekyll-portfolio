@@ -5,6 +5,7 @@ image: images/aStar-cover.jpg
 title: A★
 labelColor: blue
 language: C#
+website: https://github.com/trolit/Inne/tree/master/Algorytm%20A_star#o-algorytmie-a
 permalink: projects/Astar
 # All dates must be YYYY-MM-DD format!
 date: 2018-08-14

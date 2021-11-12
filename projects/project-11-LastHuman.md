@@ -5,6 +5,7 @@ image: images/lastHuman-cover.png
 title: Last Human
 labelColor: blue
 language: C#
+website: https://github.com/trolit/LastHuman#last-human
 permalink: projects/lasthuman
 # All dates must be YYYY-MM-DD format!
 date: 2018-06-10

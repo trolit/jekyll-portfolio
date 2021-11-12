@@ -5,6 +5,7 @@ image: images/sShuffler-cover.PNG
 title: sShuffler
 labelColor: blue
 language: C#
+website: https://github.com/trolit/sShuffler
 permalink: projects/sShuffler
 # All dates must be YYYY-MM-DD format!
 date: 2020-04-12

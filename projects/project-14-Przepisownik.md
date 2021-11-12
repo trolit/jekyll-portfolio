@@ -5,6 +5,7 @@ image: images/recipeBook-cover.png
 title: Przepisownik
 labelColor: yellow
 language: JavaScript
+website: http://przepisownik2016.opx.pl/
 permalink: projects/recipeBook
 # All dates must be YYYY-MM-DD format!
 date: 2016-07-19
@@ -24,7 +25,8 @@ summary: Page that stores culinary recipes that got my attention. Project was ma
 
 <div style="text-align: justify;text-justify: inter-word;">
 
-Strona jest jeszcze dostępna i można ją odwiedzić klikając <a href="http://przepisownik2016.opx.pl/" target="_blank">w ten odnośnik</a>. Z racji, że jest to darmowy hosting to ostrzegam, że mogą pojawić się reklamy (z rozszerzeniami jak AdBlock po prostu są białe przestrzenie). 
+Strona jest jeszcze dostępna i można ją odwiedzić klikając <a href="http://przepisownik2016.opx.pl/" target="_blank">w ten odnośnik</a>. Z racji, że jest to darmowy hosting to ostrzegam, że mogą pojawić się reklamy (z rozszerzeniami jak AdBlock po prostu są białe przestrzenie).
+
 </div>
 
 <br>

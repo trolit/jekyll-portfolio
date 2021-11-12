@@ -1,5 +1,5 @@
 <a class="grey card"
-  href="{% if page.projecturl %}{{ page.projecturl }}{% else %}{{ site.baseurl}}{{ include.page.url }}{% endif %}">
+  href="{% if include.page.website %}{{ include.page.website }}{% else %}wut{% endif %}" target="_blank">
   <div class="content">
     <div class="card-header font-spartan">
       {{ include.page.title }}

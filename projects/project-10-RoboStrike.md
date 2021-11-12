@@ -5,6 +5,7 @@ image: images/roboStrike-cover.png
 title: Robots Strike
 labelColor: blue
 language: C#
+website: https://github.com/trolit/Robots_strike#robots-strike
 permalink: projects/roboStrike
 # All dates must be YYYY-MM-DD format!
 date: 2018-07-29

@@ -5,6 +5,7 @@ image: images/naiveBayes-cover.jpg
 title: NB Research Project
 labelColor: blue
 language: C#
+website: https://github.com/trolit/naive-bayes-classifiers-work#naive-bayes-classifiers-experimental-work
 permalink: projects/NaiveBayesRP
 # All dates must be YYYY-MM-DD format!
 date: 2019-05-19

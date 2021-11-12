@@ -3,6 +3,7 @@ layout: project
 type: project
 image: images/cs_k1234_reedition-cover.png
 title: k1234_reedition
+website: https://gamebanana.com/mods/92118
 permalink: projects/csk1234reedition
 published: true
 # All dates must be YYYY-MM-DD format!

@@ -2,18 +2,15 @@
 layout: project
 type: project
 image: images/gsa-cover.png
-title: Grocery Store (API)
-labelColor: red
-language: Java
-website: https://github.com/trolit/grocery-store-themed-API#-grocery-store-api-v122
-permalink: projects/groceryStoreApi
+title: React portfolio
+labelColor: yellow
+language: JavaScript
+website: https://github.com/Dorota1997/react-frontend-dev-portfolio
 # All dates must be YYYY-MM-DD format!
-date: 2020-09-21
+date: 2020-11-29
 labels:
-  - Maven
-  - H2
-  - Spring Boot 2.3.4
-summary: Grocery store API implementation to find out Spring Boot, JPA, Hibernate and Java language (JDK 14).
+  - React 16
+summary: Dorota1997 frontend dev portfolio template contribution.
 ---
 
 <table class="ui celled striped tablet stackable table">

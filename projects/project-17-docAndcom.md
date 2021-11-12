@@ -5,6 +5,7 @@ image: images/docAndCom-cover.png
 title: Document and Compare
 labelColor: blue
 language: C#
+website: https://github.com/OS-expected/document-and-compare#document-and-compare
 permalink: projects/docAndCom
 # All dates must be YYYY-MM-DD format!
 date: 2020-04-17

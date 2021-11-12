@@ -3,9 +3,10 @@ layout: project
 type: project
 image: images/WW-cover.png
 title: Wszystko-wojskowe
+website: https://github.com/trolit/Inne/tree/master/Projekty%20stron(PA%20WWW)
 permalink: projects/ww
 # All dates must be YYYY-MM-DD format!
-date: 2019-01-02    
+date: 2019-01-02
 labels:
   - HTML
   - JavaScript
