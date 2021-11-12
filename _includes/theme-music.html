@@ -71,9 +71,9 @@
         <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
             {% assign song_pages = site.pages | where: "type", "music" | sort: "date" | reverse %}
             {% for page in song_pages %}
-            {% unless page.draft %}
-            {% include song-card.html page=page %}
-            {% endunless %}
+              {% unless page.draft %}
+                {% include song-card.html page=page %}
+              {% endunless %}
             {% endfor %}
         </div>
     </div>
