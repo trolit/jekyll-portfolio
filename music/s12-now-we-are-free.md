@@ -1,7 +1,7 @@
 ---
 layout: music
 type: music
-author: ["Hans Zimmer", "Lisa Gerrard"]
+author: ["Hans Zimmer", "Lisa Gerrard", "Klaus Badelt"]
 youtubeId: Y1UiD2sxoWo
 subtitle: Now We Are Free
 genre: cinematic
