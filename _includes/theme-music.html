@@ -15,7 +15,7 @@
             <input id="songFilter" type="hidden" name="filters">
 
             <div class="text" style="opacity: 0.3; padding: 2px 0;">
-              Filter tracks by author(s) and/or genres
+              Filter tracks by author(s) and/or genre
             </div>
 
             <div class="menu">
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="ui stackable centered three cards">
+        <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
             {% assign song_pages = site.pages | where: "type", "music" | sort: "date" | reverse %}
             {% for page in song_pages %}
             {% unless page.draft %}
