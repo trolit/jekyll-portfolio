@@ -29,13 +29,15 @@
           {% when "alternative" %}
             {% assign labelColor = 'blue' %}
           {% when "cinematic" %}
-            {% assign labelColor = 'violet' %}
+            {% assign labelColor = 'teal' %}
           {% when "hard rock" %}
             {% assign labelColor = 'brown' %}
           {% when "country" %}
             {% assign labelColor = 'orange' %}
           {% when "rock" %}
             {% assign labelColor = 'grey' %}
+          {% when "EDM" %}
+            {% assign labelColor = 'pink' %}
         {% endcase %}
 
         <span class="ui mini {{ labelColor }} label">
