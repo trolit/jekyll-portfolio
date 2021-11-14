@@ -3,15 +3,18 @@
   <div class="content">
     <div class="card-header font-spartan">
       {{ include.page.title }}
-      {% if include.page.language %}
+
       <br/>
-      <span class="ui tiny {{ include.page.labelColor }} label">
-        {{ include.page.language }}
-      </span>
+
+      {% if include.page.language %}
+        <span class="ui tiny {{ include.page.labelColor }} label">
+          {{ include.page.language }}
+        </span>
+      {% endif %}
+      
       <span class="ui tiny label">
         {{ include.page.date | date: "%d.%m.%Y" }}
       </span>
-      {% endif %}
     </div>
 
     {% if include.page.image %}
