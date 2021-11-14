@@ -14,7 +14,18 @@ $(document).ready(function () {
     on: null,
   });
 
-  $(".menu .item").tab();
+  $(".menu .item").tab({
+    onLoad: function (tabPath, parameterArray, historyEvent) {
+      echo.init({
+        offset: 2500,
+        throttle: 250,
+        unload: false,
+        callback: function (element, op) {
+          // console.log(element, "has been", op + "ed");
+        },
+      });
+    },
+  });
 
   $(".ui.dropdown").dropdown({
     maxSelections: 2,
@@ -75,8 +86,6 @@ $(document).ready(function () {
           item.includes("genre") ? item.replace("genre: ", "") : []
         );
 
-      // apply filters
-      // SOLVE BUG when FIRST GENRE THEN AUTHOR
       for (var i = 0; i < songs.length; i++) {
         var isMatched = false;
         var authors = songs[i]
