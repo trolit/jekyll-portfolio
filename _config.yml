@@ -7,7 +7,7 @@ baseurl: ""
 # OPTIONAL CHANGES
 theme-home: theme-home-builtin-2.html
 theme-projects: theme-projects-builtin-1a.html
-theme-essays: theme-essays-builtin-1a.html
+theme-posts: theme-posts.html
 theme-music: theme-music.html
 
 # Specify the rouge syntax highlighter theme. Pick one from css/rouge.
@@ -16,4 +16,3 @@ rouge-theme: gruvbox
 # YOU NORMALLY NEVER CHANGE THE FOLLOWING
 markdown: kramdown
 include: [_data]
-

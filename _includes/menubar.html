@@ -1,9 +1,9 @@
 <!-- Used by all builtin themes. Now we list number of essays and projects. -->
 
-{% assign essay_pages = site.pages | where: "type", "essay" | where_exp: "page", "page.draft != true" %}
+{% assign post_pages = site.pages | where: "type", "post" | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
 {% assign song_pages = site.pages | where: "type", "music" | where_exp: "page", "page.draft != true" %}
-{% assign num_essays = essay_pages.size %}
+{% assign num_posts = post_pages.size %}
 {% assign num_projects = project_pages.size %}
 {% assign num_tracks = song_pages.size %}
 
@@ -28,12 +28,12 @@
   </a>
   {% endif %}
 
-  {% if num_essays > 0 %}
-  <a href="{{ site.baseurl }}/essays" class="brand {% if include.active == 'essays' %} active {% endif %} item">
+  {% if num_posts > 0 %}
+  <a href="{{ site.baseurl }}/posts" class="brand {% if include.active == 'posts' %} active {% endif %} item">
     <div class="text-center">
       <span class="iconify icon icon-25" data-icon="fluent:note-28-regular"></span>
       <div class="mt-15">
-        <small>Essays ({{ num_essays }})</small>
+        <small>Posts ({{ num_posts }})</small>
       </div>
     </div>
   </a>

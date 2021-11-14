@@ -2,10 +2,10 @@
   <div class="ui container">
     <!-- Label picker -->
     <div style="margin-bottom: 60px;">
-      {% assign essays = site.pages | where: "type", "essay" %}
+      {% assign posts = site.pages | where: "type", "post" %}
       {% assign labels = '' | split: '' %}
-      {% for essay in essays %}
-      {% for label in essay.labels %}
+      {% for post in posts %}
+      {% for label in post.labels %}
       {% assign tmp = label | split: '_' %}
       {% assign labels = labels | concat: tmp %}
       {% endfor %}
@@ -22,10 +22,10 @@
     </div>
 
     <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
-      {% assign essay_pages = site.pages | where: "type", "essay" | sort: "date" | reverse %}
-      {% for page in essay_pages %}
+      {% assign post_pages = site.pages | where: "type", "post" | sort: "date" | reverse %}
+      {% for page in post_pages %}
       {% unless page.draft %}
-      {% include essay-card-1a.html page=page %}
+      {% include post-card-1a.html page=page %}
       {% endunless %}
       {% endfor %}
     </div>
