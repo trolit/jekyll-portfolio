@@ -81,7 +81,7 @@
               {% assign pageYear = page.date | date: "%Y" %}
 
               {% if pageYear == year %}
-                {% include project-card-1a.html page=page %}
+                {% include project-card.html page=page %}
               {% endif %}
             {% endunless %}
           {% endfor %}

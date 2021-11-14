@@ -5,8 +5,8 @@ url: "https://trolit.github.io"
 baseurl: ""
 
 # OPTIONAL CHANGES
-theme-home: theme-home-builtin-2.html
-theme-projects: theme-projects-builtin-1a.html
+theme-home: theme-home.html
+theme-projects: theme-projects.html
 theme-posts: theme-posts.html
 theme-music: theme-music.html
 
