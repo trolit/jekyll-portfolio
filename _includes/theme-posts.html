@@ -13,7 +13,7 @@
       {% assign labels = labels | uniq | sort %}
 
       <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
-        <option value="">Pick interesting label(s)</option>
+        <option value="">Filter posts by label(s)</option>
 
         {% for label in labels %}
           <option value="{{label}}">{{ label }}</option>
