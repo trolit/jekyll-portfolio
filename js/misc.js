@@ -4,16 +4,22 @@ var songs = document.getElementsByClassName("mysong");
 $(document).ready(function () {
   $(".tiny.modal").modal("hide");
 
+  // enable popup
   $(".activating.element").popup({
     trigger: "hover",
     html: true,
     animation: false,
   });
 
+  // enable accordion
   $(".ui.accordion").accordion({
     on: null,
   });
 
+  // enable videos
+  $(".ui.embed").embed();
+
+  // lazyload images in accordions
   $(".menu .item").tab({
     onLoad: function (tabPath, parameterArray, historyEvent) {
       echo.init({
@@ -27,6 +33,7 @@ $(document).ready(function () {
     },
   });
 
+  // enable dropdown (essays)
   $(".ui.dropdown").dropdown({
     maxSelections: 2,
     onChange: function () {
@@ -61,6 +68,8 @@ $(document).ready(function () {
       }
     },
   });
+
+  // enable dropdown (music)
   $(".ui.dropdown.music-dropdown").dropdown({
     onChange: function () {
       var data = $("#songFilter").val();
