@@ -13,7 +13,7 @@ labels:
   - HTML
   - MDBootstrap
   - LESS
-summary: WYSIWYG tool that allows to easily and quickly develop repositories documentation. First, stable version got released in 6 days.
+summary: WYSIWYG tool that gives ability to easily and quickly develop repositories documentation. First, stable version got released in 6 days.
 ---
 
 <div class="ui centered grid">

@@ -12,7 +12,7 @@ date: 2018-08-14
 labels:
   - WinForms
   - .NET Framework
-summary: Approach to A* algorithm visualization through WinForms desktop app.
+summary: First approach to A* algorithm and attempt to visualization through WinForms desktop app.
 ---
 
 <div class="ui centered grid">

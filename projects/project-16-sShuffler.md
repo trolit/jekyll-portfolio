@@ -12,7 +12,7 @@ date: 2020-04-12
 labels:
   - WinForms
   - .NET Framework
-summary: Tired of playlist order? Quickly shuffle it and maintain format that is respected by car players.
+summary: Small tool to quickly rearrange playlists and maintain format that is respected by car players.
 ---
 
 <div class="ui centered grid">

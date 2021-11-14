@@ -12,7 +12,7 @@ date: 2017-11-12
 labels:
   - WinForms
   - .NET Framework
-summary: First project at GitHub which is game made in WinForms. Concept based on popular classic - Arcade Frogger.
+summary: First project released at GitHub - which is - game made in WinForms. Concept based on popular classic - Arcade Frogger with few enchancements.
 ---
 
 <div class="ui centered grid">

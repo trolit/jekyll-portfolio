@@ -12,5 +12,5 @@ labels:
   - Gatsby.js
   - jsPDF
   - material-ui
-summary: Portfolio built from @LekoArts Emma starter and modified to personal needs.
+summary: Personal portfolio made from LekoArts emma-starter-template, found at GitHub.
 ---

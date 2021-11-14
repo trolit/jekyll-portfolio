@@ -13,7 +13,7 @@ labels:
   - Android
   - SQLite
   - YoutubeAPI
-summary: Mobile app that allows to add favourite artists and playlists, receive one suggestion per day from YouTube service and play it.
+summary: Mobile app that allows to add artists and playlists and let it query YouTube service to receive suggestion per day. Embeddable videos can be played through the app.
 ---
 
 <div class="ui centered grid">

@@ -12,7 +12,7 @@ labels:
   - JavaScript
   - Bootstrap
   - CSS
-summary: WWW page projects made for studies.
+summary: WWW page projects made for studies subject(pure HTML, pure HTML with CSS and lastly HTML, CSS and Bootstrap).
 ---
 
 <div class="ui centered grid">

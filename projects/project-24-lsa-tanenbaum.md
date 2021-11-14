@@ -11,5 +11,5 @@ date: 2021-04-25
 labels:
   - WinForms
   - Distributed Systems
-summary: Election algorithm simulation(ring algorithm, Andrew Tanenbaum's variant) using .NET sockets mechanism and UDP protocol.
+summary: Election algorithm simulation(ring topology, Andrew Tanenbaum's variant) using .NET sockets mechanism and UDP protocol.
 ---

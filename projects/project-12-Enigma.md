@@ -11,7 +11,7 @@ permalink: projects/enigmaProject
 date: 2018-01-07
 labels:
   - .NET Framework
-summary: Console app that implements three-rotor enigma made while participating in science club. Versions before 2.0 doesn't count :D
+summary: Simple console app that attempts to work as three-rotor enigma made for science club. Versions before 2.0 doesn't count :D
 ---
 
 <div class="ui centered grid">

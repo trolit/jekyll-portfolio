@@ -13,5 +13,5 @@ labels:
   - React 17
   - MySQL
   - Mocha
-summary: Web application with backend made in Nodejs and frontend in React that stores users notes.
+summary: Web application that stores users notes.
 ---

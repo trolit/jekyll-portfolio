@@ -12,7 +12,7 @@ date: 2018-06-10
 labels:
   - Unity 2D
   - .NET Framework
-summary: Small 2D project as a second attempt to Unity IDE to make game.
+summary: Small, uncompleted 2D game project as a second attempt to Unity IDE.
 ---
 
 <div class="ui centered grid">

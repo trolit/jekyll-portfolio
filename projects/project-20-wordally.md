@@ -13,7 +13,7 @@ labels:
   - HTML
   - SCSS
   - Bootstrap 4
-summary: Page that implements personal way of learning foreign language vocabulary(short learning intervals, better effects).
+summary: Tool that improves foreign language vocabulary learning from personal experience(short learning intervals, better effects).
 ---
 
 <table class="ui celled striped tablet stackable table">

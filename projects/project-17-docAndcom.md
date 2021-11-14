@@ -13,7 +13,7 @@ labels:
   - Xamarin.Forms
   - Android
   - SQLite
-summary: Mobile app that allows to document any "thing" under tag and then generate PDF files to easily compare photos.
+summary: Mobile app that allows to document any "thing" under tag and then generate PDF files to easily compare photos between themselves.
 ---
 
 <div class="ui centered grid">

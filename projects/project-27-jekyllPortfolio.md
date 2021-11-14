@@ -11,5 +11,5 @@ date: 2021-09-29
 labels:
   - Liquid
   - Semantic UI
-summary: Updated Jekyll portfolio template that was built from TechFolios template.
+summary: Updated personal Jekyll portfolio template that was previously created from TechFolios template in 2019.
 ---
