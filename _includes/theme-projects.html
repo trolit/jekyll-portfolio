@@ -3,13 +3,10 @@
     <div class="ui one column center aligned container">
       {% assign projects = site.pages | where: "type", "project" %}
       {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
-      {% for language in languages %}
-        {% if language == nil %}
-          {% continue %}
-        {% endif %}
 
+      {% for language in languages %}
         {% assign counter = 0 %}
-        
+
         {% for project in projects %}
           {% if project.language == language %}
             {% assign counter = counter | plus: 1 %}
@@ -28,7 +25,8 @@
               {% when "C#" %}
                 <span class="iconify icon-40" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
               {% else %}
-                Something bad happened!
+
+                <span class="iconify icon-40" data-icon="carbon:unknown" data-inline="false"></span>
             {% endcase %}
           </div>
           <div style="margin-top: 40% !important;">
@@ -38,24 +36,24 @@
       {% endfor %}
     </div>
   </div>
-  
+
   <div class="ui container mb-5 mt-5" >
     <div>
       {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
-  
+
       <!-- Take out unique years -->
       {% assign years = "" %}
 
       {% for page in project_pages %}
         {% assign test = test | append: page | date: "%Y" %}
-          {% if years contains test %} 
+          {% if years contains test %}
           {% else %}
             {% assign years = years | append: test | append: "," %}
           {% endif %}
       {% endfor %}
 
       {% assign yearsAsArray = years | split: ',' %}
-  
+
       <div class="ui accordion center aligned grid text-center">
         {% for year in yearsAsArray %}
           <span class="title title-{{ year }}" onclick="toggleAccordionContent('{{ year }}')" style="margin: 10px 15px">
@@ -64,7 +62,7 @@
               {% assign numberOfProjects = 0 %}
               {% for page in project_pages %}
                 {% assign projectYear = page.date | date: "%Y" %}
-                  {% if projectYear == year %} 
+                  {% if projectYear == year %}
                     {% assign numberOfProjects = numberOfProjects | plus: 1 %}
                   {% endif %}
               {% endfor %}
@@ -73,7 +71,7 @@
           </span>
         {% endfor %}
 
-        {% for year in yearsAsArray %}    
+        {% for year in yearsAsArray %}
         <div class="content accordion-{{ year }} w-100">
           <div class="ui stackable centered cards">
             {% for page in project_pages %}
@@ -92,8 +90,6 @@
     </div>
   </div>
 </div>
-
-
 
 <script>
   $(document).ready(function () {
@@ -124,7 +120,7 @@
     function updateAccordionElementByYear(year, action) {
       if (action === 'hide') {
         // remove active class from content
-        $(`.accordion-${year}`).each(function () { 
+        $(`.accordion-${year}`).each(function () {
           $(this).removeClass("active");
         });
 
