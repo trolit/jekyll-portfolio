@@ -7,6 +7,16 @@ $secondary-gradient: conic-gradient(from 270deg at 120% 90%, #eeeeee, #dddddd);
 $primary-color: #4b1248;
 $secondary-color: #f0c27b;
 
+/* ************************************* */
+/* Media */
+/* ************************************* */
+
+@media only screen and (max-width: 550px) {
+  .projects-margin {
+    margin-left: 3% !important;
+  }
+}
+
 @media only screen and (min-width: 1px) and (max-width: 600px) {
   .year-label-margin {
     margin: 10% 0 !important;
@@ -27,38 +37,41 @@ $secondary-color: #f0c27b;
   }
 }
 
+@media only screen and (min-width: 770px) and (max-width: 990px) {
+  .content-margin {
+    margin: 0 10% 0 20% !important;
+  }
+
+  .bottom-spacing {
+    margin: 0 10% !important;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .projects-counter {
     margin: 15% 0 10% 0 !important;
   }
 
   .content-margin {
-    margin: 0 5% 0 15% !important;
+    margin-left: 20% !important;
   }
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (min-width: 901px) and (max-width: 990px) {
   .bottom-spacing {
     margin-top: 10% !important;
     margin-bottom: 35% !important;
   }
+
+  .post-padding {
+    padding: 50px 50px !important;
+  }
 }
 
-.background-main-gradient {
-  background-image: $main-gradient !important;
-}
-
-.background-secondary-gradient {
-  background-image: $secondary-gradient !important;
-}
-
-.custom-color {
-  background-color: #996c2c !important;
-  color: white !important;
-}
-
-nav .active {
-  background-color: darken($secondary-color, 5%) !important;
+@media only screen and (min-width: 991px) {
+  .post-padding {
+    padding: 50px 150px !important;
+  }
 }
 
 @media only screen and (min-width: 901px) {
@@ -164,6 +177,23 @@ nav .active {
 }
 
 /* ************************************* */
+
+.background-main-gradient {
+  background-image: $main-gradient !important;
+}
+
+.background-secondary-gradient {
+  background-image: $secondary-gradient !important;
+}
+
+.custom-color {
+  background-color: #996c2c !important;
+  color: white !important;
+}
+
+nav .active {
+  background-color: darken($secondary-color, 5%) !important;
+}
 
 .year-label {
   position: absolute;

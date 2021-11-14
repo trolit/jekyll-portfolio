@@ -1,4 +1,4 @@
-<div class="content-margin" style="position: absolute; top: 15%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+<div class="content-margin" onselectstart="return false" ondragstart="return false" style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
   <div class="ui raised">
     <div class="ui one column center aligned container">
       {% assign projects = site.pages | where: "type", "project" %}
@@ -17,16 +17,15 @@
           <div class="value">
             {% case language %}
               {% when "Java" %}
-                <span class="iconify icon-40" data-icon="logos:java" data-inline="false"></span>
+                <span class="iconify icon-35" data-icon="logos:java" data-inline="false"></span>
               {% when "JavaScript" %}
-                <span class="iconify icon-40" data-icon="logos:javascript" data-inline="false"></span>
+                <span class="iconify icon-35" data-icon="logos:javascript" data-inline="false"></span>
               {% when "Kotlin" %}
-                <span class="iconify icon-40" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
+                <span class="iconify icon-35" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
               {% when "C#" %}
-                <span class="iconify icon-40" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
+                <span class="iconify icon-35" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
               {% else %}
-
-                <span class="iconify icon-40" data-icon="carbon:unknown" data-inline="false"></span>
+                <span class="iconify icon-35" data-icon="carbon:unknown" data-inline="false"></span>
             {% endcase %}
           </div>
           <div style="margin-top: 40% !important;">
@@ -73,7 +72,7 @@
 
         {% for year in yearsAsArray %}
         <div class="content accordion-{{ year }} w-100">
-          <div class="ui stackable centered cards">
+          <div class="ui stackable centered cards projects-margin">
             {% for page in project_pages %}
             {% unless page.draft %}
               {% assign pageYear = page.date | date: "%Y" %}
@@ -98,11 +97,21 @@
       duration: 1200,
       interval: 200
     })
+
+    const currentYear = new Date().getFullYear();
+
+    toggleAccordionContent(currentYear)
   });
 
   var lastYear;
 
   function toggleAccordionContent(year) {
+    const isExisting = $(`.title-${year}`).length;
+
+    if (!isExisting) {
+      return;
+    }
+
     if (year == lastYear) {
       updateAccordionElementByYear(lastYear, 'hide');
 
@@ -120,25 +129,17 @@
     function updateAccordionElementByYear(year, action) {
       if (action === 'hide') {
         // remove active class from content
-        $(`.accordion-${year}`).each(function () {
-          $(this).removeClass("active");
-        });
+        $(`.accordion-${year}`).removeClass("active");
 
         // remove active class from title
-        $(`.title-${year}`).each(function () {
-          $(this).removeClass("active");
-        });
+        $(`.title-${year}`).removeClass("active");
 
         // update directory icon
         $(`.title-${year} i`).removeClass("open");
       } else if (action === 'show') {
-        $(`.accordion-${year}`).each(function () {
-          $(this).addClass("active");
-        });
+        $(`.accordion-${year}`).addClass("active");
 
-        $(`.title-${year}`).each(function () {
-          $(this).addClass("active");
-        });
+        $(`.title-${year}`).addClass("active");
 
         $(`.title-${year} i`).addClass("open");
       }
