@@ -9,62 +9,50 @@
 
 <div class="ui left visible vertical inverted sidebar labeled icon menu" style="background-color: #333333;">
   <a href="{{ site.baseurl}}/" class="brand item">
-    <div class="text-center">
-      <span class="iconify icon icon-25" data-icon="radix-icons:home"></span>
-      <div class="mt-15">
-        <small>Home</small>
-      </div>
+    <i class="iconify icon icon-25" data-icon="radix-icons:home"></i>
+    <div class="mt-15">
+      <small>Home</small>
     </div>
   </a>
 
   {% if num_projects > 0 %}
   <a href="{{ site.baseurl }}/projects" class="brand {% if include.active == 'projects' %} active {% endif %} item">
-    <div class="text-center">
-      <span class="iconify icon icon-25" data-icon="clarity:library-line"></span>
-      <div class="mt-15">
-        <small>Projects ({{ num_projects }})</small>
-      </div>
+    <i class="iconify icon icon-25" data-icon="clarity:library-line"></i>
+    <div class="mt-15">
+      <small>Projects ({{ num_projects }})</small>
     </div>
   </a>
   {% endif %}
 
   {% if num_posts > 0 %}
   <a href="{{ site.baseurl }}/posts" class="brand {% if include.active == 'posts' %} active {% endif %} item">
-    <div class="text-center">
-      <span class="iconify icon icon-25" data-icon="fluent:note-28-regular"></span>
-      <div class="mt-15">
-        <small>Posts ({{ num_posts }})</small>
-      </div>
+    <i class="iconify icon icon-25" data-icon="fluent:note-28-regular"></i>
+    <div class="mt-15">
+      <small>Posts ({{ num_posts }})</small>
     </div>
   </a>
   {% endif %}
   
   <a href="{{ site.baseurl }}/music" class="brand {% if include.active == 'music' %} active {% endif %} item">
-    <div class="text-center">
-      <span class="iconify icon icon-25" data-icon="teenyicons:headphones-outline"></span>
-      <div class="mt-15">
-        <small>Tracks ({{ num_tracks }})</small>
-      </div>
+    <i class="iconify icon icon-25" data-icon="teenyicons:headphones-outline"></i>
+    <div class="mt-15">
+      <small>Tracks ({{ num_tracks }})</small>
     </div>
   </a>
 
   <div class="w-100" style="position: absolute; bottom: 0;">
     <a href="https://profile-summary-for-github.com/user/trolit" target="_blank" class="brand item">
-      <div class="text-center">
-        <span class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></span>
-        <span class="iconify icon icon-25" data-icon="ic:baseline-query-stats"></span>
-        <div class="mt-15">
-          <small>Summary</small>
-        </div>
+      <i class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></i>
+      <i class="iconify icon icon-25" data-icon="ic:baseline-query-stats"></i>
+      <div class="mt-15">
+        <small>Summary</small>
       </div>
     </a>
     <a href="https://github.com/trolit" target="_blank" class="brand item">
-      <div class="text-center">
-        <span class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></span>
-        <span class="iconify icon icon-25" data-icon="iconoir:github"></span>
-        <div class="1mt-15">
-          <small>GitHub</small>
-        </div>
+      <i class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></i>
+      <i class="iconify icon icon-25" data-icon="iconoir:github"></i>
+      <div class="1mt-15">
+        <small>GitHub</small>
       </div>
     </a>
   </div>
