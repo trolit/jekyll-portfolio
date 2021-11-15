@@ -130,7 +130,7 @@ $(document).ready(function () {
             }
           }
 
-          if (pickedGenres[0]) {
+          if (!isMatched && pickedGenres[0]) {
             isMatched = pickedGenres.includes(genre);
           }
         }
