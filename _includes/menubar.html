@@ -41,6 +41,9 @@
   </a>
 
   <div class="w-100" style="position: absolute; bottom: 0;">
+    <span id="themeModeIcon" class="iconify icon-30" data-icon="emojione:full-moon" onclick="changeBrightness('update'); this.blur();" style="position: absolute; color: white !important; cursor: pointer; top: -50px; left: 0; right: 0; margin: 0 auto">
+    </span>
+    
     <a href="https://profile-summary-for-github.com/user/trolit" target="_blank" class="brand item">
       <i class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></i>
       <i class="iconify icon icon-25" data-icon="ic:baseline-query-stats"></i>
@@ -48,6 +51,7 @@
         <small>Summary</small>
       </div>
     </a>
+
     <a href="https://github.com/trolit" target="_blank" class="brand item">
       <i class="iconify icon-15" data-icon="carbon:new-tab" style="position: absolute; top: 5px; right: 5px;"></i>
       <i class="iconify icon icon-25" data-icon="iconoir:github"></i>
@@ -57,3 +61,54 @@
     </a>
   </div>
 </div>
+
+<script>
+  let currentValue;
+
+  $(document).ready(function () {
+    currentValue = parseInt(localStorage.getItem('brightness'));
+
+    if (currentValue) {
+      changeBrightness('load', false);
+    } else {
+      currentValue = 100;
+    }
+  });
+
+  function changeBrightness(mode = 'update', withAnimation = true) {
+    if (withAnimation) {
+      triggerAnim('themeModeIcon', 'jiggle');
+    }
+
+    const projects = document.getElementsByClassName('content-margin');
+    const themeModeIcon = document.getElementById('themeModeIcon');
+
+    if (mode === 'update') {
+      currentValue = currentValue > 40 ? currentValue - 15 : 100;
+    }
+
+    switch(currentValue) {
+      case 100:
+        themeModeIcon.setAttribute('data-icon', 'emojione:full-moon');
+        break;
+      case 85:
+        themeModeIcon.setAttribute('data-icon', 'emojione:waxing-gibbous-moon');
+        break;
+      case 70:
+        themeModeIcon.setAttribute('data-icon', 'emojione:first-quarter-moon');
+        break;
+      case 55:
+        themeModeIcon.setAttribute('data-icon', 'emojione:waxing-crescent-moon');
+        break;
+      case 40:
+        themeModeIcon.setAttribute('data-icon', 'emojione:new-moon-face');
+        break;
+    }
+    
+    for (let i = 0; i < projects.length; i++) {
+      projects[i].style.filter = `brightness(${currentValue}%)`;
+    }
+
+    localStorage.setItem('brightness', currentValue);
+  }
+</script>

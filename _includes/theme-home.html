@@ -48,7 +48,7 @@
 
             <button class="small compact ui orange button font-spartan"
               onclick="redirect('{{ site.baseurl}}/projects/')" tabindex="0"
-              onmouseenter="triggerAnim('projectsIcon', 'tada')" onmouseleave="disableJiggleAnim('projectsIcon')">
+              onmouseenter="triggerAnim('projectsIcon', 'tada', 2000)" onmouseleave="disableJiggleAnim('projectsIcon')">
               redirect
             </button>
           </div>
@@ -78,13 +78,3 @@
 </div>
 
 <div id="lead-overlay" class="particles"></div>
-
-<script>
-  function triggerAnim(id, animation) {
-    $(`#${id}`)
-      .transition({
-        animation,
-        duration: 2000,
-      });
-  }
-</script>

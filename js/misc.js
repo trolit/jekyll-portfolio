@@ -157,6 +157,13 @@ function displayAllSongs() {
   }
 }
 
+function triggerAnim(id, animation, duration = 500) {
+  $(`#${id}`).transition({
+    animation,
+    duration,
+  });
+}
+
 function test() {
   if (document.images) {
     alert("kapp");
