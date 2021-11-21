@@ -42,14 +42,17 @@ $(document).ready(function () {
         return false;
       }
       var labels = $("#labelPicker").val();
+
       // loop through essays
       for (var i = 0; i < essays.length; i++) {
         var essayLabels = essays[i].getElementsByClassName("label");
         var array = [];
+
         // loop through essay labels
         for (var j = 0; j < essayLabels.length; j++) {
           array.push(essayLabels[j].textContent);
           var isMatched = false;
+
           // loop through picked labels
           for (var k = 0; k < labels.length; k++) {
             if (array.includes(labels[k]) == true) {
@@ -60,6 +63,7 @@ $(document).ready(function () {
             }
           }
         }
+
         if (isMatched == true) {
           essays[i].classList.remove("hide");
         } else {
@@ -164,12 +168,6 @@ function triggerAnim(id, animation, duration = 500) {
   });
 }
 
-function test() {
-  if (document.images) {
-    alert("kapp");
-  }
-}
-
 function showModalWithImage(container) {
   document.getElementById("imgPlaceholder").src = container.children[0].src;
   $(".tiny.modal").modal("show");
@@ -179,11 +177,14 @@ function copyToClipboard() {
   var copyText = document
     .getElementById("hexStringPlaceholder")
     .textContent.trim();
+
   var tempInput = document.createElement("input");
   tempInput.value = copyText;
+
   document.body.appendChild(tempInput);
   tempInput.select();
   tempInput.setSelectionRange(0, 99999); /*For mobile devices*/
+
   document.execCommand("copy");
   document.body.removeChild(tempInput);
 }
