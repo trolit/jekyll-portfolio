@@ -16,8 +16,14 @@
 
       <br/>
 
+      {% if include.page.language contains 'JavaScript' %} 
+        {% assign languageLabelTextColor = 'black' %} 
+      {% else %} 
+        {% assign languageLabelTextColor = 'white' %} 
+      {% endif %}
+
       {% if include.page.language %}
-        <span class="ui tiny {{ include.page.labelColor }} label">
+        <span class="ui tiny {{ include.page.labelColor }} label"  style="color: {{ languageLabelTextColor }} !important;">
           {{ include.page.language }}
         </span>
       {% endif %}
