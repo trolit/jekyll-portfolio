@@ -2,6 +2,16 @@
   href="{% if include.page.website %}{{ include.page.website }}{% else %}wut{% endif %}" target="_blank">
   <div class="content">
     <div class="card-header font-spartan">
+      <div class="ui small rounded bordered image">
+        {% if include.page.image %}
+          <img src="{{ site.baseurl }}/{{ include.page.image }}">
+        {% else %}
+          <img src="{{ site.baseurl }}/images/default.jpg">
+        {% endif %}
+      </div>
+
+      <br/><br/>
+
       {{ include.page.title }}
 
       <br/>
@@ -17,12 +27,7 @@
       </span>
     </div>
 
-    {% if include.page.image %}
-    <div class="ui tiny rounded bordered image"  style="padding-top: 20px;">
-      <img src="{{ site.baseurl }}/{{ include.page.image }}">
-    </div>
 
-    {% endif %}
 
     <div class="description" style="min-height: 100px; padding-top: 15px; ">
       <div class="font-balooChettan2" style="text-align: justify; font-size: 80%;">
