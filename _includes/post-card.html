@@ -1,6 +1,7 @@
 <a class="grey card myessay" href="{{ site.baseurl}}{{ include.page.url }}">
   <div class="content">
     <span class="header">{{ include.page.title }}</span>
+    
     <div class="meta">
       <span class="date font-balooChettan2">{{ include.page.date | date: "%d.%m.%Y" }}</span>
     </div>
@@ -14,7 +15,7 @@
   <div class="extra content">
     <div class="ui tiny labels font-balooChettan2">
       {% for label in include.page.labels %}
-      <div class="ui label">{{ label }}</div>
+        <div class="ui label">{{ label }}</div>
       {% endfor %}
     </div>
   </div>

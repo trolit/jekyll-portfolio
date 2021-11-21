@@ -4,12 +4,14 @@
     <div style="margin-bottom: 60px;">
       {% assign posts = site.pages | where: "type", "post" %}
       {% assign labels = '' | split: '' %}
+
       {% for post in posts %}
-      {% for label in post.labels %}
-      {% assign tmp = label | split: '_' %}
-      {% assign labels = labels | concat: tmp %}
+        {% for label in post.labels %}
+          {% assign tmp = label | split: '_' %}
+          {% assign labels = labels | concat: tmp %}
+        {% endfor %}
       {% endfor %}
-      {% endfor %}
+
       {% assign labels = labels | uniq | sort %}
 
       <select id="labelPicker" multiple="multiple" name="skills" class="ui fluid search dropdown font-balooChettan2">
@@ -23,10 +25,10 @@
 
     <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
       {% assign post_pages = site.pages | where: "type", "post" | sort: "date" | reverse %}
-      {% for page in post_pages %}
-      {% unless page.draft %}
-      {% include post-card.html page=page %}
-      {% endunless %}
+        {% for page in post_pages %}
+          {% unless page.draft %}
+          {% include post-card.html page=page %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
