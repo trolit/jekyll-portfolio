@@ -11,5 +11,5 @@ date: 2019-06-16
 labels:
   - Unity 3D
   - .NET Framework
-summary: Completed educational sandbox game introducing programming. 40 unique levels, 4 minigames and rich documentation :)
+summary: Complete, educational, sandbox game about programming with 40 unique levels, 4 minigames, installer and rich documentation :)
 ---
