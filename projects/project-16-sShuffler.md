@@ -11,5 +11,5 @@ date: 2020-04-12
 labels:
   - WinForms
   - .NET Framework
-summary: Small tool to quickly rearrange playlists and maintain format that is respected by car players.
+summary: Small, handy tool to give music playlists second life in format that is respected by car players.
 ---

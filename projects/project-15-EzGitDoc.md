@@ -12,5 +12,5 @@ labels:
   - HTML
   - MDBootstrap
   - LESS
-summary: WYSIWYG tool that gives ability to easily and quickly develop repositories documentation. First, stable version got released in 6 days.
+summary: WYSIWYG web tool to let users easily and quickly develop repos documentation. First, stable version got released in 6 days.
 ---

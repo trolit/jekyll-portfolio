@@ -12,5 +12,5 @@ labels:
   - Android
   - SQLite
   - YoutubeAPI
-summary: Mobile app that allows to add artists and playlists and let it query YouTube service to receive suggestion per day. Embeddable videos can be played through the app.
+summary: Mobile app to encourage listening to music everyday and give a chance of finding something that wasn't heard before.
 ---

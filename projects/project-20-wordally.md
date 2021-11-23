@@ -12,5 +12,5 @@ labels:
   - HTML
   - SCSS
   - Bootstrap 4
-summary: Tool that improves foreign language vocabulary learning from personal experience(short learning intervals, better effects).
+summary: Tiny web tool that offers foreign language vocabulary learning, based on personal experience (short intervals, better effects).
 ---

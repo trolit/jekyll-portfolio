@@ -11,5 +11,5 @@ labels:
   - JavaScript
   - Bootstrap
   - CSS
-summary: WWW page projects made for studies subject(pure HTML, pure HTML with CSS and lastly HTML, CSS and Bootstrap).
+summary: Three WWW page projects made for studies(pure HTML, pure HTML with CSS and lastly - HTML, CSS and Bootstrap).
 ---

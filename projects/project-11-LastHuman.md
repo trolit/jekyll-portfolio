@@ -11,5 +11,5 @@ date: 2018-06-10
 labels:
   - Unity 2D
   - .NET Framework
-summary: Small 2D game project as a second attempt to Unity IDE.
+summary: Small 2D game project as personal second attempt to meet Unity IDE.
 ---

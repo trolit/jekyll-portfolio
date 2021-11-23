@@ -10,5 +10,5 @@ website: https://github.com/trolit/Kryptosystemy/tree/master/6.%20Enigma%20I#pro
 date: 2018-01-07
 labels:
   - .NET Framework
-summary: Simple console app that attempts to work as three-rotor enigma made for science club. Versions before 2.0 doesn't count :D
+summary: Attempt to simulate three-rotor enigma as project for science club. Versions before 2.0 doesn't count :D
 ---

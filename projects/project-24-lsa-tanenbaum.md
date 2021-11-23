@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/gsa-cover.png
+image: images/lsa-cover.png
 title: Leader selection algorithm
 labelColor: blue
 language: C#
@@ -11,5 +11,5 @@ date: 2021-04-25
 labels:
   - WinForms
   - Distributed Systems
-summary: Election algorithm simulation(ring topology, Andrew Tanenbaum's variant) using .NET sockets mechanism and UDP protocol.
+summary: Election algorithm simulation in ring topology (Andrew Tanenbaum's variant) using .NET sockets mechanism and UDP protocol.
 ---

@@ -1,7 +1,6 @@
 ---
 layout: project
 type: project
-image: images/gsa-cover.png
 title: Grocery Store (frontend)
 labelColor: yellow
 language: JavaScript
@@ -12,5 +11,5 @@ labels:
   - Angular 10
   - RxJS
   - Angular Material
-summary: Grocery Store API frontend implementation introducing products CRUD, sessionStorage, shopping cart, sorting and filtering.
+summary: Grocery Store API frontend demonstration including sessionStorage, shopping cart, sorting and filtering.
 ---

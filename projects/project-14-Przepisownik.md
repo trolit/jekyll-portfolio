@@ -11,5 +11,5 @@ date: 2016-07-19
 labels:
   - HTML
   - CSS
-summary: Page that stores culinary recipes that got my attention. Project was made to get familiar with gridster library and have mobile recipes book.
+summary: Page storing culinary recipes. Project was made to get familiar with <strong>gridster</strong> library and release web recipe book.
 ---

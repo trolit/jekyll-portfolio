@@ -1,8 +1,7 @@
 ---
 layout: project
 type: project
-image: images/gsa-cover.png
-title: Grocery Store (API)
+title: Grocery Store (backend)
 labelColor: red
 language: Java
 website: https://github.com/trolit/grocery-store-themed-API#-grocery-store-api-v122
@@ -12,5 +11,5 @@ labels:
   - Maven
   - H2
   - Spring Boot 2.3.4
-summary: Grocery store API implementation in Java (JDK 14) that uses Spring Boot, JPA, Hibernate, Querydsl.
+summary: Grocery store API implementation in Java (JDK 14) using Spring Boot, JPA, Hibernate, Querydsl.
 ---

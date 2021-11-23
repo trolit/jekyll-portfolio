@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/gsa-cover.png
+image: images/tonodedo-cover.png
 title: tonodedo
 labelColor: yellow
 language: JavaScript
@@ -12,6 +12,6 @@ labels:
   - Node.js
   - React 17
   - MySQL
-  - Mocha
-summary: Web application that stores users notes.
+  - JWT
+summary: First approach to React with Node.js as web application for storing user's notes with some unit tests done in Mocha.
 ---

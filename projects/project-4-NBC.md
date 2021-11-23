@@ -11,5 +11,5 @@ date: 2019-05-19
 labels:
   - .NET Framework
   - CSP2019
-summary: Naive Bayes Classifier efficency test when training set can contain duplicates(Bootstrap) or consists only of unique objects(Monte Carlo).
+summary: Naive Bayes Classifier efficency test when TRN set contains duplicates (Bootstrap) vs TRN containing unique objects only (Monte Carlo).
 ---

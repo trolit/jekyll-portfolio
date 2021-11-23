@@ -12,5 +12,5 @@ labels:
   - Unity 3D
   - uNet
   - .NET Framework
-summary: Approach to Unity uNet technology(currently deprecated) while expanding FPS sample game provided by youtube content creator, Brackeys.
+summary: Meet Unity uNet technology (deprecated) while expanding FPS sample provided by Brackeys.
 ---
