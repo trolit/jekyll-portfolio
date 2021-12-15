@@ -1,4 +1,5 @@
-<div class="content-margin" style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+<div class="content-margin"
+  style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
   <div class="ui container">
     <!-- Label picker -->
     <div style="margin-bottom: 60px;">
@@ -6,10 +7,10 @@
       {% assign labels = '' | split: '' %}
 
       {% for post in posts %}
-        {% for label in post.labels %}
-          {% assign tmp = label | split: '_' %}
-          {% assign labels = labels | concat: tmp %}
-        {% endfor %}
+      {% for label in post.labels %}
+      {% assign tmp = label | split: '_' %}
+      {% assign labels = labels | concat: tmp %}
+      {% endfor %}
       {% endfor %}
 
       {% assign labels = labels | uniq | sort %}
@@ -18,17 +19,17 @@
         <option value="">Filter posts by label(s)</option>
 
         {% for label in labels %}
-          <option value="{{label}}">{{ label }}</option>
+        <option value="{{label}}">{{ label }}</option>
         {% endfor %}
       </select>
     </div>
 
     <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
       {% assign post_pages = site.pages | where: "type", "post" | sort: "date" | reverse %}
-        {% for page in post_pages %}
-          {% unless page.draft %}
-          {% include post-card.html page=page %}
-        {% endunless %}
+      {% for page in post_pages %}
+      {% unless page.draft %}
+      {% include post-card.html page=page %}
+      {% endunless %}
       {% endfor %}
     </div>
   </div>
