@@ -1,0 +1,133 @@
+<div class="ui centered grid">
+    <div class="sixteen wide column">
+        <img class="ui bordered image img-center" src="../images/oval.svg" data-echo="../posts/images/22_05_2020_1.png">
+    </div>
+</div>
+
+<p style="font-size: 12px; text-align: center; margin-top: 10px;">
+    <a href="https://shields.io/" target="_blank">shields.io</a>
+</p>
+
+<br />
+
+<p class="justify-text stylize-text">
+    Zacznijmy od tego, że Prettier w połączeniu z ESLint powoduje czasami niemały zgrzyt. Nawet jeżeli dorzucimy
+    zależności, które mają pomagać im ze sobą współpracować poprzez np. wyłączenie konfliktujących zasad. Z tego
+    powodu podejrzewałem, że mój przypadek dotyczy współdziałania tych dwóch narzędzi. Zmieniałem wersje ESLint,
+    konfiguracje, dodawałem i usuwałem zależności i bez poprawy. Delikwentem okazał się być sam w sobie Prettier.
+</p>
+
+<p class="justify-text stylize-text">
+    O co chodziło? Przy formatowaniu szablonu komponentu, Prettier narzucał formatowanie znaczników, które nie
+    przekroczyły limitu znaków ustawionego w konfiguracji (80) do pojedynczej linii. Celem było zmuszenie Prettiera,
+    żeby narzucał poprawne formatowanie lub dawał możliwość wyboru <strong>bez zmiany pliku konfiguracyjnego</strong>.
+    Mamy znacznik <strong>label</strong> i następujące sytuacje:
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <!-- oczekiwane formatowanie (dobrze) -->
+    <label for="search">
+        Search
+    </label>
+
+    <!-- uzyskiwane formatowanie (źle) -->
+    <label for="search"> Search </label>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    Początkowo dwie osoby podpowiadały mi, że wina może leżeć po stronie ustawień IDE VSC. Udostępniono mi dwie
+    różne konfiguracje, żadna z nich nie rozwiązała problemu. W między czasie poprosiłem osobę, która bezpośrednio
+    brała udział przy projekcie i potwierdziła przypuszczenia. Dostałem również podobny feedback od osoby
+    podejrzewającej konfiguracje środowiska po tym jak to sprawdziła własnoręcznie.
+</p>
+
+<p class="justify-text stylize-text">
+    Po przetestowaniu wielu różnych ustawień zerknąłem na starszą wersję projektu, żeby porównać Prettiera.
+    Wykorzystywano wtedy <strong>prettier^1</strong> a w najnowszym dodaliśmy <strong>prettier^2</strong>. Symbol ^
+    oznacza pobranie najnowszej wersji, <strong>ale z uwzględnieniem, że ma to być najnowsza ze wskazanej</strong>.
+    Okazało się, że po powrocie do <strong>prettier^1</strong> problem został rozwiązany! Znaczniki, które nie
+    przekraczały limitu znaków (po ustawieniu w jednej linii) można było ustawić dwojako tzn. do jednej linii lub
+    rozłożone. Wynika więc z tego, że w nowszej wersji Prettiera zrezygnowano z tej dowolności.
+</p>
+
+<p class="justify-text stylize-text">
+    Z czego to wynika? Mam swoje podejrzenia, które nie są potwierdzone, ale wydają się sensowne :D. Wróćmy
+    do przykładu z <strong>label</strong> i trochę go zmodyfikujmy żeby to zobrazować.
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <b-container fluid>
+        <b-row>
+            <b-col>
+                <!-- label1 -->
+                <label for="search">
+                    Search
+                </label>
+
+                <!-- label2 -->
+                <label for="search"> Search </label>
+            </b-col>
+        </b-row>
+    </b-container>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    <em>Label1</em> składa się z 90 znaków (wliczając wcięcia) natomiast <em>label2</em> z 52. Mogłoby się więc wydawać,
+    że Prettier powinien zostawić formatowanie <em>label1</em> bo rozkładajac ten znacznik na 3 linie, przekroczyliśmy
+    ustawiony w konfiguracji odgórny limit (80), ale tak się nie dzieje dla <strong>prettier^2</strong>.
+</p>
+
+<p class="justify-text stylize-text">
+    <em>Label1</em> nadal zostanie sformatowanie do postaci <em>label2</em>. Dlaczego tak? Odnoszę wrażenie, że w
+    <strong>prettier^2</strong> zmieniono podejście do liczenia odstępów wewnątrz znaczników. Jeżeli spojrzymy ponownie
+    na <em>label1</em> a dokładnie na siódmy wiersz
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <b-container fluid>
+        <b-row>
+            <b-col>
+                <!-- label1 -->
+                <label for="search">
+                    Search
+                </label>
+            </b-col>
+        </b-row>
+    </b-container>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    to 20 spacji (4 tabulatory) od początku dokumentu do wyrazu Search nie są brane pod uwagę tzn. traktuje te odstępy
+    jakby był jeden znak odstępu przed i po wyrazie Search, przez co dla <strong>prettier^2</strong>, <em>label1</em>
+    nie składa się z 90 znaków tylko 70, a skoro nie przekroczono limitu to można sformatować do jednej linii!
+</p>
+
+<p class="justify-text stylize-text">
+    W momencie kiedy wrócimy do <strong>prettier^1</strong> to odstępy wewnątrz znacznika &lt;label&gt; będą poprawnie
+    uwzględniane (poprawnie w kontekście postawionego celu) i będziemy mogli zapisać &lt;label&gt; dwojako, w postaci
+    <em>label1</em> lub <em>label2</em> 🤠👍
+</p>
