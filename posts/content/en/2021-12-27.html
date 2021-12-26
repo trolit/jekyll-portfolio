@@ -1,0 +1,117 @@
+<p class="justify-text stylize-text">
+    Let's start from statement that Prettier combined with ESLint causes sometimes problems. Even if we add dependencies
+    that are supposed to help them work together by e.g. disabling conflicting rules. Because of that I've thought that
+    my case concerns interaction of these tools. I've changed ESLint version, configuration and it did not help. It
+    turned out that Prettier is the source of the problem.
+</p>
+
+<p class="justify-text stylize-text">
+    What was it about? When formatting component's template, Prettier forced oneline formatting on tags that exceeded
+    length limit (80) while spread. The goal was to force Prettier to apply proper formatting or let developer choose
+    <strong>without changing config file</strong>. Let's say we have <strong>label</strong> tag and results:
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <!-- expected formatting (good) -->
+    <label for="search">
+        Search
+    </label>
+
+    <!-- received formatting (wrong) -->
+    <label for="search"> Search </label>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    Initially, two people told me that the reason behind that might be in my IDE VSC settings. I was given two
+    different configurations, none of them solved the problem.
+</p>
+
+<p class="justify-text stylize-text">
+    After testing many different settings, I've looked at older project version to compare Prettier. There was used
+    <strong>prettier^1</strong> and in newest one we've moved to <strong>prettier^2</strong>. ^ symbol means newest
+    version <strong>but taking into account that major version needs to match</strong>. It turned out that after
+    returning to <strong>prettier^1</strong> problem was solved! Tags that did not exceed single line length limit
+    could be set in two ways.
+</p>
+
+<p class="justify-text stylize-text">
+    What it comes from? I have my assumptions that are not confirmed but seems reasonable :D. Let's return
+    to the <strong>label</strong> example and slightly modify it to picture the reason.
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <b-container fluid>
+        <b-row>
+            <b-col>
+                <!-- label1 -->
+                <label for="search">
+                    Search
+                </label>
+
+                <!-- label2 -->
+                <label for="search"> Search </label>
+            </b-col>
+        </b-row>
+    </b-container>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    <em>Label1</em> has 90 characters (including indentations) while <em>label2</em> 52. It might seem that Prettier
+    should leave <em>label1</em> formatting because when spreading that tag among 3 lines we've exceeded row length
+    limit (80) but it does not work like that for <strong>prettier^2</strong>.
+</p>
+
+<p class="justify-text stylize-text">
+    <em>Label1</em> will still be formatted to <em>label2</em>. Why? I have the impression that in
+    <strong>prettier^2</strong> there was change in approach to indentation counting inside tags. If
+    we take a look again at <em>label1</em>, exactly on 7th line
+</p>
+
+<br />
+
+{% highlight vue linenos %}
+
+<template>
+    <b-container fluid>
+        <b-row>
+            <b-col>
+                <!-- label1 -->
+                <label for="search">
+                    Search
+                </label>
+            </b-col>
+        </b-row>
+    </b-container>
+</template>
+
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    20 spaces (4 tabs) between document start and Search word are not taken into account. Prettier treats that
+    indentation like it would be single whitespace character and because of that <em>label1</em> has 70 characters
+    instead of 90 which means that it didn't exceed limit and can be formatted into single line!
+</p>
+
+<p class="justify-text stylize-text">
+    Once we return to <strong>prettier^1</strong>, indentations inside &lt;label&gt; tag will be correctly taken into
+    account (correctly in the context of set goal) and we will be able to write down &lt;label&gt; in two ways:
+    <em>label1</em> or <em>label2</em> 🤠👍
+</p>
