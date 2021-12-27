@@ -1,20 +1,19 @@
 <div class="ui centered grid">
     <div class="sixteen wide column">
-        <img class="ui bordered image img-center" src="../images/oval.svg" data-echo="../posts/images/22_05_2020_1.png">
+        <img class="ui bordered image img-center" src="../images/oval.svg" data-echo="../posts/images/29_12_2021_1.png">
     </div>
 </div>
 
 <p style="font-size: 12px; text-align: center; margin-top: 10px;">
-    <a href="https://shields.io/" target="_blank">shields.io</a>
+    <a href="https://www.meme-arsenal.com/en/create/meme/2728383" target="_blank">meme-arsenal</a>
 </p>
 
 <br />
 
 <p class="justify-text stylize-text">
     Pomyłki przy pracy z gitem zdarzają się dosyć często. Można np. zrobić commita na niewłaściwy mail. Sytuacja ta
-    staje się problematyczna gdy zrobimy push do repozytorium. Taki commit da radę zmienić, ale jeżeli wcześniej się
-    tego nie robiło to zdobycie informacji i poprawka może trochę zająć (chyba, że skorzysta się z tego rozwiązania t.j.
-    zastosowania <strong>git rebase</strong> oraz <strong>commit</strong> z flagą <strong>amend</strong>) :P
+    staje się problematyczna gdy zrobimy push do repozytorium. Taki commit da radę zmienić. Poniżej w jaki sposób to
+    zrobić korzystając z <strong>git rebase</strong> oraz <strong>commit</strong> z flagą <strong>amend</strong>.
 </p>
 
 <p class="justify-text stylize-text">
@@ -23,23 +22,19 @@
 
 <ol class="stylize-text">
     <li>Przechodzimy do brancha, którego commity chcemy zmienić.</li>
-    <li>Sprawdzamy o jaką wartość <strong>Z</strong> musimy się cofnąć, żeby się do nich dostać.</li>
+    <li>Sprawdzamy o jaką wartość <strong>Z (Z = 1, 2, ..., n + 1)</strong> musimy się cofnąć, żeby się do nich dostać.
+    </li>
     <li>Wykonujemy polecenie:
-
-        <br />
-
-        {% highlight bash linenos %} git rebase -i HEAD~Z // (Z = 1, 2, ..., n + 1) {% endhighlight %}
-
-        <br />
-
+        {% highlight bash linenos %} git rebase -i HEAD~Z {% endhighlight %}
     </li>
     <li>Dostajemy ostatnie <strong>Z</strong> commitów w edytorze.</li>
     <li>Przechodzimy na stronę repo -> brancha -> otwieramy listę commitów.</li>
     <li>Porównujemy identyfikatory commitów. Tym, które potrzebujemy zmodyfikować zmieniamy <strong>pick</strong> na
-        <strong>edit</strong> (jeżeli korzystasz z edytora vi wciśnij <key>A</key>, żeby przejść do trybu edycji).
+        <strong>edit</strong> (w edytorze vi wciśnij <key>A</key>, żeby przejść do trybu edycji).
     </li>
     <li> Wychodzimy z trybu wprowadzania danych (w vi -> <key>Escape</key>).</li>
-    <li> Zapisujemy plik i wychodzimy z edytora. Żeby to zrobić w vi, wpisz <strong>:wq!</strong> i naciśniij Enter</li>
+    <li> Zapisujemy plik i wychodzimy z edytora. Żeby to zrobić w vi, wpisz <strong>:wq!</strong> i naciśniij Enter.
+    </li>
     <li>
         <div>
             Modyfikujemy <strong>--author</strong> w poniższym poleceniu i wykonujemy:
@@ -89,9 +84,17 @@
     Źródła:
 <div>
     <ul>
-        <li>1</li>
-        <li>2</li>
+        <li>
+            <a href="http://treeindev.net/article/git-change-commit-name" target="_blank">
+                Git - change commit name
+            </a>
+        </li>
+
+        <li>
+            <a href="https://gist.github.com/robertpainsi/2c42c15f1ce6dab03a0675348edd4e2c" target="_blank">
+                How to reopen a pull-request after a force-push?
+            </a>
+        </li>
     </ul>
 </div>
-
 </p>
