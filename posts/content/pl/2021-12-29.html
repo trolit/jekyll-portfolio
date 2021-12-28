@@ -1,6 +1,7 @@
 <div class="ui centered grid">
     <div class="sixteen wide column">
-        <img class="ui bordered image img-center" src="../images/oval.svg" data-echo="../posts/images/29_12_2021_1.png">
+        <img class="ui bordered big image img-center" src="../images/oval.svg"
+            data-echo="../posts/images/29_12_2021_1.png">
     </div>
 </div>
 
@@ -12,29 +13,48 @@
 
 <p class="justify-text stylize-text">
     Pomyłki przy pracy z gitem zdarzają się dosyć często. Można np. zrobić commita na niewłaściwy mail. Sytuacja ta
-    staje się problematyczna gdy zrobimy push do repozytorium. Taki commit da radę zmienić. Poniżej w jaki sposób to
-    zrobić korzystając z <strong>git rebase</strong> oraz <strong>commit</strong> z flagą <strong>amend</strong>.
-</p>
-
-<p class="justify-text stylize-text">
-    Co należy zrobić?
+    staje się problematyczna, gdy zorientujemy się po wykonaniu push. Taki commit da radę zmienić. Poniżej przykład
+    jak to zrobić korzystając z <strong>git rebase</strong> oraz <strong>commit</strong> z flagą <strong>amend</strong>.
+    Są oczywiście inne podejścia (np. wprowadzanie komend bezpośrednio pod commitami w edytorze), ale ten okazał się
+    dla mnie
 </p>
 
 <ol class="stylize-text">
-    <li>Przechodzimy do brancha, którego commity chcemy zmienić.</li>
-    <li>Sprawdzamy o jaką wartość <strong>Z (Z = 1, 2, ..., n + 1)</strong> musimy się cofnąć, żeby się do nich dostać.
+    <li>
+        Przechodzimy do brancha, którego commity chcemy zmienić.
     </li>
-    <li>Wykonujemy polecenie:
+
+    <li>
+        Sprawdzamy o jaką wartość <strong>Z (Z = 1, 2, ..., n + 1)</strong> musimy się cofnąć, żeby się do nich dostać.
+    </li>
+
+    <li>
+        Dla danego <strong>Z</strong> wykonujemy polecenie:
         {% highlight bash linenos %} git rebase -i HEAD~Z {% endhighlight %}
     </li>
-    <li>Dostajemy ostatnie <strong>Z</strong> commitów w edytorze.</li>
-    <li>Przechodzimy na stronę repo -> brancha -> otwieramy listę commitów.</li>
-    <li>Porównujemy identyfikatory commitów. Tym, które potrzebujemy zmodyfikować zmieniamy <strong>pick</strong> na
-        <strong>edit</strong> (w edytorze vi wciśnij <key>A</key>, żeby przejść do trybu edycji).
+
+    <li>
+        Dostajemy ostatnie <strong>Z</strong> commitów w edytorze.
     </li>
-    <li> Wychodzimy z trybu wprowadzania danych (w vi -> <key>Escape</key>).</li>
-    <li> Zapisujemy plik i wychodzimy z edytora. Żeby to zrobić w vi, wpisz <strong>:wq!</strong> i naciśniij Enter.
+
+    <li>
+        Przechodzimy na stronę repo i otwieramy listę commitów brancha.
     </li>
+
+    <li>
+        Porównujemy identyfikatory commitów. Tym, które potrzebujemy zmodyfikować, zmieniamy wartość
+        <strong>pick</strong> na <strong>edit</strong> (w edytorze vi wciśnij <key>A</key>, żeby
+        przejść do trybu edycji).
+    </li>
+
+    <li>
+        Wychodzimy z trybu wprowadzania danych (w vi -> <key>Escape</key>).
+    </li>
+
+    <li>
+        Zapisujemy plik i wychodzimy z edytora (w vi, wpisz <strong>:wq!</strong> i naciśnij <key>Enter</key>).
+    </li>
+
     <li>
         <div>
             Modyfikujemy <strong>--author</strong> w poniższym poleceniu i wykonujemy:
@@ -50,10 +70,13 @@
         </div>
 
         <div>
-            do moment aż nie ukaże się: <em>Successfully rebased and updated...</em>
+            <strong>do moment aż nie ukaże się:</strong> <em>Successfully rebased and updated...</em>
 
-            W między czasie mogą przeszkodzić konflikty oraz ekrany proszące o podanie komentarzy dla zmienianych
-            commitów.
+            <br /><br />
+
+            W między czasie mogą przeszkodzić konflikty (jeżeli owe wystąpiły do wskazanego commita) oraz ekrany
+            proszące o uzupełnienie komentarzy dla zmienianych commitów. Przyglądaj się komunikatom z rebase,
+            żeby móc przejść ten etap.
         </div>
     </li>
 
@@ -66,19 +89,26 @@
             {% highlight bash linenos %} git push -f {% endhighlight %}
         </div>
 
-        <div>
+        <div class="justify-text">
             Uwaga: Jeżeli zmiany dotyczą zamkniętego, niezmergowanego PRa, warto przed tym otworzyć ponownie PR
-            &lt;jeżeli
-            jest zamknięty&gt;. W przeciwnym wypadku będziemy musieli zrobić TEN zabieg, żeby móc otworzyć PR i żeby
-            zmiany
-            z lokalnego brancha od którego jest PR zostały uwzględnione w tym logu PRa.
+            &lt;jeżeli jest zamknięty&gt;. W przeciwnym wypadku będziemy musieli zrobić dodatkowy
+            <a href="https://gist.github.com/robertpainsi/2c42c15f1ce6dab03a0675348edd4e2c" target="_blank">
+                zabieg
+            </a> żeby móc otworzyć PR i żeby zmiany z lokalnego brancha od którego jest PR zostały
+            uwzględnione w tym logu PRa.
         </div>
     </li>
 
     <li>
-        Gotowe :EZ:
+        (∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. *
+    </li>
+
+    <li>
+        Gotowe.
     </li>
 </ol>
+
+<hr class="mt-5" />
 
 <p class="justify-text stylize-text">
     Źródła:
