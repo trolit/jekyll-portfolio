@@ -3,17 +3,17 @@
     <span class="header">{{ include.page.title }}</span>
     
     <div class="meta">
-      <span class="date font-balooChettan2">{{ include.page.date | date: "%d.%m.%Y" }}</span>
+      <span class="date font-poppins">{{ include.page.date | date: "%d.%m.%Y" }}</span>
     </div>
 
-    <div class="description center aligned font-balooChettan2" style="font-size: 13px;">
+    <div class="description center aligned font-poppins" style="font-size: 13px;">
       <!-- {{ include.page.content | markdownify | strip_html | truncatewords: 40 }} -->
       {{ include.page.summary }}
     </div>
   </div>
 
   <div class="extra content">
-    <div class="ui tiny labels font-balooChettan2">
+    <div class="ui tiny labels font-poppins">
       {% for label in include.page.labels %}
         <div class="ui label">{{ label }}</div>
       {% endfor %}
