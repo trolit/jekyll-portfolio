@@ -11,6 +11,18 @@ $secondary-color: #f0c27b;
 /* Media */
 /* ************************************* */
 
+@media only screen and (max-height: 367px) {
+  #gitHubAnchor {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 435px) {
+  #themeModeIcon {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 550px) {
   .projects-margin {
     margin-left: 3% !important;
