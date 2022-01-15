@@ -1,0 +1,110 @@
+<p class="justify-text stylize-text">
+Imagine situation where you have some currency in game which can be spent on some elements. Instead of spending 10
+minutes in IDE collecting required amount, you can click button that triggers <em>AddMoney()</em> and done. You can
+of course use console and type command but in that case I think that button is more effective.
+</p>
+
+<p class="justify-text stylize-text">
+    Different situation: you want to check whether all books give valid notification after they are read. You can
+    get each book by:
+</p>
+
+<ul>
+    <li>wandering around the world and spending currency on it,</li>
+    <li>prepare special command to dev console that will unlock all at once,</li>
+</ul>
+
+<p class="justify-text stylize-text">
+    or... simply adding an button. Setting up buttons under scripts are especially useful in the final stages of project
+    checking or verifying if scripts are working as expected. Under button you can attach not only operation that
+    manipulates current state of the game (adding funds, skill points, objects), but also the one that debugs situation. 
+    As a result it reduces necessity to type in <em>Debug.Log</em> in particular place and after verification commenting
+    or removing it. It may happen again that we will need to check same script and be forced to add or uncomment
+    instructions outputting information to console so alternative with buttons sounds very useful. 
+</p>
+
+<p class="justify-text stylize-text">
+    Unity does not include that feature by default but it allows to modify IDE. I've used ready solution shared at GitHub,
+    <em>EasyButtons</em>. Buttons are rendered within special attribute placed above functions, <strong>[Button]</strong>.
+    If we setup functions and decorate them with mentioned attribute, we will get following effect in Unity's Inspector:
+</p>
+
+<br />
+
+<img class="ui image normal centered" src="../posts/images/21_03_2020_1.PNG">
+
+<br />
+
+<p class="justify-text stylize-text">
+    In example above, I use first button to verify current minigame state and second one to force win, regardless of the 
+    state of the game. The implementations are as follows:
+</p>
+
+<br />
+
+{% highlight cs linenos %}
+using EasyButtons;
+
+[Button]
+public void CheckCurrentGameState()
+{
+    Debug.Log($"<b>{PuzzleStatus}</b> out of <b>{_puzzleAmount}</b> blocks are placed correctly.");
+}
+{% endhighlight %}
+
+<br />
+
+{% highlight cs linenos %}
+using EasyButtons;
+
+[Button]
+public void TriggerWinManually()
+{
+    TriggerWin();
+}
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    Those examples are from <a href="https://github.com/trolit/projectZero/blob/master/projectZero/Assets/Scripts/Minigame_Puzzle/PuzzleManager.cs" 
+    target="_blank">that</a> script of Project Zero game. You may notice that these functions do not have any parameters. In <em>EasyButtons</em>
+    you can't decorate functions with <strong>[Button]</strong> that have parameters or they won't appear in the Inspector. At the first look
+    it might look as an obstacle. But if we want to pass some data, we can work around it by calling another function inside decorated method 
+    that can already have parameters. Simple example:
+</p>
+
+<br />
+
+{% highlight cs linenos %}
+using EasyButtons;
+
+[Header("Teleport To Destination Button Data")]
+[SerializeField]
+private float _X;
+
+[SerializeField]
+private float _Y;
+
+[SerializeField]
+private float _Z;
+
+[Button]
+public void TeleportToDestination()
+{
+    SetCharacterPosition(_X, _Y, _Z);
+}
+{% endhighlight %}
+
+<br />
+
+<p class="justify-text stylize-text">
+    So you can deal with it easily and don't have to modify <em>EasyButtons</em> logic. Using <em>EasyButtons</em> is that easy.
+    You just need to add it to your project, import dependencies and decorate parameterless function with <strong>[Button]</strong>
+    attribute. That's all!
+</p>
+
+<p class="justify-text stylize-text">
+    If you are interested in trying out <em>EasyButtons</em>, you can find the repository at 
+    <a href="https://github.com/madsbangh/EasyButtons#easy-buttons-for-the-unity-default-inspector" target="_blank">this</a> link.
+</p>

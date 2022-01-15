@@ -19,7 +19,7 @@
     albo.. stworzyć odpowiedni przycisk. Przygotowanie pod skryptami przycisków jest szczególnie przydatne w końcowych
     etapach sprawdzania projektu lub weryfikacji poprawności działania danego skryptu. Pod taki przycisk podpiąć można
     nie tylko jakąś operację manipulującą bieżącym stanem gry(dodanie środków, punktów umiejętności, obiektów), ale
-    również sprawdzającą obecną sytuację (status). Redukuje to potrzebę wpisywania <em>Debug.Log</em> w konkretnym
+    również sprawdzającą określoną sytuację (status). Redukuje to potrzebę wpisywania <em>Debug.Log</em> w konkretnym
     miejscu kodu, a po skończonej weryfikacji, jego komentowania lub kasowania. Może się zdarzyć, że ponownie zajdzie
     potrzeba sprawdzenia działania tego samego skryptu i znowu będziemy zmuszeni dodawać lub odkomentowywać polecenia
     wypisujące informacje do konsoli, więc alternatywa z przyciskiem jest bardzo użyteczna.
@@ -39,7 +39,7 @@
 <br />
 
 <p class="justify-text stylize-text">
-    W powyższym przykładzie, pierwszy przycisk służy mi do weryfikacji aktualnego stanu minigry, a drugi do uruchomienia
+    W powyższym przykładzie, pierwszy przycisk służy mi do weryfikacji aktualnego stanu minigry, a drugi do uruchomienia 
     zakończenia poziomu, niezależnie od stanu rozgrywki. Implementacje wyglądają następująco:
 </p>
 
@@ -70,11 +70,12 @@ public void TriggerWinManually()
 <br />
 
 <p class="justify-text stylize-text">
-    W oczy rzucić Ci się może to, że funkcje nie mają zdefiniowanych żadnych parametrów. W rozwiązaniu
-    <em>EasyButtons</em> nie można opatrzyć atrybutem <strong>[Button]</strong> funkcji z parametrami, bo przycisk nie
-    będzie dostępny w inspektorze. Na pierwszy rzut można uznać to za przeszkodę. Jeżeli jednak zależy nam na możliwości
-    przekazania argumentów, możemy to obejść wywołując wewnątrz metody kolejną funkcję, która już bedzie mogła posiadać
-    parametry. Prosty przykład:
+    Są to przykłady z <a href="https://github.com/trolit/projectZero/blob/master/projectZero/Assets/Scripts/Minigame_Puzzle/PuzzleManager.cs" 
+    target="_blank">tego</a> skryptu gry Project Zero. W oczy rzucić Ci się może to, że funkcje nie mają zdefiniowanych 
+    żadnych parametrów. W rozwiązaniu <em>EasyButtons</em> nie można opatrzyć atrybutem <strong>[Button]</strong> funkcji 
+    z parametrami, bo przycisk nie będzie dostępny w inspektorze. Na pierwszy rzut można uznać to za przeszkodę. Jeżeli 
+    jednak zależy nam na możliwości przekazania argumentów, możemy to obejść wywołując wewnątrz metody kolejną funkcję, 
+    która już bedzie mogła posiadać parametry. Prosty przykład:
 </p>
 
 <br />
@@ -109,6 +110,6 @@ public void TeleportToDestination()
 </p>
 
 <p class="justify-text stylize-text">
-    Repozytorium znajdziesz pod <a href="https://github.com/madsbangh/EasyButtons#easy-buttons-for-the-unity-default-inspector"
-    target="_blank">tym</a> linkiem.
+    Jeżeli chciałbyś/chciałabyś wypróbować <em>EasyButtons</em>, repozytorium znajdziesz pod 
+    <a href="https://github.com/madsbangh/EasyButtons#easy-buttons-for-the-unity-default-inspector" target="_blank">tym</a> linkiem.
 </p>
