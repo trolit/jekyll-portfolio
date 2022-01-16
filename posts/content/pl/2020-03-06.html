@@ -1,32 +1,39 @@
 <p class="justify-text stylize-text">
-    Na pewno zdajesz sobie sprawę z tego czym jest konsola. Znacznie usprawnia proces testowania. Możemy w niej dodać komendy, 
-    które przyspieszą wykonanie określonych czynności, żeby móc przetestować różne scenariusze bez marnowania czasu na 
-    spełnienie poprzednich warunków, a przy złożonych projektach takich jest naprawdę dużo!
+    Na pewno zdajesz sobie sprawę z tego czym jest konsola dewelopera. Możemy w niej dodać komendy, które np. przyspieszą 
+    wykonanie określonych czynności, żeby móc przetestować różne scenariusze bez marnowania czasu na spełnienie poprzednich 
+    warunków, a przy złożonych projektach takich jest naprawdę dużo! Modyfikacja warunków wstępnych sceny nie jest tak wygodna 
+    jak konsola ponieważ wymusza dokonanie zmian w różnych miejscach, potem ich odrzucenie a w innym momencie powtórne dodanie.
 </p>
 
 <p class="justify-text stylize-text">
-    W moim przypadku, pierwszy taki projekt, który kwalifikował się pod dodanie konsoli była <a
-        href="https://github.com/trolit/projectZero" target="_blank">gra tworzona w ramach pracy inżynierskiej</a>. Z
-    racji, że praca była wykonywana w dwie osoby, gra musiała być odpowiednio duża. Z tyłu głowy miałem tą
-    świadomość, że będzie dużo kluczy (korzystaliśmy z PlayerPrefs) i funkcjonalności.
+    W moim przypadku projektem, który kwalifikował się pod dodanie konsoli było <a href="https://github.com/trolit/projectZero" 
+    target="_blank">Project Zero</a>. Z racji, że praca była wykonywana w dwie osoby, gra musiała być odpowiednio duża.
 </p>
 
 <p class="justify-text stylize-text">
     Zacząłem szukać przykładu na to jak przygotować konsolę developera. Udało się trafić na pomysł od youtuber'a, <a
         href="https://www.youtube.com/channel/UCmG1UbEI0iFE1tAw2SyvvXg" target="_blank">Joey The Lantern</a>. Konsolę
-    Joey'a uzupełniłem o skupienie na polu do wpisywania komend po jej uruchomieniu, 'ściągania' ekranu konsoli do 
-    dołu w przypadku zwracania większej liczby informacji niż dostępna jest ilość ekranu (przeznaczonego na konsole), 
-    statyczne zmienne przechowujące popularne błędy, kolorowanie składni i predefiniowany design. Nie dodałem logów 
-    Unity, ale można to odnaleźć na kanale autora. Po projekcie zdecydowałem się udostępnić swoją wersję jako oddzielne 
-    repozytorium. Przykładowe komendy można znaleźć w szablonie 
-    (<a href="https://github.com/trolit/unity-dev-console" target="_blank">tutaj</a>) lub w kodzie źródłowym gry Project 
-    Zero (<a href="https://github.com/trolit/projectZero" target="_blank">tutaj</a>).
+    Joey'a zaimplementowałem i zmodyfikowałem o kilka rzeczy. Nie dodałem logów Unity, ale można to odnaleźć na kanale 
+    autora. Zdecydowałem się udostępnić wersję z Project Zero jako oddzielne repozytorium. Z perspektywy zakończenia 
+    tego projektu mogę powiedzieć, że poświęcenie kilkunastu godzin na przygotowanie komend i konsoli zwróciło się 
+    zdecydowanie i skróciło czas spędzony na łataniu bugów :)
 </p>
 
-<div class="ui large header stylize-header">Jak dodać komendę?</div>
+<p class="justify-text stylize-text">
+    Szablon konsoli znaleźć można <a href="https://github.com/trolit/unity-dev-console" target="_blank">tutaj</a> (sprawdź 
+    README po więcej szczegółów), a przykład zastosowania w grze Project Zero, 
+    <a href="https://github.com/trolit/projectZero/tree/master/projectZero/Assets/Scripts/Dev" target="_blank">tutaj</a> 
+    (jest tu więcej komend 😁).
+</p>
+
+<img class="ui image big centered"
+    src="https://raw.githubusercontent.com/trolit/unity-dev-console/images/images/ezgif.gif"
+    alt="dev console demontration" alt="dev console demo" style="width: 100%;">
+
+<div class="ui large header stylize-header">Dodawanie komendy</div>
 
 <p class="justify-text stylize-text">
-    Stwórz klasę z nazwą <code>CommandX</code> gdze <code>X</code> to, krótki opis Twojej komendy (co by tradycji stało
+    Stwórz klasę z nazwą <code>CommandX</code> gdzie <code>X</code> to, krótki opis Twojej komendy (co by tradycji stało
     się zadość). Twoja wstępna wersja klasy mogłaby wyglądać następująco.
 </p>
 
@@ -70,28 +77,5 @@ public class CommandX : ConsoleCommand
     W trakcie definiowania <code>RunCommand</code> nie zapomnij o tym, żeby zwrócić uwagę na typowe komunikaty konsoli
     przygotowane w klasie <code>DevConsole</code>. Jeżeli nie znajdziesz tej o której myślisz to przygotuj kolejną. Jak
     już komenda będzie gotowa to wystarczy wywołać statyczną metodę <code>CreateCommand()</code> nowej komendy w
-    skrypcie <code>DevConsole</code>, w metodzie <code>CreateCommands()</code> (tak jak to pokazano niżej) i gotowe, 
-    można zabierać się do testowania!
+    skrypcie <code>DevConsole</code>, w metodzie <code>CreateCommands()</code> i gotowe, można zabierać się do testowania 😉
 </p>
-
-{% highlight cs linenos %}
-private void CreateCommands()
-{
-    var commandHelp = CommandHelp.CreateCommand();
-
-    var commandGetKeyValue = CommandGetKeyValue.CreateCommand();
-
-    var commandLoadScene = CommandLoadScene.CreateCommand();
-
-    var commandSceneList = CommandSceneList.CreateCommand();
-
-    // my NEW, fresh command!
-    var commandX = CommandX.CreateCommand();
-}
-{% endhighlight %}
-
-<div class="ui large header stylize-header">Demonstracja</div>
-
-<img class="ui image big centered"
-    src="https://raw.githubusercontent.com/trolit/unity-dev-console/images/images/ezgif.gif"
-    alt="dev console demontration" style="width: 100%;">

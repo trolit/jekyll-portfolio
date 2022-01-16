@@ -1,0 +1,82 @@
+<p class="justify-text stylize-text">
+    You are surely aware of what developer console is. We can add commands in it which for e.g. speed up certain conditions
+    to be able to test different scenarios without wasting time to fullfil previous ones and in complex projects there are a
+    lot of these. Scene preconditions modification isn't that convenient like console because it requires you to do changes
+    in different places, discard them and at another point a re-addition.
+</p>
+
+<p class="justify-text stylize-text">
+    In my case project that was eligible for adding console was <a href="https://github.com/trolit/projectZero" 
+    target="_blank">Project Zero</a>. Due to the fact that the game was performed by two people, game had to be
+    large enough.
+</p>
+
+<p class="justify-text stylize-text">
+    I've started looking after example on how to make dev console. I've managed to find an idea from <a
+    href="https://www.youtube.com/channel/UCmG1UbEI0iFE1tAw2SyvvXg" target="_blank">Joey The Lantern</a>.
+    I've modified his console with few things. I didn't add Unity logs to it but it can be found on the 
+    author's channel. I've decided to share my version from Project Zero as separate repository. From the
+    perspective of the end of that project I can say that sacrificing several hours to prepare commands and
+    console itself definitely paid back and shorten the time spent on patching bugs :)
+</p>
+
+<p class="justify-text stylize-text">
+    If you're interested, console template repository can be found <a href="https://github.com/trolit/unity-dev-console" 
+    target="_blank">here</a> (check README for more details), while example of applying it to Project Zero game, 
+    <a href="https://github.com/trolit/projectZero/tree/master/projectZero/Assets/Scripts/Dev" target="_blank">here</a> 
+    (there are more commands 😁).
+</p>
+
+<img class="ui image big centered"
+    src="https://raw.githubusercontent.com/trolit/unity-dev-console/images/images/ezgif.gif"
+    alt="dev console demontration" alt="dev console demo" style="width: 100%;">
+
+<div class="ui large header stylize-header">Adding command</div>
+
+<p class="justify-text stylize-text">
+    Create class named <code>CommandX</code> where <code>X</code> is short title of your command (to follow convention).
+    Command class template could look like this:
+</p>
+
+{% highlight cs linenos %}
+public class CommandX : ConsoleCommand
+{
+    public sealed override string Name { get; protected set; }
+    public sealed override string Command { get; protected set; }
+    public sealed override string Description { get; protected set; }
+    public sealed override string Help { get; protected set; }
+    public sealed override string Example { get; protected set; }
+
+    public CommandX()
+    {
+        Name = ""; // title of the command
+        Command = ""; // text that will be recognized as command
+        Description = ""; // give your command nice desc!
+        Help = ""; // here you can put syntax for example
+        Example = "";
+
+        AddCommandToConsole();
+    }
+
+    public override void RunCommand(string[] data)
+    {
+        // put body of your command here
+        // remember to properly secure
+        // all cases, watch which pos
+        // of array you are referring to
+    }
+
+    // creates command object
+    public static CommandX CreateCommand()
+    {
+        return new CommandX();
+    }
+}
+{% endhighlight %}
+
+<p class="justify-text stylize-text">
+    When defining <code>RunCommand</code>, don't forget to check common console messages prepared in <code>DevConsole</code>
+    class. If you won't find appropriate one, make new one. If command will be ready, just call static method 
+    <code>CreateCommand()</code> of the new command in <code>DevConsole</code> script in <code>CreateCommands()</code> and
+    done, you can start testing it 😉 
+</p>
