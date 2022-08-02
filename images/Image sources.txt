@@ -28,5 +28,8 @@ https://pixabay.com/pl/photos/autobus-komunikacja-miejska-%C5%BC%C3%B3%C5%82ty-4
 enigmaProject-cover
 https://pixabay.com/pl/photos/wirnik-maszyny-szyfruj%C4%85cej-enigma-1147801/
 
+patchron-cover
+https://pixabay.com/vectors/dog-pet-hound-black-eye-animal-151123/
+
 favicon
 https://www.flaticon.com/premium-icon/github_4494749
