@@ -1,7 +1,7 @@
 ---
 layout: music
 type: music
-author: ["Two Steps from Hell"]
+author: ["Two Steps From Hell"]
 youtubeId: IMy1ZLyaSqk
 subtitle: Heart Of Courage (combined with FDR prayer)
 genre: cinematic
