@@ -10,5 +10,6 @@ date: 2022-01-18
 labels:
   - Probot
   - jsdoc
-summary: GitHub app that helps in maintaining project conventions like implicit import to index, line-break before return, ordered keywords, marked comments.
+  - Jest
+summary: GitHub bot intended to provide first, early pull request review and faster further reviews done by humans. Includes type definitions and unit tests written in Jest.
 ---
