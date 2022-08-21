@@ -151,9 +151,10 @@ body .ui.cards > .card {
 }
 
 #avatar {
-  min-height: 250px;
-  min-width: 250px;
+  min-width: 240px;
+  min-height: 240px;
   filter: brightness(90%);
+  background-color: wheat;
 }
 
 .mw-150 {
