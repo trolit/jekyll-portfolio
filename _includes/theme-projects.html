@@ -1,42 +1,43 @@
-<div class="content-margin" onselectstart="return false" ondragstart="return false" style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+<div class="content-margin" onselectstart="return false" ondragstart="return false"
+  style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
   <div class="ui raised">
     <div class="ui one column center aligned container">
       {% assign projects = site.pages | where: "type", "project" %}
-      {% assign languages = site.pages | where: "type", "project" | map: 'language' | uniq %}
+      {% assign languages = site.pages | where: "type", "project" | map: 'language' | compact | uniq %}
 
       {% for language in languages %}
-        {% assign counter = 0 %}
 
-        {% for project in projects %}
-          {% if project.language == language %}
-            {% assign counter = counter | plus: 1 %}
-          {% endif %}
-        {% endfor %}
+      {% assign counter = 0 %}
 
-        <div class="ui medium statistic label jiggle-anim" style="padding: 2%;">
-          <div class="value">
-            {% case language %}
-              {% when "Java" %}
-                <span class="iconify icon-35" data-icon="logos:java" data-inline="false"></span>
-              {% when "JavaScript" %}
-                <span class="iconify icon-35" data-icon="logos:javascript" data-inline="false"></span>
-              {% when "Kotlin" %}
-                <span class="iconify icon-35" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
-              {% when "C#" %}
-                <span class="iconify icon-35" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
-              {% else %}
-                <span class="iconify icon-35" data-icon="carbon:unknown" data-inline="false"></span>
-            {% endcase %}
-          </div>
-          <div style="margin-top: 40% !important;">
-            ( {{ counter }} )
-          </div>
+      {% for project in projects %}
+      {% if project.language == language %}
+
+      {% assign counter = counter | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+
+      <div class="ui medium statistic label jiggle-anim" style="padding: 2%;">
+        <div class="value">
+          {% case language %}
+          {% when "Java" %}
+          <span class="iconify icon-35" data-icon="logos:java" data-inline="false"></span>
+          {% when "JavaScript" %}
+          <span class="iconify icon-35" data-icon="logos:javascript" data-inline="false"></span>
+          {% when "Kotlin" %}
+          <span class="iconify icon-35" data-icon="vscode-icons:file-type-kotlin" data-inline="false"></span>
+          {% when "C#" %}
+          <span class="iconify icon-35" data-icon="vscode-icons:file-type-csharp2" data-inline="false"></span>
+          {% endcase %}
         </div>
+        <div style="margin-top: 40% !important;">
+          ( {{ counter }} )
+        </div>
+      </div>
       {% endfor %}
     </div>
   </div>
 
-  <div class="ui container mb-5 mt-5" >
+  <div class="ui container mb-5 mt-5">
     <div>
       {% assign project_pages = site.pages | where: "type", "project" | sort: "date" | reverse %}
 
@@ -44,30 +45,30 @@
       {% assign years = "" %}
 
       {% for page in project_pages %}
-        {% assign test = test | append: page | date: "%Y" %}
-          {% if years contains test %}
-          {% else %}
-            {% assign years = years | append: test | append: "," %}
-          {% endif %}
+      {% assign test = test | append: page | date: "%Y" %}
+      {% if years contains test %}
+      {% else %}
+      {% assign years = years | append: test | append: "," %}
+      {% endif %}
       {% endfor %}
 
       {% assign yearsAsArray = years | split: ',' %}
 
       <div class="ui accordion center aligned grid text-center">
         {% for year in yearsAsArray %}
-          <span class="title title-{{ year }}" onclick="toggleAccordionContent('{{ year }}')" style="margin: 10px 15px">
-            <div class="ui huge label" style="position: relative;">
-              <i class="folder icon ma-0"></i> &nbsp; {{ year }} <br/>
-              {% assign numberOfProjects = 0 %}
-              {% for page in project_pages %}
-                {% assign projectYear = page.date | date: "%Y" %}
-                  {% if projectYear == year %}
-                    {% assign numberOfProjects = numberOfProjects | plus: 1 %}
-                  {% endif %}
-              {% endfor %}
-              <div class="floating ui teal circular label">{{ numberOfProjects }}</div>
-            </div>
-          </span>
+        <span class="title title-{{ year }}" onclick="toggleAccordionContent('{{ year }}')" style="margin: 10px 15px">
+          <div class="ui huge label" style="position: relative;">
+            <i class="folder icon ma-0"></i> &nbsp; {{ year }} <br />
+            {% assign numberOfProjects = 0 %}
+            {% for page in project_pages %}
+            {% assign projectYear = page.date | date: "%Y" %}
+            {% if projectYear == year %}
+            {% assign numberOfProjects = numberOfProjects | plus: 1 %}
+            {% endif %}
+            {% endfor %}
+            <div class="floating ui teal circular label">{{ numberOfProjects }}</div>
+          </div>
+        </span>
         {% endfor %}
 
         {% for year in yearsAsArray %}
@@ -75,13 +76,13 @@
           <div class="ui stackable centered cards projects-margin">
             {% for page in project_pages %}
             {% unless page.draft %}
-              {% assign pageYear = page.date | date: "%Y" %}
+            {% assign pageYear = page.date | date: "%Y" %}
 
-              {% if pageYear == year %}
-                {% include project-card.html page=page %}
-              {% endif %}
+            {% if pageYear == year %}
+            {% include project-card.html page=page %}
+            {% endif %}
             {% endunless %}
-          {% endfor %}
+            {% endfor %}
           </div>
         </div>
         {% endfor %}
