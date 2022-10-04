@@ -1,8 +1,3 @@
-<header>
-  <script type="text/javascript" src="js/particles/jquery.particleground.js"></script>
-  <script type="text/javascript" src="js/particles/demo.js"></script>
-</header>
-
 <!-- Home page design with large image to left of bio info. -->
 {% assign post_pages = site.pages | where: "type", "post" | where_exp: "page", "page.draft != true" %}
 {% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
@@ -77,5 +72,3 @@
     </div>
   </div>
 </div>
-
-<div id="lead-overlay" class="particles"></div>
