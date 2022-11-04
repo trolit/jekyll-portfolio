@@ -1,80 +1,84 @@
-<div class="content-margin" style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
-    <div class="ui container">
-        {% assign songs = site.pages | where: "type", "music" %}
-        {% assign authors = '' %}
-        {% assign genres = '' %}
+<div class="content-margin"
+  style="position: absolute; top: 5%; left:0; right:0; margin-left: auto; margin-right: auto; border: 1px solid #1C00ff00;">
+  <div class="ui container">
+    {% assign songs = site.pages | where: "type", "music" %}
+    {% assign authors = '' %}
+    {% assign genres = '' %}
 
-        {% for song in songs %}
-            {% assign authors = authors | concat: song.author | uniq | sort %}
-            {% assign tmp = song.genre | split: '_' %}
-            {% assign genres = genres | concat: tmp %}
-        {% endfor %}
-        {% assign genres = genres | uniq | sort %}
+    {% for song in songs %}
+    {% assign authors = authors | concat: song.author | uniq | sort %}
+    {% assign tmp = song.genre | split: '_' %}
+    {% assign genres = genres | concat: tmp %}
+    {% endfor %}
+    {% assign genres = genres | uniq | sort %}
 
-        <div class="ui multiple dropdown music-dropdown icon button w-100" style="margin-bottom: 60px; background-color: white; font-weight: lighter;">
-            <input id="songFilter" type="hidden" name="filters">
+    <div class="ui multiple dropdown music-dropdown icon button w-100"
+      style="margin-bottom: 60px; background-color: white; font-weight: lighter;">
+      <input id="songFilter" type="hidden" name="filters">
 
-            <div class="text" style="opacity: 0.3; padding: 2px 0;">
-              Filter tracks by author(s) and/or genre
-            </div>
+      <div class="text" style="opacity: 0.3; padding: 2px 0;">
+        Filter tracks by author(s) and/or genre
+      </div>
 
-            <div class="menu">
-              <div class="ui icon search input">
-                <i class="search icon"></i>
-                <input type="text" placeholder="Search tags...">
-              </div>
-
-              <div class="font-poppins" style="margin-left: 10px;">
-                <span class="iconify icon-25 ma-0 pa-0" data-icon="akar-icons:chat-question"></span> ..when combining <span class="ui mini blue label">genre</span> & <span class="ui mini green label">author</span> filters, note that:
-                <ul style="margin-top: 10px;">
-                  <li>if first selection is author, filters are matched independently. </li>
-                  <li>if first selection is genre, tracks must have both author and genre matched. </li>
-                </ul>
-              </div>
-
-              <div class="header">
-                <span class="iconify icon-15" data-icon="file-icons:composer"></span>
-                Author
-              </div>  
-              <div class="scrolling menu">
-                {% for author in authors %}
-                    {% if author == '' %}
-                        {% continue %}
-                    {% endif %}
-
-                    <div class="item" data-value="author: {{ author }}">
-                        <div class="ui green empty circular label"></div>
-                        {{ author }}
-                    </div>
-                {% endfor %}
-              </div>
-              
-              <div class="header">
-                <span class="iconify-inline icon-15" data-icon="clarity:cd-dvd-solid"></span>
-                Genre
-              </div>
-              <div class="scrolling menu">
-                {% for genre in genres %}
-                    {% if genre == '' %}
-                        {% continue %}
-                    {% endif %}
-
-                    <div class="item" data-value="genre: {{ genre }}">
-                        <div class="ui blue empty circular label"></div>
-                        {{ genre }}
-                    </div>
-                {% endfor %}
-              </div>
-            </div>
+      <div class="menu">
+        <div class="ui icon search input">
+          <i class="search icon"></i>
+          <input type="text" placeholder="Search tags...">
         </div>
 
-        <div class="ui stackable centered three cards" style="margin-bottom: 5%;">
-            {% assign song_pages = site.pages | where: "type", "music" | sort: "date" | reverse %}
-            {% for page in song_pages %}
-              {% unless page.draft %}
-                {% include song-card.html page=page %}
-              {% endunless %}
-            {% endfor %}
+        <div class="font-poppins" style="margin-left: 10px;">
+          <span class="iconify icon-25 ma-0 pa-0" data-icon="akar-icons:chat-question"></span> ..when combining <span
+            class="ui mini blue label">genre</span> & <span class="ui mini green label">author</span> filters, note
+          that:
+          <ul style="margin-top: 10px;">
+            <li>if first selection is author, filters are matched independently. </li>
+            <li>if first selection is genre, tracks must have both author and genre matched. </li>
+          </ul>
         </div>
+
+        <div class="header">
+          <span class="iconify icon-15" data-icon="file-icons:composer"></span>
+          Author
+        </div>
+        <div class="scrolling menu">
+          {% for author in authors %}
+          {% if author == '' %}
+          {% continue %}
+          {% endif %}
+
+          <div class="item" data-value="author: {{ author }}">
+            <div class="ui green empty circular label"></div>
+            {{ author }}
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="header">
+          <span class="iconify-inline icon-15" data-icon="clarity:cd-dvd-solid"></span>
+          Genre
+        </div>
+        <div class="scrolling menu">
+          {% for genre in genres %}
+          {% if genre == '' %}
+          {% continue %}
+          {% endif %}
+
+          <div class="item" data-value="genre: {{ genre }}">
+            <div class="ui blue empty circular label"></div>
+            {{ genre }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
+
+    <div class="ui stackable centered four cards" style="margin-bottom: 5%;">
+      {% assign song_pages = site.pages | where: "type", "music" | sort: "date" | reverse %}
+      {% for page in song_pages %}
+      {% unless page.draft %}
+      {% include song-card.html page=page %}
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
