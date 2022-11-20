@@ -2,7 +2,8 @@
 
 title: 968
 url: "https://trolit.github.io"
-baseurl: "jekyll-portfolio"
+# Edit next line so that baseurl is "" if your repo is <username>.github.io
+baseurl: "/jekyll-portfolio"
 
 # OPTIONAL CHANGES
 theme-home: theme-home.html
