@@ -1,8 +1,8 @@
 # Site settings
 
 title: 968
-url: "https://trolit.github.io/jekyll-portfolio"
-baseurl: ""
+url: "https://trolit.github.io"
+baseurl: "jekyll-portfolio"
 
 # OPTIONAL CHANGES
 theme-home: theme-home.html
